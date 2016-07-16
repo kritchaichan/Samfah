@@ -1,0 +1,66 @@
+.wrap-wood{
+	margin: 50px auto;
+    width: 800px;
+    min-height: 800px;
+    text-align: center;;
+}
+
+.wrap-wood-pic{
+    display: inline-block;
+    width: 736px;
+    height: auto;
+    position: relative;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.wood-pic{
+	width: 180px;
+    height: auto;
+    float: left;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    margin: 0px 2px;
+}
+
+.wood-pic img{
+	width: 180px;
+    height: auto;
+}
+
+.wrap-wood-text,.wrap-wood-text h3{
+	text-align: center;
+}
+p{
+	text-indent: 1.5em;
+	line-height: 2em;
+	margin-bottom: 1em;
+	text-align: left;
+}
+
+h1,h2,h3,h4,h5,h6{
+	margin-bottom: 25px;
+	margin-top: 30px;
+	text-align: left;
+}
+
+span{
+	font-weight: bold;
+}
+
+table {
+	width: 600px;
+	border-collapse: collapse;
+	border: 1px solid black;
+}
+
+th{
+	width: 200px;
+	text-align: left;
+}
+
+td{
+	text-align: center;
+	width: 100px;
+}

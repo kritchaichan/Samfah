@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Samfa Craftman</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="https://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script>
+		<script type="text/javascript" src="modernizr.custom.79639.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+		<style type="text/css">
+			hr.style-head:after{
+					content: 'Gallery';
+			}
+			.imghover{
+				cursor: pointer;
+			}
+			#menu3{font-weight:bold;}
+		</style>
+
+</head>
+
+	<body>
+	    <div id="container" style="opacity: 1.0; background: url(../images/)no-repeat center center fixed; background-size: auto auto;">
+	    	
+	    	<div data-import="header.html">กรุณารอซักครู่...</div>
+			
+			<div id="DATA">
+				
+				<div id="blog" class="order">
+					<hr class="style-head">
+					<div id="select">
+						<div class="selectMenu" id="1" >
+							<div class="selectHead" style="margin-left:250px;"><a href="#">Showroom</a></div>
+							<hr class="selectLine">
+							<div id="imghover1" class="imghover"><a href="showroom.php"><img src="../images/gallery-hover-1.jpg"></a></div>
+						</div>
+
+						<div class="selectMenu" id="2" >
+							<div class="selectHead" style="margin-left:350px;"><a href="#">Project Folio</a></div>
+							<hr class="selectLine">
+							<div id="imghover2" class="imghover"><a href="process.php"><img src="../images/gallery-hover-2.jpg"></a></div>
+						</div>
+
+						<div class="selectMenu" id="3" >
+							<div class="selectHead" style="margin-left:450px;"><a href="#">Process</a></div>
+							<hr class="selectLine">
+							<div id="imghover3" class="imghover"><a href="process.php"><img src="../images/gallery-hover-3.jpg"></a></div>
+						</div>
+						<div class="selectMenu" id="4" >
+							<div class="selectHead" style="margin-left:550px;"><a href="#">Other crafts</a></div>
+							<hr class="selectLine">
+							<div id="imghover4" class="imghover"><a href="othercraft.php"><img src="../images/gallery-hover-4.jpg"></a></div>
+						</div>	
+					</div>
+
+					
+			  	</div><!--/*end blog*/-->
+
+				<div id="footerPan">
+					<p>
+						<a href="profile.html">COMPANY PROFILE</a> | 
+						<a href="woodis.html">WOOD IS?</a> | 
+						<a href="gallery.html">GALLERY</a> | 
+						<a href="order.html">ORDER US!</a> | 
+						<a href="contact.html">CONTACTS US</a>
+						<br/>
+						<span>Copyright &copy; 2015 Samfah Craftman Co., Ltd, All rights reserved.</span>
+					</p>
+		        </div><!--/*end footer*/-->
+
+			</div><!--/*end DATA*/-->
+		
+		</div><!--/*end container*/-->
+
+
+</body>
+	<script><!--/*ClearText*/-->
+		function clearText(thefield){
+		if (thefield.defaultValue==thefield.value)
+		thefield.value = ""
+		} 
+
+		$(".imghover").hide();
+
+		$(document).ready(function(){
+		  $("#1").on("click",function(){
+		   		$("#imghover1").slideDown("slow");
+		   		$("#imghover2").slideUp("slow");
+		   		$("#imghover3").slideUp("slow");
+		   		$("#imghover4").slideUp("slow");
+		  	});
+		  
+		  $("#2").on("click",function(){
+		   		$("#imghover1").slideUp("slow");
+		   		$("#imghover2").slideDown("slow");
+		   		$("#imghover3").slideUp("slow");
+		   		$("#imghover4").slideUp("slow");
+		  	});
+
+		  $("#3").on("click",function(){
+		   		$("#imghover1").slideUp("slow");
+		   		$("#imghover2").slideUp("slow");
+		   		$("#imghover3").slideDown("slow");
+		   		$("#imghover4").slideUp("slow");
+		  	});
+
+		  $("#4").on("click",function(){
+		   		$("#imghover1").slideUp("slow");
+		   		$("#imghover2").slideUp("slow");
+		   		$("#imghover3").slideUp("slow");
+		   		$("#imghover4").slideDown("slow");
+		  	});
+		});
+
+		$('#imghover1').on("click",function(){
+			setTimeout(function() { window.location.href='showroom.php'; }, 3000 );
+		});
+
+		$('#imghover2').on("click",function(){
+			setTimeout(function() { window.location.href='project.php'; }, 3000 );
+		});
+
+		$('#imghover3').on("click",function(){
+			setTimeout(function() { window.location.href='process.php'; }, 3000 );
+		});
+
+		$('#imghover4').on("click",function(){
+			setTimeout(function() { window.location.href='other.php'; }, 3000 );
+		});
+			   	
+
+	</script>
+
+</html>
