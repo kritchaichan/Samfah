@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Samfa Craftman</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style_wood.css">
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="https://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script>
+		<script type="text/javascript" src="modernizr.custom.79639.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+		<!-- <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'> -->
+		<style type="text/css">
+			hr.style-head:after{content: 'Wood Is?';}
+			#compare_door{
+				cursor: pointer;
+			}
+			#compare_frame{
+				cursor: pointer;
+			}
+			#menu2{font-weight:bold;}
+		</style>
+
+</head>
+
+	<body>
+
+	    <div id="container">
+	    	<div class="bg" style="opacity: 1.0; background: url(../images/bg02.jpg)no-repeat center center fixed; background-size: auto auto;"></div>
+	    	
+	    	<div data-import="header.html">กรุณารอซักครู่...</div>
+			
+			<div id="DATA">
+				<div id="blog" class="order">
+					<hr class="style-head">
+					
+					<div class="wrap-wood en">
+						<div class="wrap-wood-pic">
+							<div class="wood-pic disclick"><a href="wood1.html"><img src="../images/wood_1.jpg"></a></div>
+							<div class="wood-pic frame"><a href="wood2.html"><img src="../images/wood_2.jpg"></a></div>
+							<div class="wood-pic frame"><a href="wood3.html"><img src="../images/wood_3.jpg"></a></div>
+							<div class="wood-pic disclick"><a href="wood4.html"><img src="../images/wood_4.jpg"></a></div>
+							<div class="wood-pic door"><a href="wood5.html"><img src="../images/wood_5.jpg"></a></div>
+							<div class="wood-pic door"><a href="wood6.html"><img src="../images/wood_6.jpg"></a></div>
+							<div class="wood-pic frame"><a href="wood7.html"><img src="../images/wood_7.jpg"></a></div>
+							<div class="wood-pic door"><a href="wood8.html"><img src="../images/wood_8.jpg"></a></div>
+						</div>
+						<div class="wrap-wood-text">
+							<h3 id="compare_door">Compare wood for door</h3>
+							<div id="img_compare_door"><img src="../images/compare_door.jpg"></div>
+							<h3 id="compare_frame">Compare wood for frame</h3>
+							<div id="img_compare_frame"><img src="../images/compare_frame.jpg"></div>
+						</div>
+
+
+			  	</div><!--/*end blog*/-->
+
+				<div id="footerPan">
+					<p>
+						<a href="profile.html">COMPANY PROFILE</a> | 
+						<a href="woodis.html">WOOD IS?</a> | 
+						<a href="gallery.html">GALLERY</a> | 
+						<a href="order.html">ORDER US!</a> | 
+						<a href="contact.html">CONTACTS US</a>
+						<br/>
+						<span>Copyright &copy; 2015 Samfah Craftman Co., Ltd, All rights reserved.</span>
+					</p>
+		        </div><!--/*end footer*/-->
+
+			</div><!--/*end DATA*/-->
+		
+		</div><!--/*end container*/-->
+
+
+</body>
+	<script><!--/*ClearText*/-->
+		function clearText(thefield){
+		if (thefield.defaultValue==thefield.value)
+		thefield.value = ""
+		} 
+		$("#img_compare_door").hide();
+		$("#img_compare_frame").hide();
+		
+		$("#compare_door").on('click', function(){
+			        $('#img_compare_door').slideDown('slow');
+			        $('#img_compare_frame').slideUp('slow');
+			        $(".frame")
+			        .click(false)
+			        .css({
+			        	'opacity': '0.3'
+			        });
+			        $(".door")
+			        .click(true)
+			        .css({
+			        	'opacity': '1'
+			        });
+		});
+
+		$("#compare_frame").on('click', function(){
+			        $('#img_compare_frame').slideDown('slow');
+			        $('#img_compare_door').slideUp('slow');
+			        $(".door")
+			        .click(false)
+			        .css({
+			        	'opacity': '0.3'
+			        });
+					$(".frame")
+					.click(true)
+			        .css({
+			        	'opacity': '1'
+			        });
+		});
+
+		$('.disclick')
+		.click(false)
+        .css({
+        	'opacity': '0.3'
+        });
+
+	</script>
+	<script type="text/javascript" src="../js/disable_rightclick.js"></script>
+</html>

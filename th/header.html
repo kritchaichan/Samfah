@@ -1,0 +1,99 @@
+	<div id="header">
+		<div id="HeadMenu">
+			<ul>
+				<li><a href="index.html">SAMFAH CRAFTMAN</a></li>
+				<li><a href="index.html">森 和 興 木 廠</a></li>
+				<li>
+					<!-- <a href="#"><img src="../images/lang_en.png"></a>
+					<a href="#"><img src="../images/lang_th.png"></a> -->
+					<a href="JavaScript:fncEN()" id="EN" ><img src="../images/lang_en.png"></a>
+					<a href="JavaScript:fncTH()" id="TH" ><img src="../images/lang_th.png"></a>
+				</li>
+			</ul>
+		</div>
+		<div class="showmenu">
+			<nav>
+				<ul>
+					<li><a id="menu1" href="profile.html">ประวัติบริษัท</a></li>		
+					<li><a id="menu2" href="woodis.html">มีไม้อะไรบ้าง?</a></li>
+					<li><a id="menu3" href="gallery.html">คลังรูปภาพ</a></li>
+					<li><a id="menu4" href="order.html">สั่งสินค้า</a></li>
+					<li><a id="menu5" href="contact.html">ติดต่อเรา</a></li>
+				</ul>
+			</nav>
+		</div><!--/*end showmenu*/-->
+	</div><!--/*end head*/-->
+
+	<script>
+		document.import();
+	</script>
+
+	<script>
+		$( "#menu1" ).hover(function()
+		{
+			<!--/*Show BG after hover menu*/-->
+			$( "#item_1" ).fadeIn(300, "linear");
+			$( "#item_2" ).fadeOut(300, "linear");
+			$( "#item_3" ).fadeOut(300, "linear");
+			$( "#item_4" ).fadeOut(300, "linear");
+			$( "#item_5" ).fadeOut(300, "linear");
+		});
+
+		$( "#menu2" ).hover(function()
+		{
+			<!--/*Show BG after hover menu*/-->
+			$( "#item_1" ).fadeOut(300, "linear");
+			$( "#item_2" ).fadeIn(300, "linear");
+			$( "#item_3" ).fadeOut(300, "linear");
+			$( "#item_4" ).fadeOut(300, "linear");
+			$( "#item_5" ).fadeOut(300, "linear");
+		});
+
+		$( "#menu3" ).hover(function()
+		{
+			<!--/*Show BG after hover menu*/-->
+			$( "#item_1" ).fadeOut(300, "linear");
+			$( "#item_2" ).fadeOut(300, "linear");
+			$( "#item_3" ).fadeIn(300, "linear");
+			$( "#item_4" ).fadeOut(300, "linear");
+			$( "#item_5" ).fadeOut(300, "linear");
+		});
+
+		$( "#menu4" ).hover(function()
+		{
+			<!--/*Show BG after hover menu*/-->
+			$( "#item_1" ).fadeOut(300, "linear");
+			$( "#item_2" ).fadeOut(300, "linear");
+			$( "#item_3" ).fadeOut(300, "linear");
+			$( "#item_4" ).fadeIn(300, "linear");
+			$( "#item_5" ).fadeOut(300, "linear");
+		});
+
+		$( "#menu5" ).hover(function()
+		{
+			<!--/*Show BG after hover menu*/-->
+			$( "#item_1" ).fadeOut(300, "linear");
+			$( "#item_2" ).fadeOut(300, "linear");
+			$( "#item_3" ).fadeOut(300, "linear");
+			$( "#item_4" ).fadeOut(300, "linear");
+			$( "#item_5" ).fadeIn(300, "linear");
+		});
+		
+		function fncTH(){
+		
+		var parts = window.location.pathname.split( '/' );
+		var query = parts[parts.length-1];
+		var redirectpathTH = "../" + "th" + "/" + query;
+		location.replace(redirectpathTH);
+		
+		}
+		
+		function fncEN(){
+		var parts = window.location.pathname.split( '/' );
+		var query = parts[parts.length-1];
+		var redirectpathEN = "../" + "en" + "/" + query;
+		location.replace(redirectpathEN);
+		
+		}
+	</script>
+

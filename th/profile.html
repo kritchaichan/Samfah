@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<title>Samfa Craftman</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="../css/style.css">
+		<link rel="stylesheet" type="text/css" href="../css/style_profile.css">
+		<script type="text/javascript" src="../js/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="https://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script>
+		<script type="text/javascript" src="modernizr.custom.79639.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'> 
+		<link href="../css/th.css" rel="stylesheet" />
+		<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.core.js"></script>
+		<script src="http://jquery-ui.googlecode.com/svn/tags/latest/ui/jquery.effects.slide.js"></script>
+
+		<style type="text/css">
+			hr.style-head:after{content: 'Company Profile';}
+			#menu1{font-weight:bold;}
+		</style>
+
+</head>
+
+	<body>
+		<!-- style="opacity: 1.0; background: url(../images/bg01.jpg)no-repeat center center fixed; background-size: auto auto;" -->
+	    <div id="container">
+	    	<div class="bg" style="opacity:0.2;"></div>
+	    	
+	    	<div data-import="header.html">กรุณารอซักครู่...</div>
+			
+			<div id="DATA" style="box-shadow: 0px 2px 30px 0px rgba(50, 50, 50, 0);">
+				<div id="blog" class="order" style="min-height: 800px; background: rgba(255, 255, 255, 0);">
+					<br><br><br>
+					<div style="width:auto; height:auto; float:left;"><a href="../images/Mr_yeung.png"><img src="../images/Mr_yeung.png" style="width:300px; height:auto;"></a></div>
+					<div class="profile">
+						<h2>การเดินทางของเรา</h2>
+						<p>นายหยุ่งฝ่า แซ่หย่องผู้ย้ายถิ่นฐานมาจากประเทศจีนแผ่นดินใหญ่ได้เรียนรู้วิธีการผลิตประตู และหน้าต่างไม้จากพื้นที่ชุมชนค้าไม้เก่าแก่บริเวณหลังวัดสระเกศฯ ภูเขาทอง ท่านได้ริเริ่มกิจการแซมฟ้าการช่าง ในปีพ.ศ. 2502  จากห้องแถว 1 ห้อง เป็น 3 ห้อง บ้านเลขที่ 84-88 บริเวณถนนบริพัตร  หลังวัดสระเกศฯ  นายหยุ่งฝ่า ผลิตผลงานที่เน้นความประณีตเรียบร้อย ฝีมือดี ตรงเวลาและซื่อสัตย์ ใช้วัสดุประกอบที่ดีมีมาตรฐานและมีคุณภาพตามที่ตกลงกับลูกค้า เมื่องานเสร็จจะต้องตรวจงาน และปรับแต่งให้เรียบร้อย ท่านได้ใช้วิธีการตัดเย็บเสื้อผ้ามาประยุกต์กับการผลิตประตูหน้าต่าง โดยคิดค้นวิธีการประกอบประตู หน้าต่างที่ทำให้เห็นรอยต่อของไม้น้อยที่สุด การเข้าฉากและมุมสนิทชิดไม่มีร่องรู สินค้าจึงมีลวดลายไม้ที่สวยงามประณีตทั้งชิ้น วิธีการเข้าเดือยใช้วิธีการแบบเก่าโบราณ คือเดือยเต็มแน่นหนา ไม่โยกคลอน ใส่ประกอบเข้ารูป นอกจากนั้นยังเน้นเรื่อง การเลือกสรรไม้ที่มีคุณภาพและมีลายที่งดงาม เครื่องจักร และอุปกรณ์การผลิตต้องคม ไม่ชำรุดหรือสึกหรอ มีกระบวนการเช็คสภาพก่อนส่งถึงลูกค้า กิจการแซมฟ้าการช่างได้ยืนหยัดมาตลอดระยะเวลา 56 ปี โดยมีการพัฒนาและยึดมั่นในมาตรฐานคุณภาพสินค้า  จนได้รับความเชื่อมั่นไว้วางใจจากลูกค้าด้วยคุณภาพและราคาที่สมเหตุสมผลเสมอมา</p>
+					</div>
+			  	</div><!--/*end blog*/-->
+
+			</div><!--/*end DATA*/-->
+		
+		</div><!--/*end container*/-->
+
+
+</body>
+	<script><!--/*ClearText*/-->
+		function clearText(thefield){
+		if (thefield.defaultValue==thefield.value)
+		thefield.value = ""
+		} 
+		
+		//Array of images which you want to show: Use path you want.
+		var images=new Array('../images/pic1.jpg','../images/pic2.jpg','../images/pic3.jpg');
+		var nextimage=0;
+		doSlideshow();
+
+		function doSlideshow(){
+		    if(nextimage>=images.length){
+		    	nextimage=0;
+		    }
+		    
+		    $('.bg')
+		    .css('background','url("'+images[nextimage++]+'") no-repeat center center fixed')
+			.show('slide', {direction: 'right'}, 3000,function(){
+			        setTimeout(doSlideshow,7000);
+			    });
+		}
+
+	</script>
+	<script type="text/javascript" src="../js/disable_rightclick.js"></script>
+
+</html>
