@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 
 <html>
@@ -38,6 +41,7 @@
 							@ini_set('display_errors', '0');
 							
 							include ("calendar-0.9.1/date_menu.php");
+							
 										  $door = $_POST['door'];
 										  $door_order = $_POST['door_order'];
 										  $x = $_POST['x'];
@@ -114,7 +118,8 @@
 						</div><!--/*end Order2*/-->
 						<hr class="style-End">
 						<div id="footer">
-							<a href="javascript:history.back(1);">< Back</a>
+							<!-- <a href="javascript:history.back(1);">< Back</a> -->
+                            <a href="madetocatalogue.html">< Back</a>
                             <a href="JavaScript:fncSubmit()">Next ></a>
 			        	</div>
 		        	</div><!--/*end pageStyle*/-->
