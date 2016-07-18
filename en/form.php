@@ -41,6 +41,7 @@ session_start();
 							@ini_set('display_errors', '0');
 							
 							include ("calendar-0.9.1/date_menu.php");
+							
 										  $door = $_POST['door'];
 										  $door_order = $_POST['door_order'];
 										  $x = $_POST['x'];
