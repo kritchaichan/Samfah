@@ -92,7 +92,7 @@
 									?>
 								</div>
 									<div id="detail-product">
-										<form action="form.php" method="post" name="form2">
+										<form action="order.php" method="post" name="form2">
 											<h3>1st</h3>
 											<div class="detail-form">
 										  		<input type="hidden" name="door" value="<?=$door?>">
