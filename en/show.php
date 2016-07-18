@@ -106,7 +106,7 @@ else
 	        <?php
 													
 			if($acsr1 != ""){
-				echo '<label><input type="checkbox" checked id="acsr" name="Acsr1" value="Door/Windows disabled readonly"><span>Door/Windows</span></label>';
+				echo '<label><input type="checkbox" checked id="acsr" name="Acsr1" value="Door/Windows" disabled readonly><span>Door/Windows</span></label>';
 			}
 			else{
 				echo '<label><input type="checkbox" disabled id="acsr" name="Acsr1" value="Door/Windows" disabled readonly><span>Door/Windows</span></label>';
