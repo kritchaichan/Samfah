@@ -101,8 +101,11 @@
 	session_start();
 		include('../include/config.inc.php');
 		
+		
+		for($i=0;$i<=(int)$_SESSION["intLine"];$i++)
+        {
 		$firstname = $_POST['firstname'];
-        $lastname = $_POST['lastname'];
+		$lastname = $_POST['lastname'];
 		$name = $firstname." ".$lastname;
 		$address=  $_POST['address'];
 		$mobile =  $_POST['mobile'];
@@ -110,18 +113,19 @@
 		$email =  $_POST['email'];
 		$line =  $_POST['line'];
 		$fbname =  $_POST['fbname'];
-        $date_delivery =  $_POST['date'];
-		$x =  $_POST['x'];
-		$y =  $_POST['y'];
-		$quan =  $_POST['quantity'];
-		$acsr1 =  $_POST['Acsr1'];
-		$acsr2 =  $_POST['Acsr2'];
-		$acsr3 =  $_POST['Acsr3'];
-		$door = $_POST['door'];
+		$date_delivery =  $_POST['date'];
 		$door_order = $_POST['door_order'];
-		$wood_c = $_POST['door_color'];
-		$frame_c = $_POST['framing_style'];
 		$remark = $_POST['remark'];
+		
+        $door = $_SESSION["ImgDoor"][$i];
+        $x =  $_SESSION["Height"][$i];
+        $y =  $_SESSION["Width"][$i];
+        $quan =  $_SESSION["Quantity"][$i];
+        $acsr1 =  $_SESSION["Acsr1"][$i];
+        $acsr2 =  $_SESSION["Acsr2"][$i];
+        $acsr3 =  $_SESSION["Acsr3"][$i];
+        $wood_c = $_SESSION["WoodForDoor"][$i];
+        $frame_c = $_SESSION["WoodForFraming"][$i];
 		
 		$acsr = $acsr1." ".$acsr2." ".$acsr3;
 		
@@ -137,11 +141,12 @@
 		$date = date('Y-m-d');
 		$date_reserve =  date('Y-m-d H:i:s');
 		
-		/*$sql="INSERT INTO `sf`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` ,`name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve')";*/
+		$sql="INSERT INTO `sf`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` ,`name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve')";
 		
-		$sql ="INSERT INTO `u982279518_samfa`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` , `name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`, `status`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve', 'New Order')";
+		/*$sql ="INSERT INTO `u982279518_samfa`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` , `name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`, `status`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve', 'New Order')";*/
 		
 		$result = mysql_query ($sql);
+		}
  
  // Send Mail Order
 /*require('PHPMailer/PHPMailerAutoload.php');  // path to the PHPMailer class
@@ -188,9 +193,6 @@ $mail->WordWrap = 50;
 
 }*/
 
-
-			
-		
 	?>
 
 	<body>
@@ -203,103 +205,100 @@ $mail->WordWrap = 50;
 					?>
 					<hr class="style" >				
 		        	<div id="Detail">
-						<div id="order2">
-							<div id="box-product"><!--/*Box-product*/-->
-								<div id="model-product" style="width:400px;">
+<?php
+                    for($i=0;$i<=(int)$_SESSION["intLine"];$i++)
+                    { // Loop Order
+                    ?>
+                        <div id="order2">
+                        <div id="box-product">
+                        <div id="model-product" style="width:50%;" >
+                    <?php
+                    
+                        $pic_name = substr($door,0,2);
+                        if($pic_name == "CS"){
+                        $img_door  = '<img src="../pic_door_classic/'.$door.'.jpg" alt="door" >';
+                        $img_door .= '<h5>'.$door.'</h5>';
+                        echo $img_door;
+                        $link = "classic.php";
+                        }
+                        else if ($pic_name == "CT"){
+                        $img_door  = '<img src="../pic_door_contemporary/'.$door.'.jpg" alt="door" >';
+                        $img_door .= '<h5>'.$door.'</h5>';
+                        echo $img_door;
+                        $link = "contemporary.php";
+                        }
+                        else if($pic_name == "MD"){
+                        $img_door  = '<img src="../pic_door_modern/'.$door.'.jpg" alt="door" >';
+                        $img_door .= '<h5>'.$door.'</h5>';
+                        echo $img_door;
+                        $link = "modern.php";
+                        }
+                        else{
+                        $img_door  = '<img src="../pic_door_order/'.$door.'.jpg" alt="door" >';
+                        $img_door .= '<h5>'.$door_order.'</h5>';
+                        echo $img_door;
+                        }
+                    ?>
+                    </div>
+                    <div id="detail-product" style="width:50%;">
+                    <?php 
+                    //Ordinal Number
+                    $number = $i+1;
+                    $ends = array('th','st','nd','rd','th','th','th','th','th','th');
+                    if (($number%100) >= 11 && ($number%100) <= 13)
+                       $abbreviation = $number. 'th';
+                    else
+                       $abbreviation = $number. $ends[$number % 10];
+                      
+                    ?>
+                    <h3><?=$abbreviation?></h3>
+                        <div class="detail-form">
+                        <label>Size</label>
+                        <label>Height : <?=$x?> Cm</label>
+                        <label>Width : <?=$y?> Cm</label>
+                        <label>Quantity : <?=$quan?> Pcs</label>
+                        </div>
+                                <div class="detail-form">
+                                <label>Accessories</label>
                                 <?php
-								
-								$pic_name = substr($door,0,2);
-									if($pic_name == "CS"){
-												$img_door  = '<img src="../pic_door_classic/'.$door.'.jpg" alt="door" >';
-												$img_door .= '<h5>'.$door.'</h5>';
-												echo $img_door;
-												$link = "classic.php";
-										}
-										else if ($pic_name == "CT"){
-												$img_door  = '<img src="../pic_door_contemporary/'.$door.'.jpg" alt="door" >';
-												$img_door .= '<h5>'.$door.'</h5>';
-												echo $img_door;
-												$link = "contemporary.php";
-											
-											
-										}
-										else if($pic_name == "MD"){
-												$img_door  = '<img src="../pic_door_modern/'.$door.'.jpg" alt="door" >';
-												$img_door .= '<h5>'.$door.'</h5>';
-												echo $img_door;
-												$link = "modern.php";
-										}
-										else{
-											$img_door  = '<img src="../pic_door_order/'.$door.'.jpg" alt="door" >';
-											$img_door .= '<h5>'.$door_order.'</h5>';
-											echo $img_door;
-											
-										}
-									?>
-								</div>
-								<div id="detail-product">
-									<h3>1st</h3>
-									<form action="detail.php" method="post">
-										<div class="detail-form">
-									  		<label>Size</label>
-									  		<label>Height : <?=$x?> Cm</label>
-									  		<label>Width : <?=$y?> Cm</label>
-									  		<label>Quantity : <?=$quan?> Pcs</label>
-										</div>
-										<div class="detail-form">
-									  		<label>Accessories</label>
-                                            <?php
-												
-												if($acsr1 !== ""){
-													echo '<label><input type="checkbox" checked id="acsr" name="Acsr1" value="Door/Windows"><span>Door/Windows</span></label>';
-												}
-												else{
-													echo '<label><input type="checkbox" disabled id="acsr" name="Acsr1" value="Door/Windows"><span>Door/Windows</span></label>';
-												}
-												
-												if($acsr2 !== ""){
-													echo '<label><input type="checkbox" checked id="acsr" name="Acsr2" value="Frame"><span>Frame</span></label>';
-												}
-												else{
-													echo '<label><input type="checkbox" disabled id="acsr" name="Acsr2" value="Door/Windows"><span>Frame</span></label>';
-												}
-												
-												if ($acsr3 !== ""){
-										  			echo '<label><input type="checkbox" checked id="acsr" name="Acsr3" value="Glass"><span>Glass work</span></label>';
-												}
-												else{
-													echo '<label><input type="checkbox" disabled id="acsr" name="Acsr3" value="Door/Windows"><span>Glass work</span></label>';
-												}
-											
-											
-											?>
-										</div>
-										<div class="option-product">
-											<label>Select Wood</label>
-											<label><img style="width:77px; border:3px solid black;" src="../wood_color/<?=$wood_c.".jpg"?>" alt="ไม้"></label>
-										</div>
-										<div class="option-product">
-											<label>Select Framing</label>
-											<label><img style="width:77px; border:3px solid black;" src="../wood_frame/<?=$frame_c.".jpg"?>" alt="ไม้"></label>
-										</div>
-									</form>
-								</div>
+                                                                        
+                                if($acsr1 != ""){
+                                    echo '<label><input type="checkbox" checked id="acsr" name="Acsr1" value="Door/Windows" disabled readonly><span>Door/Windows</span></label>';
+                                }
+                                else{
+                                    echo '<label><input type="checkbox" disabled id="acsr" name="Acsr1" value="Door/Windows" disabled readonly><span>Door/Windows</span></label>';
+                                }
+                                                                        
+                                if($acsr2 != ""){
+                                    echo '<label><input type="checkbox" checked id="acsr" name="Acsr2" value="Frame" disabled readonly><span>Frame</span></label>';
+                                }
+                                else{
+                                    echo '<label><input type="checkbox" disabled id="acsr" name="Acsr2" value="Door/Windows" disabled readonly><span>Frame</span></label>';
+                                }
+                                                                        
+                                if ($acsr3 != ""){
+                                    echo '<label><input type="checkbox" checked id="acsr" name="Acsr3" value="Glass" disabled readonly><span>Glass work</span></label>';
+                                }
+                                else{
+                                    echo '<label><input type="checkbox" disabled id="acsr" name="Acsr3" value="Door/Windows" disabled readonly><span>Glass work</span></label>';
+                                }
                                 
-                                <table cellpadding="5" style="font-weight:bold; text-align:left;">
-                            			<tr>
-											<td style="vertical-align:top;">Remark : </td>
-											<td colspan="3"><?=$remark ?></td>
-										</tr>
-                                        </table>
-                                        
-								<div style="text-align:left; margin : auto; width:500px; height=60px;">
-									<div>
-										<h5>Note!</h5>
-										<h6>- We welcome your special requested type of wood.</h6>
-										<h6>- The actual color of wood may have minimal change from the pictures.</h6>
-									</div>
-								</div>
-							</div><!--/*end Box-product*/-->
+                                ?>
+                                </div>
+                                                                
+                                <div class="option-product" onclick="$('#color').show();$('#style').hide();">
+                                    <label>Wood</label>
+                                    <label><img style="width:77px; border:3px solid black;" src="../wood_color/<?=$wood_c.".jpg"?>" alt="ไม้"></label>
+                                    </div>
+                                <div class="option-product" onclick="$('#color').hide();$('#style').show();">
+                            <label>Framing</label>
+                            <label><img style="width:77px; border:3px solid black;" src="../wood_frame/<?=$frame_c.".jpg"?>" alt="ไม้"></label>
+                        </div>
+                    </div><!--/*end detail-product*/-->
+                    </div><!--/*end box-product*/-->
+                    <?php
+                      } // End Loop Order
+                    ?>
 							<div style="margin-top:50px;"><!--/*Form*/-->
 								<h3>Customer's information</h3>
 									<table cellpadding="5" style="font-weight:bold; text-align:left;">
@@ -371,3 +370,7 @@ $mail->WordWrap = 50;
       	</form>
 </body>
 </html>
+
+<?php
+	session_destroy();
+?>
