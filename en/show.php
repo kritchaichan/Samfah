@@ -76,11 +76,12 @@ session_start();
                         echo $img_door;
                         $link = "modern.php";
                         }
-                        else{
+                        
+						/*if(!empty($door_order)){
                         $img_door  = '<img src="../pic_door_order/'.$door.'.jpg" alt="door" >';
                         $img_door .= '<h5>'.$door_order.'</h5>';
                         echo $img_door;
-                        }
+                        }*/
                     ?>
                     </div>
                     <div id="detail-product" style="width:50%;">
@@ -139,10 +140,10 @@ session_start();
                         </div>
                     </div><!--/*end detail-product*/-->
                     </div><!--/*end box-product*/-->
+                    </div><!--/*end Detail*/-->
                     <?php
                       } // End Loop Order
                     ?>
-                    </div><!--/*end Detail*/-->
 		        	<hr class="style-End">
 					<div id="footer">
 						<a href="javascript:history.back(1);">< Back</a>

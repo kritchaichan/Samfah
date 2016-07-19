@@ -43,17 +43,17 @@
                                     <?php
 									
 									include('../include/config.inc.php');
-    									mysql_query("SET NAMES utf8"); // กำหนด charset ให้ฐานข้อมูล เพื่ออ่านภาษาไทย
+    								mysqli_set_charset($objCon,"utf8"); // กำหนด charset ให้ฐานข้อมูล เพื่ออ่านภาษาไทย
 
-									$sql="select name from contemporary";
-									
-									$result = mysql_query ($sql);
-									
-									$total=0;
+								$strSQL="SELECT Picture_Door_Name FROM picture_door WHERE Picture_Door_Type = 'Contemporary'";
+								
+								$objQuery = mysqli_query($objCon,$strSQL);
+								
+								$total=0;
 
-									while ( $row= mysql_fetch_array ( $result ) )
+								while($objResult = mysqli_fetch_array($objQuery,MYSQLI_ASSOC))
 									{
-										$n_door=$row["name"];
+										$n_door = $objResult["Picture_Door_Name"];
 									
 									  $output = '<td>
 											<a href="../pic_door_contemporary/'.$n_door.'.jpg" data-lightbox="image-1" data-title="door">

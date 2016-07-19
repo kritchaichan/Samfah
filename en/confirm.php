@@ -154,6 +154,7 @@ session_start();
                         </div>
                     </div><!--/*end detail-product*/-->
                     </div><!--/*end box-product*/-->
+		        	</div><!--/*end Detail*/-->
                     <?php
                       } // End Loop Order
                     ?>
@@ -224,7 +225,6 @@ session_start();
 	                        </div>
 
 						</div><!--/*end order2*/-->
-		        	</div><!--/*end Detail*/-->
 		        	<hr class="style-End">
 					<div id="footer">
 						<a href="javascript:history.back(1);">< Back</a>

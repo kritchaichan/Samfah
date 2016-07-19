@@ -92,7 +92,7 @@
 									?>
 								</div>
 									<div id="detail-product">
-										<form action="order.php" method="post" name="form2">
+										<form action="order.php" method="post" name="form2" target="_blank">
 											<h3>1st</h3>
 											<div class="detail-form">
 										  		<input type="hidden" name="door" value="<?=$door?>">
@@ -219,6 +219,7 @@
 		}
 		
 		document.form2.submit();
+		
 		}
 
 		$('#color').hide();
