@@ -73,6 +73,12 @@ body {
   background-repeat: no-repeat;
 }
 
+#main-ourstory .slide.ourstory#third {
+  background-image: url("../../images/background/welcome.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
 #main-ourstory .slide .content {
   display: table-cell;
   padding: 0 8%;
