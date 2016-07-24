@@ -7,9 +7,9 @@
 *    2.2 - Social Button
 *    2.3 - Placeholder color
 *    2.4 - Height Resize
-*    2.5 - Center-Page
+*    2.7 - Position
 *    2.6 - Focus
-*    2.7 - Center-Block
+*    2.7 - Text
 *  3 - Welcome Page
 *  4 - Main Menu 
 *  5 - Page Top Section
@@ -46,6 +46,7 @@ body{
 	background-color: white	;
 	color: white;
   	font-family: "PT Sans Narrow", "kunlasatri";
+
 	padding: 0px;
 	margin: 0px;
 	outline: 0px;
@@ -57,10 +58,32 @@ body{
   	user-select: none;
   	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	overflow: hidden;
+	overflow: auto; /*Disable Scroll*/
 
 }
 
+.small{
+	width: 50%;
+	max-width: 50%;
+	height: auto;
+}
+.medium {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+}
+
+.large {
+	width: 130%;
+	max-width: 130%;
+	height: auto;
+}
+
+.x-large {
+	width: 150%;
+	max-width: 150%;
+	height: auto;
+}
 
 a{
 	color: #3498db;
@@ -335,10 +358,11 @@ a:focus{
 .height-resize .team-container .col-sm-4{
 	padding-top:20px !important;
 }
+
 /* 2.4 - Height Resize End 
 ------------------------------------------ */
 
-/* 2.5 - Center-Page
+/* 2.5 - Position
 ------------------------------------------ */
 
 .center-page{
@@ -350,7 +374,13 @@ a:focus{
     margin: auto;
 }
 
-/* 2.5 - Center-Page End
+.center-block {float: none !important}
+
+.left{
+	float: left;
+}
+
+/* 2.5 - Position End
 ------------------------------------------ */
 
 /* 2.6 - Focus
@@ -371,20 +401,42 @@ a:focus{
 /* 2.6 - Focus End
 ------------------------------------------ */
 
-/* 2.7 - Center-Block
------------------------------------------- */
-.center-block {float: none !important}
 
-/* 2.7 - Center-Block End
+/* 2.7 - Text
 ------------------------------------------ */
 
-/* 2.x - Name
+.Paratext{
+	text-indent: 50px; /*  Paragrahp  */
+}
+
+.Fontsize-large{
+	font-size: large;
+}
+
+.Fontsize-x-large{
+	font-size: x-large;
+}
+
+.Fontsize-xx-large{
+	font-size: xx-large;
+}
+
+.Fontsize-small{
+	font-size: small;
+}
+
+.Fontsize-x-small{
+	font-size: x-small;
+}
+
+/* 2.7 - Text End
 ------------------------------------------ */
 
-
-/* 2.x - Name End
+/* 2.8 - A
 ------------------------------------------ */
 
+/* 2.8 - A End
+------------------------------------------ */
 
 /* 2 - Global Style End 
 ---------------------------------------------------------------------- */
