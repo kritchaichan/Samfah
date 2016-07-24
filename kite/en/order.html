@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>ORDER US</title>
+	<link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+	<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div id="main-order">
+
+  <div class="slide order" id="first">
+    <div class="content">
+      <h1>ORDER US</h1>
+    </div>
+  </div>
+
+  <div class="slide order" id="second">
+    <div class="content">
+      <h1>Page 2</h1>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+<script>
+
+//----------------------------------START Slide Div UP-DOWN
+	$(function() {
+  var list = $('.slide.order');
+  var current = 0;
+
+  var main = $('#main-order');
+
+  $(window).bind('mousewheel', function(event) {
+    if (event.originalEvent.wheelDelta >= 0) {
+      scroll(-1);
+    } else {
+      scroll(1);
+    }
+  });
+
+  /* Functions */
+  var isScrolling = false;
+
+  function scroll(dir) {
+    if (isScrolling) {
+      return;
+    }
+    isScrolling = true;
+
+    if (dir == -1) {
+      if (current > 0) {
+        current--;
+      }
+    } else {
+      if (current < list.size() - 1) {
+        current++;
+      }
+    }
+    var number = 100 * current;
+    var value = "translateY(-" + number + "vh)";
+    main.css("transform", value);
+    for (var i = 0; i < list.size(); i++) {
+      $('#nav li:nth-child(' + (i + 1) + ')').removeClass('active');
+    }
+    $('#nav li:nth-child(' + (current + 1) + ')').addClass('active');
+
+    setTimeout(function() {
+      isScrolling = false;
+    }, 500);
+  }
+});
+//----------------------------------END Slide Div UP-DOWN
+
+</script>
+</html>
