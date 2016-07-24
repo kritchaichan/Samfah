@@ -42,7 +42,6 @@
 
 
 </body>
-
 <script>
 
 //----------------------------------START Slide Div UP-DOWN
@@ -52,7 +51,7 @@
 
   var main = $('#main-ourstory');
 
-  $(window).bind('mousewheel', function(event) {
+  $('#main-ourstory').bind('mousewheel', function(event) {
     if (event.originalEvent.wheelDelta >= 0) {
       scroll(-1);
     } else {
