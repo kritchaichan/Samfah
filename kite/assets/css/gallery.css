@@ -30,8 +30,19 @@
 
 /* 1 - Import Google Font
 ---------------------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700);
+@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+}
+
+@font-face {
+  font-family: 'kunlasatri';
+  src: url('../fonts/kunlasatri.ttf');
+  unicode-range: U+0E00-U+0E7F;
+}
 /* 1 - Import Google Font End 
 ---------------------------------------------------------------------- */
 

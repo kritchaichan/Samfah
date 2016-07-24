@@ -20,8 +20,25 @@
   </div>
 
   <div class="slide order" id="second">
-    <div class="content">
-      <h1>Page 2</h1>
+    <div class="content-image">
+    
+      <div class="Tab">
+      <h2>CLASSIC CATALOGUE</h2>
+      </div>
+      
+      <div class="ImageList">
+      	<div class="table">
+      		<img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+      	</div>
+      </div>
+      
     </div>
   </div>
 

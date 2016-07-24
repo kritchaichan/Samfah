@@ -30,8 +30,19 @@
 
 /* 1 - Import Google Font
 ---------------------------------------------------------------------- */
-@import url(http://fonts.googleapis.com/css?family=Pacifico);
-@import url(http://fonts.googleapis.com/css?family=Roboto:400,300,400italic,700);
+@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+}
+
+@font-face {
+  font-family: 'kunlasatri';
+  src: url('../fonts/kunlasatri.ttf');
+  unicode-range: U+0E00-U+0E7F;
+}
 /* 1 - Import Google Font End 
 ---------------------------------------------------------------------- */
 
@@ -87,4 +98,37 @@ body {
   color: white;
   font-size: 4vh;
   text-shadow: 0.3vh 0.3vh 0.3vh rgba(0, 0, 0, 0.4);
+}
+
+#main-order .slide .content-image .Tab {
+  padding: 0;
+  margin-top: 6%;
+  margin-left: 8%;
+  margin-right: 8%;
+  background-color: white;
+}
+
+#main-order .slide .content-image .Tab h2 {
+  padding: 0;
+  display: block;
+  text-align: center;
+  color: black;
+  border:10px solid white;
+  background-color: white;
+}
+
+#main-order .slide .content-image .ImageList{
+  padding: 0;
+  margin-left: 8%;
+  margin-right: 8%;
+  overflow-y: auto;
+  height: 700px;
+  display: block;
+}
+
+#main-order .slide .content-image .ImageList .table .model{
+  margin: 0 10px 10px 0;
+  display: block;
+  width: 23.5%;
+  float:left;
 }
