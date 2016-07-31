@@ -116,10 +116,10 @@ a:focus{
 }
 .section-style{
 	background: no-repeat;
-    background-position:50% 0;
+    background-position:top center;
     background-attachment:inherit;
     background-size:cover;
-
+    height: 950px;
 }
 .pattern{
 	background:rgba(0,0,0,.4) url(../images/pattern.png);
@@ -646,10 +646,10 @@ body::-webkit-scrollbar-thumb
 ---------------------------------------------------------------------- */
 .site-title{
 	text-align:center;
-	font-size:66px;
+	font-size:60px;
 	font-family:'Pacifico';
 	position:relative;
-	padding-top: 380px;
+	padding-top: 60%;
 
 }
 
@@ -1151,3 +1151,136 @@ background: #00aaff;
 /* 11 - Preloader End
 ---------------------------------------------------------------------- */
 
+
+.slick-nextfac-1
+{
+    position: absolute;
+    top: 47%;right: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+.slick-prevfac-1
+{
+    position: absolute;
+    z-index: 1;
+    top: 47%;
+    left: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+.samfah-heading-ourstory h1
+{
+    color: #fff;
+    font-family: 'Pacifico';
+    font-size: 65px;
+    position: absolute;
+    top: 50%;
+    left: 43%;
+    right: 0;
+    display: inline-table;
+}
+.samfah-bg-about
+{
+    background-image: url(../../images/background/welcome.jpg);
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    background-attachment: fixed;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.samfah-image-about-profile
+{
+    
+}
+.samfah-image-about-profile img
+{
+    width: 400px;
+}
+.samfah-border-about
+{
+    border-style: solid;
+    border-color: #fff;
+    border-width: medium;
+    text-align: left;
+    padding: 10px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.samfah-border-about h1
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+.samfah-border-about p
+{
+    text-indent: 30px;
+    font-size: 14px;
+}
+.samfah-wood-image-about
+{
+    padding-top: 12px;
+}
+/*.samfah-wood-image-about img
+{
+    width: 140px;
+}*/
+.samfah-wood-image-about
+{
+    display: -webkit-inline-box;
+}
+.samfah-wood-image-about-left
+{
+    text-align: left;
+    padding-right: 100px;
+}
+.samfah-wood-image-about-left img
+{
+    width: 140px
+}
+.samfah-wood-image-about-right
+{
+    text-align: right;
+}
+.samfah-wood-image-about-right img
+{
+    width: 140px;
+}
+
+
+/*small*/
+@media only screen and (max-width: 40em) 
+{
+    .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-family: 'Pacifico';
+        font-size: 24px;
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+    .samfah-image-about-profile img
+    {
+        width: 384px;
+    }
+}
+
+/*medium*/
+@media only screen and (min-width: 40.063em) and (max-width: 64em) 
+{ 
+    .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-family: 'Pacifico';
+        font-size: 24px;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+}
+    
