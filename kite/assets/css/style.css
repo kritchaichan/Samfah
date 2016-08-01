@@ -658,7 +658,6 @@ body::-webkit-scrollbar-thumb
 .site-title{
 	text-align:center;
 	font-size:60px;
-	font-family:'Pacifico';
 	position:relative;
 	padding-top: 60%;
 
@@ -1182,7 +1181,6 @@ background: #00aaff;
 .samfah-heading-ourstory h1
 {
     color: #fff;
-    font-family: 'Pacifico';
     font-size: 65px;
     position: absolute;
     top: 50%;
@@ -1289,7 +1287,6 @@ background: #00aaff;
 {
     margin-top: 80%;
     margin-bottom: 80%;
-    font-family: 'Pacifico';
 }
 .topcapil-content-in-cover h1
 {
@@ -1343,7 +1340,6 @@ background: #00aaff;
     .samfah-heading-ourstory h1
     {
         color: #fff;
-        font-family: 'Pacifico';
         font-size: 24px;
         position: absolute;
         top: 12%;
@@ -1375,7 +1371,6 @@ background: #00aaff;
     .samfah-heading-ourstory h1
     {
         color: #fff;
-        font-family: 'Pacifico';
         font-size: 24px;
         position: absolute;
         top: 40%;
