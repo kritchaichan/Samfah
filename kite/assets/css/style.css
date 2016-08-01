@@ -1280,23 +1280,10 @@ background: #00aaff;
     margin-bottom: 80%;
     font-family: 'Pacifico';
 }
-.topcapil-content-in-cover h2
+.topcapil-content-in-cover h1
 {
-    font-size: 30px;
+    font-size: 60px;
     font-weight: bold;
-}
-.topcapil-content-in-cover h3
-{
-    font-size: 24px;
-}
-.topcapil-content-in-cover h2,.topcapil-content-in-cover h3
-{
-    color: #fff;
-    background-color: rgba(96,65,48,0.6);
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 7px;
-    padding-right: 15px;
 }
 .samfah-about-02
 {
