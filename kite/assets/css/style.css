@@ -1213,8 +1213,12 @@ background: #00aaff;
     border-width: medium;
     text-align: left;
     padding: 10px;
-    padding-top: 20px;
-    padding-bottom: 19px;
+    padding-top: 21px;
+    padding-bottom: 21px;
+}
+.samfah-image-heading
+{
+    margin-top: 9px;
 }
 .samfah-border-about h1
 {
@@ -1225,6 +1229,10 @@ background: #00aaff;
 {
     text-indent: 30px;
     font-size: 14px;
+}
+.samfah-image-about-head
+{
+    
 }
 .samfah-wood-image-about
 {
@@ -1241,11 +1249,11 @@ background: #00aaff;
 .samfah-wood-image-about-left
 {
     text-align: left;
-    /*padding-right: 100px;*/
+    padding-right: 100px;
 }
 .samfah-wood-image-about-left img
 {
-    width: 180px
+    width: 140px
 }
 .samfah-wood-image-about-right
 {
@@ -1253,7 +1261,7 @@ background: #00aaff;
 }
 .samfah-wood-image-about-right img
 {
-    width: 185px;
+    width: 140px;
 }
 .samfah-cover-slick-01
 {
