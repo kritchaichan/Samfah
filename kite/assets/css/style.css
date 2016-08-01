@@ -1213,8 +1213,8 @@ background: #00aaff;
     border-width: medium;
     text-align: left;
     padding: 10px;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding-top: 20px;
+    padding-bottom: 19px;
 }
 .samfah-border-about h1
 {
@@ -1241,11 +1241,11 @@ background: #00aaff;
 .samfah-wood-image-about-left
 {
     text-align: left;
-    padding-right: 100px;
+    /*padding-right: 100px;*/
 }
 .samfah-wood-image-about-left img
 {
-    width: 140px
+    width: 180px
 }
 .samfah-wood-image-about-right
 {
@@ -1253,7 +1253,7 @@ background: #00aaff;
 }
 .samfah-wood-image-about-right img
 {
-    width: 140px;
+    width: 185px;
 }
 .samfah-cover-slick-01
 {
