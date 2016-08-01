@@ -1191,7 +1191,7 @@ background: #00aaff;
 }
 .samfah-image-about-profile
 {
-    
+    text-align: center;
 }
 .samfah-image-about-profile img
 {
@@ -1246,8 +1246,99 @@ background: #00aaff;
 {
     width: 140px;
 }
-
-
+.samfah-cover-slick-01
+{
+    background-image: url(../../images/background/ourstory.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+.samfah-cover-slick-02
+{
+    background-image: url(../../images/background/ourstory.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+.samfah-cover-slick-03
+{
+    background-image: url(../../images/background/ourstory.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+.samfah-cover-slick-04
+{
+    background-image: url(../../images/background/ourstory.jpg);
+    background-size: cover;
+    background-position: top center;
+    position: relative;
+}
+.topcapil-content-in-cover
+{
+    margin-top: 80%;
+    margin-bottom: 80%;
+    font-family: 'Pacifico';
+}
+.topcapil-content-in-cover h2
+{
+    font-size: 30px;
+    font-weight: bold;
+}
+.topcapil-content-in-cover h3
+{
+    font-size: 24px;
+}
+.topcapil-content-in-cover h2,.topcapil-content-in-cover h3
+{
+    color: #fff;
+    background-color: rgba(96,65,48,0.6);
+    padding-left: 15px;
+    padding-top: 15px;
+    padding-bottom: 7px;
+    padding-right: 15px;
+}
+.samfah-about-02
+{
+    margin-top: 30px;
+   
+}
+.samfah-content-02 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 61px;
+    padding-bottom: 62px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 104%;
+}
+.samfah-image-02 img
+{
+    width: 180px;
+}
+.samfah-image-02
+{
+    letter-spacing: 20px;
+}
+.samfah-image-03 img
+{
+    width: 180px;
+}
+.samfah-about-03-all
+{
+    margin-top: 30px;
+}
+.samfah-image-03
+{
+    letter-spacing: 20px;
+}
+.samfah-image-about-03 img
+{
+    width: 400px;
+}
 /*small*/
 @media only screen and (max-width: 40em) 
 {
@@ -1266,6 +1357,18 @@ background: #00aaff;
     {
         width: 384px;
     }
+    .samfah-content-02 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
 }
 
 /*medium*/
