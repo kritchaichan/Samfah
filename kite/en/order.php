@@ -10,6 +10,37 @@
 	<link rel="stylesheet" type="text/css" href="../assets/css/order.css">
 	<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+    
+<style>
+.grid {
+  margin-left: 8%;
+  margin-right: 8%;
+  padding: 0;
+  overflow-y: auto;
+  display: block;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+
+.grid-item img {
+  float: left;
+  width: 200px;
+  height: 300px;
+  margin-bottom: 25px;
+  border: 2px solid hsla(0, 0%, 0%, 0.5);
+}
+.grid-item--width2 img{ 
+width: 400px; 
+height: 300px;
+}
+</style>
 </head>
 <body>
 <div id="main-order">
@@ -27,17 +58,28 @@
       <h2>CLASSIC CATALOGUE</h2>
       </div>
       
-      <div class="ImageList">
-      	<div class="table">
-      		<img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
+      
+      <div class="grid">
+      		<div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" > </div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
             
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-            <img class="model" src="../../pic_door_classic/CSP002.jpg" alt="door" >
-      	</div>
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
+            
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            <div class="grid-item"><img src="../../pic_door_classic/CSP002.jpg" alt="door" ></div>
+            
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
+            <div class="grid-item grid-item--width2"><img src="../../pic_door_classic/CST001.jpg" alt="door" ></div>
       </div>
       
     </div>
@@ -47,6 +89,12 @@
 
 </body>
 <script>
+
+$('.grid').masonry({
+  itemSelector: '.grid-item',
+  columnWidth: 25
+});
+
 
 //----------------------------------START Slide Div UP-DOWN
 	$(function() {
