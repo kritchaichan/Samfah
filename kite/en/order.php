@@ -8,7 +8,8 @@
     <meta name="author" content="">
 	<title>ORDER US</title>
 	<link rel="stylesheet" type="text/css" href="../assets/css/order.css">
-	<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
 </head>
 <body>
 <div id="main-order">
