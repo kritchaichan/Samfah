@@ -1195,8 +1195,17 @@ background: #00aaff;
     background-position: top center;
     text-align: center;
     background-attachment: fixed;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.about-before-contact
+{
+    background-image: url(../../images/background/welcome.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 .samfah-image-about-profile
 {
@@ -1318,6 +1327,18 @@ background: #00aaff;
     padding-right: 10px;
     width: 104%;
 }
+.samfah-content-03 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 61px;
+    padding-bottom: 62px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
 .samfah-image-02 img
 {
     width: 180px;
@@ -1341,6 +1362,44 @@ background: #00aaff;
 .samfah-image-about-03 img
 {
     width: 400px;
+}
+.samfah-detail-wood
+{
+    background-color: #fff;
+}
+.row-wood-01,.row-wood-02,.row-wood-03,.row-wood-04
+{
+    letter-spacing: 22px;
+    margin-top: 15px;
+}
+.all-wood
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.detail-wood-02
+{
+    margin-top: 30px;
+}
+.samfah-image-before-contact img,.samfah-before-right img
+{
+    padding-top: 20px;
+}
+.border-before-contact
+{
+    margin-top: 20px;
+}
+.border-before-contact p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 35px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
 }
 /*small*/
 @media only screen and (max-width: 40em) 
