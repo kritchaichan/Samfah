@@ -1313,7 +1313,6 @@ background: #00aaff;
 .samfah-about-02
 {
     margin-top: 30px;
-   
 }
 .samfah-content-02 p
 {
@@ -1458,9 +1457,51 @@ background: #00aaff;
         right: 0;
         display: block;
     }
-    .samfah-image-about-profile img
+    .samfah-image-about-profile img,.samfah-image-about-03 img
     {
-        width: 384px;
+        width: 290px;
+        margin-bottom: 20px;
+    }
+    .samfah-image-03 img,.samfah-image-02 img
+    {
+        width: 133px;
+    }
+    .samfah-image-about-03
+    {
+        margin-top: 20px;
+    }
+    .row-wood-01 img,.row-wood-02 img,.row-wood-03 img,.row-wood-04 img
+    {
+        width: 132px;
+    }
+    .all-wood
+    {
+        text-align: center;
+    }
+    .detail-wood-02
+    {
+        text-align: center;
+    }
+    .detail-wood-02 img
+    {
+        width: 285px;
+    }
+    .samfah-image-before-contact,.samfah-before-right
+    {
+        text-align: center;
+    }
+    .samfah-image-before-contact img,.samfah-before-right img
+    {
+        width: 285px;
+    }
+    .samfah-contact-bg
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .samfah-border-blog-contact
+    {
+        border-width: 4px;
     }
     .samfah-content-02 p
 {
