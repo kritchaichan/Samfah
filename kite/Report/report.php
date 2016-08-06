@@ -51,7 +51,33 @@ class PDF extends FPDF
 		$this->SetDrawColor(153,153,153); //Set color
 		$this->RoundedRect(28, 32, 155, 115, 5, 'D'); // Draw RoundRect
 		
+		$this->Image('../../pic_door_classic/CSP002.jpg',38,43,0,90,'jpg');
+		$this->SetLineWidth(0.2);
+		$this->SetDrawColor(0,0,0); //Set color
+		 //set Height Line
+		$this->Line(90, 48, 90,128);
+		$this->Line(84,48,90,48);
+		$this->Line(84,128,90,128);
+		
+		//set Width Line
+		$this->Line(52,132,84,132);
+		$this->Line(52,128, 52,132);
+		$this->Line(84, 128, 84,132);
+		
+		//set thickness Line
+		//$this->Line(92,120,84,136);
+		
 		$this->SetFont('PTsansnarrow','',13);
+		
+		$this->SetXY(92,85);
+		$this->Cell( 10, 0 , "210 CM",0,0,'L'); //add value height
+		
+		$this->SetXY(62,136);
+		$this->Cell( 10, 0 , "80 CM",0,0,'L'); //add value width
+		
+		$this->SetXY(92,130);
+		$this->Cell( 10, 0 , "Thickness: 3.5 inch",0,0,'L'); //add value thickness
+		
 		$this->SetXY(120,50);
 		$this->Cell( 10, 0 , "Quantity",0,0,'L');
 		$this->SetXY(120,57.5);
