@@ -1401,6 +1401,34 @@ background: #00aaff;
     padding-right: 10px;
     width: 100%;
 }
+.samfah-contact-bg
+{
+    background-image: url(../../images/bg-contact.jpg);
+    background-size: cover;
+    background-position: center top;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.samfah-border-blog-contact
+{
+    border-style: solid;
+    border-color: #fff;
+    padding: 30px;
+}
+.samfah-heading-contact,.samfah-address
+{
+    text-align: center;
+}
+.samfah-heading-contact h1
+{
+    font-weight: bold;
+}
+.samfah-form
+{
+    text-align: center;
+}
 /*small*/
 @media only screen and (max-width: 40em) 
 {
