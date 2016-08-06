@@ -1407,8 +1407,8 @@ background: #00aaff;
     background-position: center top;
     padding-top: 30px;
     padding-bottom: 30px;
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: 12px;
+    padding-right: 12px;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1418,7 +1418,7 @@ background: #00aaff;
     border-style: solid;
     border-color: #fff;
     border-width: 14px;
-    padding: 30px;
+    padding: 10px;
 }
 .samfah-heading-contact,.samfah-address
 {
@@ -1463,6 +1463,14 @@ background: #00aaff;
     padding-left: 30px;
     padding-right: 30px;
     cursor: pointer;    
+}
+.samfah-google-map iframe
+{
+    
+}
+.address-contact
+{
+    text-align: center;
 }
 /*small*/
 @media only screen and (max-width: 40em) 
@@ -1535,6 +1543,7 @@ background: #00aaff;
     padding-right: 10px;
     width: 100%;
 }
+   
 }
 
 /*medium*/
@@ -1563,4 +1572,17 @@ background: #00aaff;
         text-align: center;
     }
 }
-    
+
+/* res iphone 6+ */
+/* Portrait and Landscape */
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3) 
+{ 
+ .samfah-google-map iframe
+    {
+        height: 340px;
+    }
+}
+/* end res iphone 6+ */
