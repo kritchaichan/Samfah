@@ -1303,7 +1303,7 @@ background: #00aaff;
 .topcapil-content-in-cover
 {
     margin-top: 80%;
-    margin-bottom: 80%;
+    margin-bottom: 30%;
 }
 .topcapil-content-in-cover h1
 {
@@ -1415,6 +1415,7 @@ background: #00aaff;
 {
     border-style: solid;
     border-color: #fff;
+    border-width: 14px;
     padding: 30px;
 }
 .samfah-heading-contact,.samfah-address
@@ -1428,6 +1429,21 @@ background: #00aaff;
 .samfah-form
 {
     text-align: center;
+}
+.samfah-socile
+{
+    text-align: center;
+}
+.samfah-socile a
+{
+    font-size: 24px;
+    letter-spacing: 15px;
+    color: #fff;
+    transition: color 1s;
+}
+.samfah-socile a:hover
+{
+    color: #92825C;
 }
 /*small*/
 @media only screen and (max-width: 40em) 
