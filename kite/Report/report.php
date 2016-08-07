@@ -75,27 +75,30 @@ class PDF extends FPDF
 		$this->SetXY(62,136);
 		$this->Cell( 10, 0 , "80 CM",0,0,'L'); //add value width
 		
-		$this->SetXY(92,130);
-		$this->Cell( 10, 0 , "Thickness: 3.5 inch",0,0,'L'); //add value thickness
-		
-		$this->SetXY(120,50);
-		$this->Cell( 10, 0 , "Quantity",0,0,'L');
-		$this->SetXY(120,57.5);
-		$this->Cell( 20, 0 , "10 Pcs",0,0,'C');//add value qty
-		$this->SetXY(120,65);
+		$this->SetXY(120,52);
+		$this->Cell( 10, 0 , "Quantity:",0,0,'L');
+		$this->SetXY(125,58);
+		$this->Cell( 20, 0 , "10 Pcs",0,0,'L');//add value qty
+		$this->SetXY(120,64);
 		$this->Cell( 10, 0 , "Wood for Door:",0,0,'L');
-		$this->SetXY(120,72.5);
-		$this->Cell( 20, 0 , "Teak",0,0,'C'); //add value wood
-		$this->SetXY(120,80);
-		$this->Cell( 10, 0 , "Accessories",0,0,'L');
-		$this->SetXY(120,87.5);
-		$this->Cell( 20, 0 , "- Framing",0,0,'L'); //add value frame
-		$this->SetXY(120,95);
-		$this->Cell( 20, 0 , "- Glass Work",0,0,'L');//add value frame
-		$this->SetXY(120,105);
+		$this->SetXY(125,70);
+		$this->Cell( 20, 0 , "Teak",0,0,'L'); //add value wood
+		$this->SetXY(120,76);
+		$this->Cell( 10, 0 , "Accessories:",0,0,'L');
+		$this->SetXY(125,82);
+		$this->Cell( 30, 0 , "- Framing",0,0,'L'); //add value frame
+		$this->SetXY(125,88);
+		$this->Cell( 30, 0 , "- Glass Work",0,0,'L');//add value frame
+		$this->SetXY(120,94);
 		$this->Cell( 10, 0 , "Wood for framing:",0,0,'L');
-		$this->SetXY(120,112.5);
-		$this->Cell( 20, 0 , "Teak",0,0,'C');
+		$this->SetXY(125,100);
+		$this->Cell( 20, 0 , "Teak",0,0,'L');
+		$this->SetXY(120,106);
+		$this->Cell( 10, 0 , "Length: 210 CM",0,0,'L'); //add value thickness
+		$this->SetXY(120,113);
+		$this->Cell( 10, 0 , "Width: 80 CM",0,0,'L'); //add value thickness
+		$this->SetXY(120,119);
+		$this->Cell( 10, 0 , "Thickness: 3.5 inch",0,0,'L'); //add value thickness
 	}
 
 	
