@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 	$serverName = "localhost";
 	$userName = "root";
 	$userPassword = "";
-	$dbName = "samfa";
+	$dbName = "samfah";
 								
 	$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
 		

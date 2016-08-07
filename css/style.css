@@ -3,7 +3,7 @@
 @font-face {
   font-family: 'PT Sans Narrow';
   src: url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
-  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF ,U+2022;
 }
 
 @font-face {

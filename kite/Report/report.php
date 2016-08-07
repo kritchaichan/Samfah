@@ -89,9 +89,9 @@ class PDF extends FPDF
 		$this->SetXY(120,80);
 		$this->Cell( 10, 0 , "Accessories",0,0,'L');
 		$this->SetXY(120,87.5);
-		$this->Cell( 20, 0 , "+ Framing",0,0,'L'); //add value frame
+		$this->Cell( 20, 0 , "- Framing",0,0,'L'); //add value frame
 		$this->SetXY(120,95);
-		$this->Cell( 20, 0 , "+ Glass Work",0,0,'L');//add value frame
+		$this->Cell( 20, 0 , "- Glass Work",0,0,'L');//add value frame
 		$this->SetXY(120,105);
 		$this->Cell( 10, 0 , "Wood for framing:",0,0,'L');
 		$this->SetXY(120,112.5);
@@ -198,6 +198,7 @@ $pdf->AddFont('PTsansnarrow','','PTsansnarrow.php');
 $pdf->AddFont('PTsansnarrow','B','PTsansnarrowb.php');
 //Cou
 $pdf->AliasNbPages();
+
 //Loop add Information
 $pdf->PrintChapter();
 $pdf->PrintChapter();

@@ -144,10 +144,7 @@
 		$sql="INSERT INTO `sf`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` ,`name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve')";
 		
 		/*$sql ="INSERT INTO `u982279518_samfa`.`reservation` (`order_no`, `pic_name`, `height`, `width`, `quantity`, `accessories`, `wood_color`, `frame`, `remark` , `name`, `deliverd_address`, `mobile`, `telephone`, `email`, `line_id`, `fbname`, `delivery_date`, `date_for_order`, `date_for_reserve`, `status`) VALUES ('$order_no', '$door', '$x', '$y', '$quan', '$acsr', '$wood_c', '$frame_c','$remark', '$name', '$address', '$mobile', '$telephone', '$email', '$line', '$fbname', '$date_delivery', '$date', '$date_reserve', 'New Order')";*/
-		
-		$result = mysql_query ($sql);
-		}
- 
+
  // Send Mail Order
 /*require('PHPMailer/PHPMailerAutoload.php');  // path to the PHPMailer class
  
