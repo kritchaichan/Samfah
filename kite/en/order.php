@@ -14,7 +14,7 @@
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- ICON  -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
 	<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
     <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
     
