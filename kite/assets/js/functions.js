@@ -25,6 +25,9 @@ if (contactImage) {  jQuery('#contact').css({ 'background-image':'url(' + contac
 var  subscribeImage = jQuery('#subscribe').data('background-image');
 if (subscribeImage) {  jQuery('#subscribe').css({ 'background-image':'url(' + subscribeImage + ')' }); };
 
+var  pageOrder_Image = jQuery('#page-order').data('background-image');
+if (pageOrder_Image) {  jQuery('#page-order').css({ 'background-image':'url(' + pageOrder_Image + ')' }); };
+
 /* Background Images End
 -------------------------------------------------------------------*/
 
