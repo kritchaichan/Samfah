@@ -1222,8 +1222,6 @@ background: #00aaff;
     border-width: medium;
     text-align: left;
     padding: 10px;
-    padding-top: 21px;
-    padding-bottom: 21px;
 }
 .samfah-image-heading
 {
@@ -1302,8 +1300,8 @@ background: #00aaff;
 }
 .topcapil-content-in-cover
 {
-    margin-top: 80%;
-    margin-bottom: 30%;
+    margin-top: 82%;
+    margin-bottom: 81%;
 }
 .topcapil-content-in-cover h1
 {
@@ -1320,10 +1318,7 @@ background: #00aaff;
     border-style: solid;
     border-width: medium;
     border-color: #fff;
-    padding-top: 61px;
-    padding-bottom: 62px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     width: 104%;
 }
 .samfah-content-03 p
@@ -1332,10 +1327,7 @@ background: #00aaff;
     border-style: solid;
     border-width: medium;
     border-color: #fff;
-    padding-top: 61px;
-    padding-bottom: 62px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 10px;
     width: 100%;
 }
 .samfah-image-02 img
@@ -1394,10 +1386,7 @@ background: #00aaff;
     border-style: solid;
     border-width: medium;
     border-color: #fff;
-    padding-top: 30px;
-    padding-bottom: 35px;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding: 20px;
     width: 100%;
 }
 .samfah-contact-bg
@@ -1419,6 +1408,7 @@ background: #00aaff;
     border-color: #fff;
     border-width: 14px;
     padding: 10px;
+    height: 100%;
 }
 .samfah-heading-contact,.samfah-address
 {
@@ -1435,6 +1425,10 @@ background: #00aaff;
 .samfah-socile
 {
     text-align: center;
+    position: absolute;
+    bottom: 75px;
+    left: 0;
+    right: 0;
 }
 .samfah-socile a
 {
@@ -1472,8 +1466,12 @@ background: #00aaff;
 {
     text-align: center;
 }
-/*small*/
-@media only screen and (max-width: 40em) 
+.samfah-content-03 span
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+@media screen and (max-width: 640px) 
 {
     .samfah-heading-ourstory h1
     {
@@ -1543,13 +1541,19 @@ background: #00aaff;
     padding-right: 10px;
     width: 100%;
 }
-   
+    .topcapil-content-in-cover h1
+    {
+        font-size: 18px;
+    }
+    .topcapil-content-in-cover
+    {
+        margin-top: 29%;
+        margin-bottom: 22%;
+    }
 }
-
-/*medium*/
-@media only screen and (min-width: 40.063em) and (max-width: 64em) 
-{ 
-    .samfah-heading-ourstory h1
+@media only screen and (min-width: 641px) and (max-width: 1025px) 
+{
+   .samfah-heading-ourstory h1
     {
         color: #fff;
         font-size: 24px;
@@ -1571,18 +1575,13 @@ background: #00aaff;
     {
         text-align: center;
     }
-}
-
-/* res iphone 6+ */
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 414px) 
-  and (max-device-width: 736px) 
-  and (-webkit-min-device-pixel-ratio: 3) 
-{ 
- .samfah-google-map iframe
+    .topcapil-content-in-cover
     {
-        height: 340px;
+        margin-top: 29%;
+        margin-bottom: 22%;
+    }
+    .topcapil-content-in-cover h1
+    {
+        font-size: 18px;
     }
 }
-/* end res iphone 6+ */
