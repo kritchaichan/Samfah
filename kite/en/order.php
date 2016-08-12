@@ -127,6 +127,7 @@ height: 400px;
                     <label>Size</label>
                     <label>Height : <input type="number" name="x" min="1" max="300" class="input_css"> Cm</label>
                     <label>Width : <input type="number" name="y" min="1" max="500" class="input_css"> Cm</label>
+                    <label>Thickness : <input type="number" name="z" min="1" max="500" class="input_css"> Inch</label>
                     <label>Quantity : <input type="number" name="quantity" min="1" max="5" class="input_css"> Pcs</label>
                 </div>
                 <div class="detail-form">
@@ -259,55 +260,6 @@ $('.grid').masonry({
   itemSelector: '.grid-item',
   columnWidth: 25
 });
-
-
-//----------------------------------START Slide Div UP-DOWN
-// 	$(function() {
-//   var list = $('.slide.order');
-//   var current = 0;
-
-//   var main = $('#main-order');
-
-//   $('#main-order').bind('mousewheel', function(event) {
-//     if (event.originalEvent.wheelDelta >= 0) {
-//       scroll(-1);
-//     } else {
-//       scroll(1);
-//     }
-//   });
-
-//   /* Functions */
-//   var isScrolling = false;
-
-//   function scroll(dir) {
-//     if (isScrolling) {
-//       return;
-//     }
-//     isScrolling = true;
-
-//     if (dir == -1) {
-//       if (current > 0) {
-//         current--;
-//       }
-//     } else {
-//       if (current < list.size() - 1) {
-//         current++;
-//       }
-//     }
-//     var number = 100 * current;
-//     var value = "translateY(-" + number + "vh)";
-//     main.css("transform", value);
-//     for (var i = 0; i < list.size(); i++) {
-//       $('#nav li:nth-child(' + (i + 1) + ')').removeClass('active');
-//     }
-//     $('#nav li:nth-child(' + (current + 1) + ')').addClass('active');
-
-//     setTimeout(function() {
-//       isScrolling = false;
-//     }, 500);
-//   }
-// });
-//----------------------------------END Slide Div UP-DOWN
 
 </script>
 
