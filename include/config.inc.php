@@ -2,7 +2,7 @@
 	$serverName = "localhost";
 	$userName = "root";
 	$userPassword = "";
-	$dbName = "samfah";
+	$dbName = "samfa";
 								
 	$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
 		
