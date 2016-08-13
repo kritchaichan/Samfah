@@ -899,7 +899,7 @@ form.news-letter .btn:hover{
 @media screen and (max-width: 992px){
 	.container{
 		width:100%;
-		max-width:830px;
+		max-width:992px;
 	}
 }
 @media (min-width: 830px){
@@ -909,7 +909,7 @@ form.news-letter .btn:hover{
 	}
 }
 
-@media screen and (max-width: 1000px){
+/*@media screen and (max-width: 1000px){
 	.container-order{
 		width:100%;
 		max-width:1000px;
@@ -921,7 +921,7 @@ form.news-letter .btn:hover{
 		max-width:1000px;
 	}
 }
-
+*/
 
 
 /* 10.1 - media screen and (max-width: 992px)  End
@@ -1827,23 +1827,27 @@ input[name="framing_style"] + span:before , input[name="door_color"] + span:befo
 }
 
 input[value="makalao"] + span:before {
-  background: url(../wood_color/makalao.jpg)no-repeat center center;
+  background: url(../images/wood_color/makalao.jpg)no-repeat center center;
   background-size: 100px;
 }
 
 input[value="teak"] + span:before {
-  background: url(../wood_color/teak.jpg)no-repeat center center;
+  background: url(../images/wood_color/teak.jpg)no-repeat center center;
   background-size: 100px;
 }
 
 input[value="laored"] + span:before {
-  background: url(../wood_color/laored.jpg)no-repeat center center;
+  background: url(../images/wood_color/laored.jpg)no-repeat center center;
   background-size: 100px;
 }
 
 /* the checked style using the :checked pseudo class */
 input[name="door_color"]:checked + span:before {
   
+}
+
+.frame_name, .wood_color_name{
+	display: block;
 }
 
 .input_css{
