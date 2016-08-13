@@ -1178,16 +1178,7 @@ background: #00aaff;
     font-size: 24px;
     cursor: pointer;
 }
-.samfah-heading-ourstory h1
-{
-    color: #fff;
-    font-size: 65px;
-    position: absolute;
-    top: 50%;
-    left: 43%;
-    right: 0;
-    display: inline-table;
-}
+
 .samfah-bg-about
 {
     background-image: url(../../images/background/welcome.jpg);
@@ -1237,18 +1228,10 @@ background: #00aaff;
     text-indent: 30px;
     font-size: 14px;
 }
-.samfah-image-about-head
-{
-    
-}
 .samfah-wood-image-about
 {
     padding-top: 12px;
 }
-/*.samfah-wood-image-about img
-{
-    width: 140px;
-}*/
 .samfah-wood-image-about
 {
     display: -webkit-inline-box;
@@ -1270,13 +1253,6 @@ background: #00aaff;
 {
     width: 140px;
 }
-/*.samfah-cover-slick-01
-{
-    background-image: url(../../images/background/ourstory.jpg);
-    background-size: cover;
-    background-position: top center;
-    position: relative;
-}*/
 
 /* cover ourstory */
 .samfah-cover-ourstory-re
@@ -1320,7 +1296,48 @@ background: #00aaff;
     font-weight: bold;
 }
 /* end cover ourstory */
-
+/* cover order */
+.samfah-cover-order-re
+{
+    background-image: url(../../images/background/order.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+}
+.samfah-cover-order-abb
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-order-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-order-tc
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.samfah-cover-order-vl
+{
+    vertical-align: middle;
+}
+.samfah-heading-in-cover-order h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+/* end cover order */
 .topcapil-content-in-cover
 {
     margin-top: 82%;
@@ -1584,11 +1601,11 @@ background: #00aaff;
     {
         text-align: center;
     }
-    .detail-wood-02
+    .detail-wood-02 
     {
         text-align: center;
     }
-    .detail-wood-02 img
+    .detail-wood-02 img 
     {
         width: 285px;
     }
@@ -1642,10 +1659,12 @@ background: #00aaff;
     {
         bottom: 10%;
     }
-    .samfah-cover-ourstory-re
+    /* cover our story mobile */
+    .samfah-cover-ourstory-re,.samfah-cover-order-re
     {
         height: 232px;
     }
+    /* end cover our story mobile */
     .samfah-border-blog-contact
     {
         padding: 0px;
@@ -1659,15 +1678,7 @@ background: #00aaff;
     {
         height: 71%;
     }
-    .bg-contact-mobile
-    {
-        background-image: url(../../images/background/contact.jpg);
-        background-size: cover;
-    }
-    .address-contact-in-mobile
-    {
-        text-align: center;
-    }
+    
 }
 @media only screen and (min-width: 641px) and (max-width: 1025px) 
 {
@@ -1707,7 +1718,7 @@ background: #00aaff;
     {
         height: 50%;
     }
-    .samfah-cover-ourstory-re
+    .samfah-cover-ourstory-re,.samfah-cover-order-re
     {
         height: 345px;
     }

@@ -12,7 +12,7 @@ session_start();
 	<title>ORDER US</title>
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+  <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
   <!-- Bootstrap  -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- ICON  -->
@@ -139,16 +139,27 @@ height: 400px;
 <body>
 <div id="main-order">
 
-  <div class="slide order" id="first">
+  <!--<div class="slide order" id="first">
     <section id="page-top" class="section-style bg-fh" data-background-image="../images/background/order.jpg">
       <div class="container">
         <h1 class="site-title">
           ORDER US
-        </h1><!-- /.site-title -->
-      </div><!-- /.container -->  
-    </section><!-- /#page-top -->
-    <!-- Page Top Section  End -->  
-  </div>
+        </h1>
+      </div>
+    </section>  
+  </div>-->
+    
+<div class="samfah-cover-order-re">
+    <div class="samfah-cover-order-abb">
+        <div class="samfah-cover-order-table">
+            <div class="samfah-cover-order-tc samfah-cover-order-vl">
+                <div class="samfah-heading-in-cover-order">
+                    <h1>ORDER</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
   <div class="slide order" id="second">
     
