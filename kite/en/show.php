@@ -11,9 +11,6 @@ session_start();
 		<script type="text/javascript" src="https://www.google.com/cse/tools/onthefly?form=searchbox_demo&lang="></script>
 		<script type="text/javascript" src="modernizr.custom.79639.js"></script>
 		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-		<script src="../../js/jquery-1.11.0.min.js"></script>
-		<script src="../../js/lightbox.min.js"></script>
-		<link href="../../css/lightbox.css" rel="stylesheet" />
         
 
 		<style type="text/css">
@@ -26,19 +23,11 @@ session_start();
 </head>
 
 <body>
-	    <div id="container">
-	    	<div class="bg" id="item_51"></div>
-	    	
-	    	<div data-import="header.html">กรุณารอซักครู่...</div>
 			
-			<div id="DATA">
 
 				<div id="blog" class="order">
 
 		        	<div id="Detail" style="min-height: 710px;">
-		        		<hr class="style-head" >
-						<hr class="selectLine">
-
 					<?php
                     for($i=0;$i<=(int)$_SESSION["intLine"];$i++)
                     { // Loop Order
@@ -146,26 +135,11 @@ session_start();
                     <?php
                       } // End Loop Order
                     ?>
-		        	<hr class="style-End">
 					<div id="footer">
 						<a href="javascript:history.back(1);">< Back</a>
 	                    <a href="form.php">Confirm ></a>
 		        	</div>
 			  	</div><!--/*end blog*/-->
-				<div id="footerPan">
-					<p>
-						<a href="profile.html">COMPANY PROFILE</a> | 
-						<a href="woodis.html">WOOD IS?</a> | 
-						<a href="gallery.html">GALLERY</a> | 
-						<a href="order.html">ORDER US!</a> | 
-						<a href="contact.html">CONTACTS US</a>
-						<br/>
-						<span>Copyright &copy; 2015 Samfah Craftman Co., Ltd, All rights reserved.</span>
-					</p>
-		        </div><!--/*end footer*/-->
-
-			</div><!--/*end DATA*/-->
-
-		</div><!--/*end container*/-->
+				
 </body>
 </html>
