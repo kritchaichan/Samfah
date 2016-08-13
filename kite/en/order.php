@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +13,6 @@
   <!-- Mobile Specific Meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 <<<<<<< HEAD
-  <link type="text/css" rel="stylesheet" href="../assets/css/style.css">
 =======
 >>>>>>> origin/master
   <!-- Bootstrap  -->
@@ -67,6 +69,79 @@ height: 400px;
 }
 </style>
 </head>
+<script language="JavaScript">
+	   var HttPRequest = false;
+
+	   function doCallAjax() {
+		  HttPRequest = false;
+		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
+			 HttPRequest = new XMLHttpRequest();
+			 if (HttPRequest.overrideMimeType) {
+				HttPRequest.overrideMimeType('text/html');
+			 }
+		  } else if (window.ActiveXObject) { // IE
+			 try {
+				HttPRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			 } catch (e) {
+				try {
+				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			 }
+		  } 
+		  
+		  if (!HttPRequest) {
+			 alert('Cannot create XMLHTTP instance');
+			 return false;
+		  }
+	
+			var url = 'post.php';
+			var pmeters = "door="+encodeURI(document.getElementById('door').value) +
+			"&x="+encodeURI(document.getElementById('x').value) +
+			"&y="+encodeURI(document.getElementById('y').value) +
+			"&z="+encodeURI(document.getElementById('z').value) + 
+			"&quantity="+encodeURI(document.getElementById('quantity').value) +
+			"&Acsr1="+encodeURI(document.getElementById('acsr1').value) + 
+			"&Acsr2="+encodeURI(document.getElementById('acsr2').value) +
+			"&Acsr3="+encodeURI(document.getElementById('acsr3').value) + 
+			"&door_color="+encodeURI(document.getElementById('door_color').value) +
+			"&framing_style="+encodeURI(document.getElementById('framing_style').value) ;
+			
+			//var pmeters = 'myName='+document.getElementById("txtName").value+'&my2='; // 2 Parameters
+			HttPRequest.open('POST',url,true);
+
+			HttPRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+			HttPRequest.setRequestHeader("Content-length", pmeters.length);
+			HttPRequest.setRequestHeader("Connection", "close");
+			HttPRequest.send(pmeters);
+			
+			HttPRequest.onreadystatechange = function()
+			{
+
+				 if(HttPRequest.readyState == 3)  // Loading Request
+				  {
+				   //document.getElementById("mySpan").innerHTML = "Now is Loading...";
+				   alert("Now is Loading...");
+				  }
+				  alert('Please see at web page status = '+HttPRequest.readyState);
+
+				 if(HttPRequest.readyState == 4) // Return Request
+				  {
+				   document.getElementById("mySpan").innerHTML = HttPRequest.responseText;
+				   //alert("Success !!"+HttPRequest.responseText);
+				  }
+				
+			}
+
+			/*
+			HttPRequest.onreadystatechange = call function .... // Call other function
+			*/
+
+	   }
+	   
+	   function TestAlert() {
+		   alert("Now is Loading...");
+	   }
+	</script>	
 <body>
 <div id="main-order">
 
@@ -140,12 +215,12 @@ height: 400px;
               </div><!--/*end model-product*/-->
               <div id="detail-product">
                 <div class="detail-form">
-                    <input type="hidden" name="door" value="<?=$door?>">
+                    <input type="hidden" name="door" id="door" value="CSP006">
                     <label>Size</label>
-                    <label>Height : <input type="number" name="x" min="1" max="300" class="input_css"> Cm</label>
-                    <label>Width : <input type="number" name="y" min="1" max="500" class="input_css"> Cm</label>
-                    <label>Thicknes : <input type="number" name="quantity" min="1" max="5" class="input_css"> Cm</label>
-                    <label>Quantity : <input type="number" name="quantity" min="1" max="5" class="input_css"> Pcs</label>
+                    <label>Height : <input type="number" name="x" id="x" min="1" max="300" class="input_css"> Cm</label>
+                    <label>Width : <input type="number" name="y" id="y" min="1" max="500" class="input_css"> Cm</label>
+                    <label>Thickness : <input type="number" name="z" id="z" min="1" max="500" class="input_css"> Inch</label>
+                    <label>Quantity : <input type="number" name="quantity" id="quantity" min="1" max="5" class="input_css"> Pcs</label>
                 </div>
                 <div class="detail-form">
                     <label>Accessories</label>
@@ -156,38 +231,38 @@ height: 400px;
                 
                 <div class="option-product" onclick="$('#color').show();$('#style').hide();">
                   <label>Select Wood</label>
-                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="wood_color" src="../images/no_image.png" alt="ไม้"><span class="wood_color_name"></span></label>
+                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="wood_color" id="wood_color" src="../images/no_image.png" alt="ไม้"><span class="wood_color_name"></span></label>
                 </div>
                 <div class="option-product" onclick="$('#color').hide();$('#style').show();">
                   <label>Select Framing</label>
-                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="frame" src="../images/no_image.png" alt="ไม้"><span class="frame_name"></span></label>
+                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="frame" id="frame" src="../images/no_image.png" alt="ไม้"><span class="frame_name"></span></label>
                 </div>    
               </div><!--/*end detail-product*/-->
               <div class="select-product">
                 <div id="color">
-                  <label><input type="radio" name="door_color" value="makalao" 
+                  <label><input type="radio" name="door_color" id="door_color" value="makalao" 
                     onclick="$('.wood_color').attr('src','../images/wood_color/makalao.jpg');
                     $('.wood_color_name').text('Makalao');$('#color').hide();"><span>Makalao</span>
                   </label>
-                  <label><input type="radio" name="door_color" value="teak" 
+                  <label><input type="radio" name="door_color" id="door_color" value="teak" 
                     onclick="$('.wood_color').attr('src','../images/wood_color/teak.jpg');
                     $('.wood_color_name').text('Teak');$('#color').hide();"><span>Teak</span>
                   </label>
-                  <label><input type="radio" name="door_color" value="laored" 
+                  <label><input type="radio" name="door_color" id="door_color" value="laored" 
                     onclick="$('.wood_color').attr('src','../images/wood_color/laored.jpg');
                     $('.wood_color_name').text('Laored');$('#color').hide();"><span>Laored</span>
                   </label>
                 </div>
                 <div id="style">
-                  <label><input type="radio" name="framing_style" value="makalao" 
+                  <label><input type="radio" name="framing_style" id="framing_style" value="makalao" 
                     onclick="$('.frame').attr('src','../images/wood_frame/makalao.jpg');
                     $('.frame_name').text('Makalao');$('#style').hide();"><span>Makalao</span>
                   </label>
-                  <label><input type="radio" name="framing_style" value="teak" 
+                  <label><input type="radio" name="framing_style" id="framing_style" value="teak" 
                     onclick="$('.frame').attr('src','../images/wood_frame/teak.jpg');
                     $('.frame_name').text('Teak');$('#style').hide();"><span>Teak</span>
                   </label>
-                  <label><input type="radio" name="framing_style" value="laored" 
+                  <label><input type="radio" name="framing_style" id="framing_style" value="laored" 
                     onclick="$('.frame').attr('src','../images/wood_frame/laored.jpg');
                     $('.frame_name').text('Laored');$('#style').hide();"><span>Laored</span>
                   </label>
@@ -195,12 +270,12 @@ height: 400px;
               </div><!--/*end select-product*/-->
             </div><!--/*end box-product*/-->
                   </form><!--/*end form*/-->
-          <dib type="button" class="btn box-form btn-block top30">+</dib>
+          <div type="button" class="btn box-form btn-block top30" onClick="JavaScript:doCallAjax();" >+</div>
           <div class="btn btn-block "><h2>Next</h2></div>
         </div><!-- /.container -->
     </section><!-- /#order_summary -->
     <!-- order_summary Section End -->
-
+	<span id="mySpan"></span>
     <!-- Form Section -->
     <section id="form" class="section-style">
         <div class="container text-center">

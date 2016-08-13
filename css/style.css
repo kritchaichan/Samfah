@@ -621,6 +621,7 @@ hr.style-Next:detail {
   width: 100px;
   float: left;
   text-align: center;
+  margin-top: 20px;
 }
 
 .select-product{
