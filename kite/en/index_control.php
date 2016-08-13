@@ -22,7 +22,6 @@
     
 </head>
 <body>
-
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -55,7 +54,6 @@
         </div>
         
     </div>
-
 </body>
 
     <!-- jQuery -->
