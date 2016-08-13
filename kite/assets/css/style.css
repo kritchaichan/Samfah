@@ -1338,6 +1338,48 @@ background: #00aaff;
     font-weight: bold;
 }
 /* end cover order */
+/* cover gallery */
+.samfah-cover-gallery-re
+{
+    background-image: url(../../images/background/gallery.JPG);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 1080px;
+}
+.samfah-cover-gallery-abb
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.samfah-cover-gallery-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-gallery-tc
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.samfah-cover-gallery-vl
+{
+    vertical-align: middle;
+}
+.samfah-cover-gallery-heading h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+/* end cover gallery */
 .topcapil-content-in-cover
 {
     margin-top: 82%;
@@ -1660,7 +1702,7 @@ background: #00aaff;
         bottom: 10%;
     }
     /* cover our story mobile */
-    .samfah-cover-ourstory-re,.samfah-cover-order-re
+    .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
     {
         height: 232px;
     }
@@ -1718,7 +1760,7 @@ background: #00aaff;
     {
         height: 50%;
     }
-    .samfah-cover-ourstory-re,.samfah-cover-order-re
+    .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
     {
         height: 345px;
     }

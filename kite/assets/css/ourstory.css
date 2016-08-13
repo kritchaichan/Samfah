@@ -52,6 +52,13 @@ html,body {
   margin: 0;
 }
 
+<<<<<<< HEAD
+=======
+body {
+  overflow:auto;
+}
+
+>>>>>>> origin/master
 #main-ourstory {
   position: relative;
   z-index: 1;
