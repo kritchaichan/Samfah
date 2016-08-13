@@ -1432,7 +1432,7 @@ background: #00aaff;
 .gg-maps
 {
     position: relative;
-    height: 400px;
+    height: 450px;
 }
 .background-contact
 {
@@ -1463,6 +1463,7 @@ background: #00aaff;
     padding: 10px;
     border-color: #fff;
     color: #fff;
+    cursor: pointer;
 }
 .image-map-test
 {
