@@ -273,10 +273,10 @@ height: 400px;
   <script>
 
 
-  // $('.grid1').masonry({
-  //   itemSelector: '.grid-item',
-  //   columnWidth: 25
-  // });
+  $('.grid1').masonry({
+  itemSelector: '.grid-item',
+   columnWidth: 25
+  });
 
 
   //----------------------------------START Slide Div UP-DOWN

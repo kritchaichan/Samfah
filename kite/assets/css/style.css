@@ -71,7 +71,7 @@ body{
   	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
 	/*overflow: hidden; /*Disable Scroll*/
-	overflow: auto; /*Enable Scroll*/
+	/*overflow: auto;*/ /*Enable Scroll*/
 
 
 }
