@@ -65,5 +65,10 @@
            });
         });
     </script>
+    <script>
+        $( "#botton-chang-map" ).click(function() {
+        $( ".ff" ).slideToggle("slow");
+        });
+    </script>
 </body>
 </html>
