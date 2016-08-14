@@ -49,12 +49,12 @@
 
 /* 2 - Global Style
 ---------------------------------------------------------------------- */
-*{
+/**{
 	padding: 0px;
 	margin: 0px;
 	outline: 0px;
 	border: 0px;
-}
+}*/
 body{
 	
 	background-color: white	;
