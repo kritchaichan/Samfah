@@ -1202,7 +1202,7 @@ background: #00aaff;
 
 .samfah-bg-about
 {
-    background-image: url(../../images/background/welcome.jpg);
+    background-image: url(../../images/background/welcome-2.jpg);
     background-size: cover;
     background-position: top center;
     text-align: center;
@@ -1212,7 +1212,7 @@ background: #00aaff;
 }
 .about-before-contact
 {
-    background-image: url(../../images/background/welcome.jpg);
+    background-image: url(../../images/background/welcome-2.jpg);
     background-size: cover;
     background-position: top center;
     background-attachment: fixed;
@@ -1282,7 +1282,7 @@ background: #00aaff;
     background-size: cover;
     background-position: bottom center;
     position: relative;
-    height: 1080px;
+    height: 970px;
 }
 .samfah-cover-ourstory-abb
 {
