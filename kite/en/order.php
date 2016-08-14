@@ -18,6 +18,7 @@ session_start();
   <!-- Bootstrap  -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
   
   <!-- ICON  -->
