@@ -26,6 +26,7 @@ session_start();
   
 
   <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.js"></script>
     
 <style>
 
@@ -71,7 +72,32 @@ height: 400px;
 </style>
 </head>
 <script language="JavaScript">
-	   var HttPRequest = false;
+//----- Ajax with JQuery
+$(document).ready(function(){
+	$("#btn_add_order").click(function(){
+
+			$.post("order-post.php", { 
+			data1: $("#door").val(), 
+			data2: $("#x").val(), 
+			data3: $("#y").val(), 
+			data4: $("#z").val(), 
+			data5: $("#quantity").val(),
+			data6: $("#acsr1").val(),
+			data7: $("#acsr2").val(),
+			data8: $("#acsr3").val(),
+			data9: $("#door_color").val(),
+			data10: $("#framing_style").val()}, 
+				function(result){
+					$("#detailsorders").html(result);
+				}
+			);
+
+		});
+	});
+
+
+//----- Ajax no JQuery
+	   /*var HttPRequest = false;
 
 	   function doCallAjax() {
 		  HttPRequest = false;
@@ -95,7 +121,7 @@ height: 400px;
 			 return false;
 		  }
 	
-			var url = 'post.php';
+			var url = 'order-post.php';
 			var pmeters = "door="+encodeURI(document.getElementById('door').value) +
 			"&x="+encodeURI(document.getElementById('x').value) +
 			"&y="+encodeURI(document.getElementById('y').value) +
@@ -120,14 +146,14 @@ height: 400px;
 
 				 if(HttPRequest.readyState == 3)  // Loading Request
 				  {
-				   //document.getElementById("mySpan").innerHTML = "Now is Loading...";
+				   //document.getElementById("Detail-Order-Door").innerHTML = "Now is Loading...";
 				   alert("Now is Loading...");
 				  }
 				  alert('Please see at web page status = '+HttPRequest.readyState);
 
 				 if(HttPRequest.readyState == 4) // Return Request
 				  {
-				   document.getElementById("mySpan").innerHTML = HttPRequest.responseText;
+				   document.getElementById("Detail-Order-Door").innerHTML = HttPRequest.responseText;
 				   //alert("Success !!"+HttPRequest.responseText);
 				  }
 				
@@ -137,11 +163,8 @@ height: 400px;
 			HttPRequest.onreadystatechange = call function .... // Call other function
 			*/
 
-	   }
+	   //}
 	   
-	   function TestAlert() {
-		   alert("Now is Loading...");
-	   }
 	</script>	
 <body>
 <div id="main-order">
@@ -271,12 +294,12 @@ height: 400px;
               </div><!--/*end select-product*/-->
             </div><!--/*end box-product*/-->
                   </form><!--/*end form*/-->
-          <div type="button" class="btn box-form btn-block top30" onClick="JavaScript:doCallAjax();" >+</div>
+          <div id="btn_add_order" type="button" class="btn box-form btn-block top30" onClick="JavaScript:doCallAjax();" >+</div>
           <div class="btn btn-block "><h2>Next</h2></div>
         </div><!-- /.container -->
     </section><!-- /#order_summary -->
     <!-- order_summary Section End -->
-	<span id="mySpan"></span>
+	<span id="detailsorders"></span>
     <!-- Form Section -->
     <section id="form" class="section-style">
         <div class="container text-center">
