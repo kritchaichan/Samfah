@@ -17,7 +17,7 @@
     <!-- Jquery Core script -->
 	<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
     
-    <link type="text/css" href="../assets/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
     
     
 </head>
@@ -47,7 +47,7 @@
             <div class="item">
                 <!-- Set Slide Order Us -->
                 <div class="fill">
-                <?php require_once("order.php"); ?>
+                <?php require_once("order.html"); ?>
                 </div>
             </div>
         </div>
