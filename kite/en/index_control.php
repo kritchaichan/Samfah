@@ -12,6 +12,7 @@
 	<link href="../assets/css/font-awesome.min.css" rel="stylesheet">
 	<link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/slick.css" rel="stylesheet">
+    <link href="../assets/css/full-slider.css" rel="stylesheet">
 </head>
 <body>
     <!-- Full Page Image Background Carousel Header -->
