@@ -7,19 +7,11 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>Samfa</title>
-    
-    <!-- Bootstrap Core CSS -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Full-Slider CSS -->
-	<link rel="stylesheet" type="text/css" href="../assets/css/full-slider.css">
-    
-    <!-- Jquery Core script -->
-	<script type="text/javascript" src="../../js/jquery-1.10.2.js"></script>
-    
-    <link rel="stylesheet" type="text/css" href="../assets/css/style.css" />
-    
-    
+    <link rel="stylesheet" type="text/css" href="../assets/css/ourstory.css" />
+	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+	<link href="../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/slick.css" rel="stylesheet">
 </head>
 <body>
     <!-- Full Page Image Background Carousel Header -->
@@ -35,7 +27,7 @@
             <div class="item active">
                 <!-- Set Slide Ourstory -->
                 <div class="fill">
-            	<?php require_once("ourstory.html"); ?>
+            	   <?php require_once("ourstory.html"); ?>
             	</div>
             </div>
             <div class="item">
@@ -54,12 +46,24 @@
         </div>
         
     </div>
+    <script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+	<script type="text/javascript" src="../assets/js/modernizr-2.8.0.min.js"></script>
+	<script type="text/javascript" src="../assets/js/plugins.js"></script>
+	<script type="text/javascript" src="../assets/js/functions.js"></script>
+	<script type="text/javascript" src="../assets/js/jquery.ajaxchimp.min.js"></script>
+    <script type="text/javascript" src="../assets/flip/jquery.flip.min.js"></script>
+    <script>
+        $(function(){
+        $("#card").flip({
+            trigger: 'click'
+            });
+        $('#flip').click(function(){
+            $("#card").flip('toggle');
+           });
+        $('#flip-back').click(function(){
+            $("#card").flip('toggle');
+           });
+        });
+    </script>
 </body>
-
-    <!-- jQuery -->
-    <script src="../assets/js/jquery.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="../assets/js/bootstrap.min.js"></script>
-    
 </html>
