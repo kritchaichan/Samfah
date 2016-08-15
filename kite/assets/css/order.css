@@ -1041,6 +1041,11 @@ form.news-letter .btn:hover{
     padding: 0px;
  }
 
+.btn-form:active , .btn-block:active{
+	box-shadow: none;
+	outline: none;
+}
+
  .box-form h1{
  	margin: 0;
     padding: 15px;
