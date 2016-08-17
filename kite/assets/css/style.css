@@ -1678,6 +1678,11 @@ transition: all 0.9s ease;
 
 @media screen and (max-width: 640px) 
 {
+    .carousel-indicators 
+    {
+        bottom: 0;
+        top: 193px;
+    }
     .samfah-heading-ourstory h1
     {
         color: #fff;
@@ -1786,11 +1791,89 @@ transition: all 0.9s ease;
     {
         height: 71%;
     }
-    
+    /* background hover gallery mobile */
+    .background-hover-gallery-mobile-1
+    {
+        background-image: url(../../images/gallery/gallery-hover-1.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 55px;
+    }
+    .background-hover-gallery-mobile-2
+    {
+        background-image: url(../../images/gallery/gallery-hover-2.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 55px;
+    }
+    .background-hover-gallery-mobile-3
+    {
+        background-image: url(../../images/gallery/gallery-hover-3.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 55px;
+    }
+    .background-hover-gallery-mobile-4
+    {
+        background-image: url(../../images/gallery/gallery-hover-4.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 55px;
+    }
+    .background-hover-gallery-abb
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .background-hover-gallery-table
+    {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .background-hover-gallery-table-cell
+    {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .background-hover-gallrey-vl
+    {
+        vertical-align: middle;
+    }
+    .content-in-hover-gallery p
+    {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .padding-top-hover-gallery-mobile
+    {
+        padding-top: 12px;
+    }
+    /* end background hover gallery mobile */ 
 }
 @media only screen and (min-width: 641px) and (max-width: 1025px) 
 {
-    
+    .carousel-indicators 
+    {
+        bottom: 0;
+        top: 275px;
+    }
    .samfah-heading-ourstory h1
     {
         color: #fff;
@@ -1830,4 +1913,79 @@ transition: all 0.9s ease;
     {
         height: 345px;
     }
+    /* background hover gallery mobile */
+    .background-hover-gallery-mobile-1
+    {
+        background-image: url(../../images/gallery/gallery-hover-1.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+    .background-hover-gallery-mobile-2
+    {
+        background-image: url(../../images/gallery/gallery-hover-2.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+    .background-hover-gallery-mobile-3
+    {
+        background-image: url(../../images/gallery/gallery-hover-3.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+    .background-hover-gallery-mobile-4
+    {
+        background-image: url(../../images/gallery/gallery-hover-4.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        position: relative;
+        width: 100%;
+        height: 100px;
+    }
+    .background-hover-gallery-abb
+    {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .background-hover-gallery-table
+    {
+        display: table;
+        width: 100%;
+        height: 100%;
+    }
+    .background-hover-gallery-table-cell
+    {
+        display: table-cell;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    .background-hover-gallrey-vl
+    {
+        vertical-align: middle;
+    }
+    .content-in-hover-gallery p
+    {
+        font-size: 30px;
+        font-weight: bold;
+        color: #fff;
+    }
+    .padding-top-hover-gallery-mobile
+    {
+        padding-top: 12px;
+    }
+    /* end background hover gallery mobile */ 
 }
