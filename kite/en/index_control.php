@@ -13,7 +13,6 @@
 	<link href="../assets/css/style.css" rel="stylesheet">
     <link href="../assets/css/slick.css" rel="stylesheet">
     <link href="../assets/css/full-slider.css" rel="stylesheet">
-    <link href="../assets/animate/animate.css" />
 </head>
 <body>
     <!-- Full Page Image Background Carousel Header -->
@@ -56,7 +55,6 @@
 	<script type="text/javascript" src="../assets/js/functions.js"></script>
 	<script type="text/javascript" src="../assets/js/jquery.ajaxchimp.min.js"></script>
     <script type="text/javascript" src="../assets/flip/jquery.flip.min.js"></script>
-    <script type="text/javascript" src="../assets/animate/viewportchecker.js"></script>
     <script>
         $(function(){
         $("#card").flip({
@@ -74,22 +72,6 @@
         $( "#botton-chang-map" ).click(function() {
         $( ".ff" ).slideToggle("slow");
         });
-    </script>
-    <script>
-    jQuery(document).ready(function() {
-        jQuery('.topcapil-image-boxset-animate').addClass("hidden-animate").viewportChecker({
-            classToAdd: 'visible-animate animated slideInLeft',
-            offset: 900
-       });
-    jQuery('.topcapil-document-animate').addClass("hidden-animate").viewportChecker({
-            classToAdd: 'visible-animate animated fadeInUp',
-            offset: 400
-       });
-    jQuery('.topcapil-document-animate').addClass("hidden-animate").viewportChecker({
-            classToAdd: 'visible-animate animated fadeInUp',
-            offset: 400
-       });
-    });
     </script>
 </body>
 </html>
