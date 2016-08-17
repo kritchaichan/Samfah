@@ -1187,6 +1187,12 @@ background: #00aaff;
 /* 11 - Preloader End
 ---------------------------------------------------------------------- */
 
+/**/
+.carousel-indicators
+{
+    bottom: 90px;
+}
+/**/
 /* hover slide text */
 .container-image-hover {
 position:relative;
@@ -1202,13 +1208,17 @@ right: 0;
 width:200px;
 height:150px;
 margin-right:-230px;
-    font-weight: bold;
+font-weight: bold;
 }
 .container-image-hover:hover .textbox {
 margin-right:200px;
 }
 .container-image-hover img {
 margin-right:0;
+}
+.size-hover-gallery a
+{
+    color: #fff;
 }
 /*.container-image-hover:hover img {
 margin-left:100%;
@@ -1324,7 +1334,7 @@ transition: all 0.9s ease;
     background-size: cover;
     background-position: bottom center;
     position: relative;
-    height: 970px;
+    height: 1050px;
 }
 .samfah-cover-ourstory-abb
 {
