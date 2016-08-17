@@ -26,7 +26,12 @@
 *  
 ---------------------------------------------------------------------- */
 
-
+.hidden-animate{
+     opacity:0;
+}
+.visible-animate{
+     opacity:1;
+}
 
 .loader 
 {
@@ -1182,6 +1187,43 @@ background: #00aaff;
 /* 11 - Preloader End
 ---------------------------------------------------------------------- */
 
+/* hover slide text */
+.container-image-hover {
+position:relative;
+/*overflow:hidden;*/
+width:100%;
+height:100%;
+}
+.container-image-hover .textbox {
+position:absolute;
+top:0;
+/*left:0;*/
+right: 0;
+width:200px;
+height:150px;
+margin-right:-230px;
+    font-weight: bold;
+}
+.container-image-hover:hover .textbox {
+margin-right:200px;
+}
+.container-image-hover img {
+margin-right:0;
+}
+/*.container-image-hover:hover img {
+margin-left:100%;
+}*/
+/*.text {
+padding-top: 50px;
+}*/
+/*.container-image-hover img, .textbox {
+-webkit-transition: all 0.9s ease;
+transition: all 0.9s ease;
+}*/
+.textbox {
+-webkit-transition: all 0.7s ease;
+    transition: all 0.7s ease;}
+/* end hover slode text */
 
 .slick-nextfac-1
 {
@@ -1615,7 +1657,14 @@ background: #00aaff;
     font-size: 24px;
     font-weight: bold;
 }
-
+.size-hover-gallery
+{
+    line-height: 7;
+}
+.size-hover-gallery img
+{
+    width: 815px;
+}
 
 @media screen and (max-width: 640px) 
 {
