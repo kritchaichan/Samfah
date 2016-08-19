@@ -1202,7 +1202,7 @@ height:100%;
 }
 .container-image-hover .textbox {
 position:absolute;
-top:0;
+top:70px;
 /*left:0;*/
 right: 0;
 width:200px;
@@ -1673,9 +1673,15 @@ transition: all 0.9s ease;
 }
 .size-hover-gallery img
 {
-    width: 815px;
+    /*width: 815px;*/
+    /*width: 1912px;*/
+    padding: 8px;
+    max-width: 100%;
 }
-
+.samfah-first-image-hover-gallery
+{
+    padding-top: 10px !important;
+}
 @media screen and (max-width: 640px) 
 {
     .carousel-indicators 
