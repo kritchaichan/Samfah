@@ -1379,17 +1379,17 @@ input[name="framing_style"] + span:before , input[name="door_color"] + span:befo
 }
 
 input[value="makalao"] + span:before {
-  background: url(../images/wood_color/makalao.jpg)no-repeat center center;
+  background: url(../../images/wood_color/makalao.jpg)no-repeat center center;
   background-size: 100px;
 }
 
 input[value="teak"] + span:before {
-  background: url(../images/wood_color/teak.jpg)no-repeat center center;
+  background: url(../../images/wood_color/teak.jpg)no-repeat center center;
   background-size: 100px;
 }
 
 input[value="laored"] + span:before {
-  background: url(../images/wood_color/laored.jpg)no-repeat center center;
+  background: url(../../images/wood_color/laored.jpg)no-repeat center center;
   background-size: 100px;
 }
 
