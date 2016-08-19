@@ -1205,10 +1205,14 @@ position:absolute;
 top:70px;
 /*left:0;*/
 right: 0;
-width:200px;
+width:45%;
 height:150px;
-margin-right:-230px;
+margin-right:-170%;
 font-weight: bold;
+}
+.textbox h1
+{
+    font-size: 50px;
 }
 .container-image-hover:hover .textbox {
 margin-right:200px;
