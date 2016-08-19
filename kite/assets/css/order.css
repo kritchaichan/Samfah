@@ -1347,7 +1347,7 @@ input[name="Acsr3"]:checked + span:before {
   display: block;
   margin: 0px;
   color: #555;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* HTML5 Boilerplate accessible hidden styles */
