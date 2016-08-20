@@ -334,7 +334,6 @@ $(document).ready(function(){
 <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
 <!-- Masonry js -->
 <script src="../assets/js/lightbox.min.js"></script>
-<script src="../assets/js/lightbox-plus-jquery.min.js"></script>
 <!-- Lightbox js -->
 <script>
   $('#color').hide();

@@ -7,12 +7,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 	<title>Samfa</title>
-    <link rel="stylesheet" type="text/css" href="../assets/css/ourstory.css" />
+    
+    <!-- Bootstrap  -->
 	<link href="../assets/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../assets/css/font-awesome.min.css" rel="stylesheet">
+    <!-- CSS  -->
 	<link href="../assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../assets/css/ourstory.css" />
     <link href="../assets/css/slick.css" rel="stylesheet">
     <link href="../assets/css/full-slider.css" rel="stylesheet">
+    <!-- ICON  -->
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
     <!-- Full Page Image Background Carousel Header -->
@@ -49,12 +54,21 @@
         </div>
         
     </div>
+    <!-- jQuery Library -->
     <script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
-	<script type="text/javascript" src="../assets/js/modernizr-2.8.0.min.js"></script>
-	<script type="text/javascript" src="../assets/js/plugins.js"></script>
-	<script type="text/javascript" src="../assets/js/functions.js"></script>
-	<script type="text/javascript" src="../assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Modernizr js -->
+    <script type="text/javascript" src="../assets/js/modernizr-2.8.0.min.js"></script>
+    <!-- Plugins -->
+    <script type="text/javascript" src="../assets/js/plugins.js"></script>
+    <!-- Custom JavaScript Functions -->
+    <script type="text/javascript" src="../assets/js/functions.js"></script>
+    <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+    <!-- Masonry js -->
+    <script type="text/javascript" src="../assets/js/jquery.ajaxchimp.min.js"></script>
+    <!-- Ajax js -->
     <script type="text/javascript" src="../assets/flip/jquery.flip.min.js"></script>
+    <!-- Flip js -->
+
     <script>
         $(function(){
         $("#card").flip({
