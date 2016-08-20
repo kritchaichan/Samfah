@@ -1568,7 +1568,7 @@ transition: all 0.9s ease;
 }
 .background-contact
 {
-    background-image: url(../../images/bg-contact.jpg);
+    background-image: url(../../images/background/contact.jpg);
     background-size: cover;
     padding: 20px;
 }
