@@ -68,10 +68,26 @@
            });
         });
     </script>
+    <!-- chang map our story -->
     <script>
         $( "#botton-chang-map" ).click(function() {
         $( ".ff" ).slideToggle("slow");
         });
     </script>
+    <!-- end chang map our story -->
+    <!-- chang map gallery -->
+    <script>
+        $( "#botton-chang-map-gallery" ).click(function() {
+        $( ".ff-gallery" ).slideToggle("slow");
+        });
+    </script>
+    <!-- end chang map gallery -->
+    <!-- chang order -->
+    <script>
+        $( "#botton-chang-map-order" ).click(function() {
+        $( ".ff-order" ).slideToggle("slow");
+        });
+    </script>
+    <!-- end chang order -->
 </body>
 </html>
