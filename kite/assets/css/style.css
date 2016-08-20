@@ -499,18 +499,18 @@ text-align: justify;
 /* 2.8 - Scroll Bar
 ------------------------------------------ */
 
-*::-webkit-scrollbar-track
+body::-webkit-scrollbar-track
 {
   -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.27);
 }
 
-*::-webkit-scrollbar
+body::-webkit-scrollbar
 {
   width: 8px;
   /*background-color: #F5F5F5;*/
 }
 
-*::-webkit-scrollbar-thumb
+body::-webkit-scrollbar-thumb
 {
   /*box-shadow: inset 0 0 10px rgba(0,0,0,0.3);*/
   background-color: rgba(0, 0, 0, 0.21);
@@ -1568,7 +1568,7 @@ transition: all 0.9s ease;
 }
 .background-contact
 {
-    background-image: url(../../images/background/contact.jpg);
+    background-image: url(../../images/bg-contact.jpg);
     background-size: cover;
     padding: 20px;
 }
@@ -1585,10 +1585,6 @@ transition: all 0.9s ease;
     border-color: #fff;
     padding: 20px;
     text-align: center;
-    min-height: 600px;
-    height: 100%;
-    max-height: 1050px;
-}
 }
 .botton-contact p
 {
@@ -1680,26 +1676,22 @@ transition: all 0.9s ease;
 {
     line-height: 7;
 }
-
 .size-hover-gallery img
 {
     /*width: 815px;*/
     /*width: 1912px;*/
     padding: 8px;
     max-width: 100%;
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    transition: filter 2s;
+    -webkit-transition: filter 2s;
+    -moz-transition: filter 2s;
 }
-
-.container-image-hover img
-{
-    opacity: 0.6;
-	-webkit-transition: opacity .5s;
-    -moz-transition: opacity .5s;
-    transition: opacity .5s;
-}
-
 .size-hover-gallery img:hover,.textbox:hover
 {
-    opacity: 1;
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
 }
 .samfah-first-image-hover-gallery
 {

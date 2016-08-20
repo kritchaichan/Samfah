@@ -16,6 +16,11 @@
   
   <!-- ICON  -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+  
+
+  <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="../assets/js/jquery.js"></script>
+    
 <style>
 </style>
 
@@ -131,15 +136,11 @@ $(document).ready(function(){
   </div>
 
   <div class="slide order" id="second">
-    <div id="page-order" data-background-image="../images/background/welcome.jpg">
+    <section id="page-order" data-background-image="../images/background/welcome.jpg">
       <div class="container-order">
-
-          <div class="box-catalog">
-            <a href="" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
-            CLASSIC CATALOGUE
-            <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
-          </div>
-          <div class="grid1"><!-- gird1-->
+        <div class="content-image">
+          <div class="box-catalog">CLASSIC CATALOGUE</div>
+          <div class="grid1">
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
                 <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
@@ -266,10 +267,13 @@ $(document).ready(function(){
                 <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
-          </div><!-- /End gird1-->  
 
+
+
+          </div>   
+        </div>
       </div><!-- /.container -->  
-    </div><!-- /#page-top -->
+    </section><!-- /#page-top -->
     <!-- Page Top Section  End -->  
 
 
@@ -448,13 +452,19 @@ $(document).ready(function(){
 </body>
 
   <script>
-    $('.grid1').masonry({
-    itemSelector: '.grid-item',
-     columnWidth: 25
-    });
+
+
+  $('.grid1').masonry({
+  itemSelector: '.grid-item',
+   columnWidth: 25
+  });
+
   </script>
 
-  
+  <script>
+    $('#color').hide();
+    $('#style').hide();
+  </script>
   <!-- jQuery Library -->
   <script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
   <!-- Modernizr js -->
@@ -464,10 +474,5 @@ $(document).ready(function(){
   <!-- Custom JavaScript Functions -->
   <script type="text/javascript" src="../assets/js/functions.js"></script>
   <!-- Custom JavaScript Functions -->
-  <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
-  <!-- Masonry js -->
-  <script>
-    $('#color').hide();
-    $('#style').hide();
-  </script>
+
 </html>
