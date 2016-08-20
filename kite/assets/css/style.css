@@ -1689,7 +1689,7 @@ transition: all 0.9s ease;
     -webkit-transition: filter 2s;
     -moz-transition: filter 2s;
 }
-.size-hover-gallery img:hover,.textbox:hover
+.size-hover-gallery img:hover,.textbox h1:hover
 {
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);
