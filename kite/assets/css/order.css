@@ -10,14 +10,20 @@
 *    2.7 - Position
 *    2.6 - Focus
 *    2.7 - Text
-*  3 - Contact Section 
-*  4 - Media Query 
+*    2.8 - Scroll Bar
+*  3 - Welcome Page
+*  4 - Main Menu 
+*  5 - Page Top Section
+*  6 - About Us Section
+*  7 - Subscribe Section
+*  8 - Contact Section
+*  9 - Footer Section  
+*  10 - Media Query 
 *    10.1 - media screen and (max-width: 992px)
 *    10.2 - media screen and (max-width: 768px)
 *    10.3 - media screen and (max-width: 1170px) 
-*  5 - Form Section
-*  6 - Order Summary Section
-*  7 - Gird Masonry
+*  11 - Preloader
+*  
 ---------------------------------------------------------------------- */
 
 
@@ -43,6 +49,32 @@
 
 /* 2 - Global Style
 ---------------------------------------------------------------------- */
+/**{
+	padding: 0px;
+	margin: 0px;
+	outline: 0px;
+	border: 0px;
+}*/
+body{
+	
+	background-color: white	;
+	color: white;
+  	font-family: "PT Sans Narrow", "kunlasatri";
+
+	padding: 0px;
+	margin: 0px;
+	outline: 0px;
+	border: 0px;
+	-webkit-user-select: none;  /* Chrome all / Safari all */
+  	-moz-user-select: none;     /* Firefox all */
+  	-ms-user-select: none;      /* IE 10+ */
+  	-o-user-select: none;
+  	user-select: none;
+  	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	/*overflow: hidden; /*Disable Scroll*/
+	overflow: auto; /*Enable Scroll*/
+
 
 }
 
@@ -95,13 +127,12 @@ a:focus{
 	outline:none;
 	outline-offset:inherit;
 }
-.container-order{
+.section-style{
 	background: no-repeat;
     background-position:top center;
     background-attachment:inherit;
     background-size:cover;
     height: 950px;
- 
 }
 .pattern{
 	background:rgba(0,0,0,.4) url(../images/pattern.png);
@@ -441,12 +472,299 @@ text-align: justify;
 /* 2.7 - Text End
 ------------------------------------------ */
 
+/* 2.8 - Scroll Bar
+------------------------------------------ */
+
+body::-webkit-scrollbar-track
+{
+  -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.27);
+}
+
+body::-webkit-scrollbar
+{
+  width: 8px;
+  /*background-color: #F5F5F5;*/
+}
+
+body::-webkit-scrollbar-thumb
+{
+  /*box-shadow: inset 0 0 10px rgba(0,0,0,0.3);*/
+  background-color: rgba(0, 0, 0, 0.21);
+  border-radius: 5px;
+}
+
+
+/* 2.8 - Scroll Bar End
+------------------------------------------ */
 
 /* 2 - Global Style End 
 ---------------------------------------------------------------------- */
 
 
-/* 3 - Contact Section
+
+
+
+
+
+
+/* 3 - Welcome Page 
+---------------------------------------------------------------------- */
+
+.resize250{
+	width: 20%;
+	height: auto;
+}
+
+.middle-page{
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 0;
+}
+
+/* 3 - Welcome Page 
+---------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+/* 4 - Main Menu
+---------------------------------------------------------------------- */
+.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a,
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a:focus{
+	font-size: 22px;
+	color:#000;
+	background-color:transparent;
+}
+.navbar-default{
+	background-color:transparent;
+	border-color:transparent;
+}
+.navbar-default .navbar-nav>.active>a:after{
+	content:"\2192";
+	display:inline-block;
+	font-style:normal;
+	font-weight:normal;
+	line-height:1;
+	margin-left:10px;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	
+	-webkit-transition:all .25s;
+	   -moz-transition:all .25s;
+	    -ms-transition:all .25s;
+	     -o-transition:all .25s;
+	        transition:all .25s;
+}
+
+.navbar-nav>li>a{
+	padding:5px 15px;
+	font-weight:400;
+	font-style:italic;
+	
+	-webkit-transition:all .25s;
+	   -moz-transition:all .25s;
+	    -ms-transition:all .25s;
+	     -o-transition:all .25s;
+	        transition:all .25s;
+}
+.navbar-nav>li>a:hover{
+	padding-left:25px;
+}
+.navbar-default .navbar-collapse, 
+.navbar-default .navbar-form{
+	border-color: transparent;
+}
+
+
+@media (max-width: 992px)  { /*max 992px*/
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: none;
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 7.5px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}
+
+@media screen and (max-width: 992px){
+	#headernavigation{
+		background:rgba(0,0,0,.5);
+	}
+	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:focus{
+		background-color:transparent;
+	}
+	.navbar-default .navbar-toggle{
+		margin-top: 15px;
+	}
+}
+@media screen and (min-width: 992px){
+	.navbar-fixed-top{
+		top:100px;
+		z-index:9999;
+	}
+	.navbar-default{
+		width:180px;
+	}
+	.navbar-nav>li{
+		float:none !important;
+	}
+}
+/* 4 - Main Menu End 
+---------------------------------------------------------------------- */
+
+
+
+
+/* 5 - Page Top Section 
+---------------------------------------------------------------------- */
+.site-title{
+	text-align:center;
+	font-size:60px;
+	position:absolute;
+	top: 40%;
+    left: 40%;
+
+
+}
+
+.bg-fh{
+	height: 100vh;
+}
+
+#page-top .section-name span:before,
+#page-top .section-name span:after{
+	content:none;
+}
+
+/* 5 - Page Top Section End 
+---------------------------------------------------------------------- */
+
+
+
+/* 6 - About Us Section
+---------------------------------------------------------------------- */
+
+.background-fix	{
+	background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+/* 6 - About Us Section End 
+---------------------------------------------------------------------- */
+
+
+
+
+/* 7 - Subscribe Section
+---------------------------------------------------------------------- */
+
+form.news-letter{
+	max-width:550px;
+	margin:auto;
+	height:60px;
+	margin-top:70px;
+	position:relative;
+}
+form.news-letter .form-control{
+	height:60px;
+	padding-right:75px;
+}
+form.news-letter .btn{
+	width:60px;
+	height:60px;
+	border:1px solid #fff;
+	position:absolute;
+	top:0;
+	right:0;
+	font-size:25px;
+}
+
+form.news-letter .btn:hover{
+	color:#3498db;
+}
+#subscribe-loading {
+	display: none;
+	line-height: 45px;
+	cursor: inherit;
+}
+#subscribe-loading:hover{
+	color: inherit;
+}
+.subscribe-message{
+	text-align: center;
+	font-size: 1.125em;
+}
+
+.alert-warning{
+	color: #ffffff;
+	position: absolute;
+	background: rgba(52, 152, 219,1);
+	display: none;
+	left: 25px;
+	bottom:60px;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+.alert-warning:after{
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 12px;
+	border-color: rgba(52, 152, 219,1) transparent  transparent transparent;
+	left: 25px;
+	bottom: -24px;
+}
+/* 7 - Subscribe Section End 
+---------------------------------------------------------------------- */
+
+
+
+
+/* 8 - Contact Section
 ---------------------------------------------------------------------- */
 #contact .next-section a{
 
@@ -540,17 +858,39 @@ text-align: justify;
 	font-size: 1.125em;
 }
 
-/* 3 - Contact Section End 
+/* 8 - Contact Section End 
+---------------------------------------------------------------------- */
+
+
+
+
+/* 9 - Footer Section  
+---------------------------------------------------------------------- */
+#footer-section{
+	width: 100%;
+	min-height: 80px;
+}
+#footer-section p{
+	margin: 0;
+	padding: 25px 15px; 
+	text-align: center;
+	line-height: 30px;
+	color: #1a1a1a;
+}
+#footer-section p a{
+	color: #3498db;
+}
+/* 9 - Footer Section End 
 ---------------------------------------------------------------------- */
 
 
 
 
 
-/* 4 - Media Query 
+/* 10 - Media Query 
 ---------------------------------------------------------------------- */
 
-/* 4.1 - media screen and (max-width: 992px)
+/* 10.1 - media screen and (max-width: 992px)
 ------------------------------------------------ */
 @media screen and (max-width: 992px){
 	.container{
@@ -580,13 +920,13 @@ text-align: justify;
 */
 
 
-/* 4.1 - media screen and (max-width: 992px)  End
+/* 10.1 - media screen and (max-width: 992px)  End
 ------------------------------------------------ */
 
 
 
 
-/* 4.2 - media screen and (max-width: 768px)
+/* 10.2 - media screen and (max-width: 768px)
 ------------------------------------------------ */
 
 
@@ -609,22 +949,22 @@ text-align: justify;
 	}
 }
 
-/* 4.2 - media screen and (max-width: 768px) End
+/* 10.2 - media screen and (max-width: 768px) End
 ------------------------------------------------ */
 
 
-/* 4.3 - media screen and (max-width: 1170px)
+/* 10.3 - media screen and (max-width: 1170px)
 ------------------------------------------------ */
 @media (min-width: 1170px){
 	.container{
 		width:1170px;
 	}
 }
-/* 4.3 - media screen and (max-width: 1170px) End
+/* 10.3 - media screen and (max-width: 1170px) End
 ------------------------------------------------ */
 
 
-/* 4 - Media Query End
+/* 10 - Media Query End
 ---------------------------------------------------------------------- */
 
 
@@ -678,7 +1018,7 @@ text-align: justify;
     }
 }
 
-/* 5 - Form Section 
+/* Form Section 
 ---------------------------------------------------------------------- */
 #form{
 	color: black;
@@ -724,17 +1064,17 @@ text-align: justify;
  }
 
 
-/* 5 - Form Section  End 
+/* Form Section  End 
 ---------------------------------------------------------------------- */
     
-/* 6 - Order Summary Section
+/* Order Summary Section
 ---------------------------------------------------------------------- */
 .box-catalog{
 	text-align: center;
 	color: black;
 	font-size: 24px;
-	margin-bottom: 25px;
 	margin-top: 25px;
+	margin-bottom: 25px;
     background-color: white;
     border: 1px solid white;
     border-radius: 0px;
@@ -1079,109 +1419,5 @@ input[name="door_color"]:checked + span:before {
   text-decoration: underline dotted black;*/
 }
 
-/* 6 - Order Summary Section End
+/* Order Summary Section End
 ---------------------------------------------------------------------- */
-
-
-/* 7 - Gird Masonry
----------------------------------------------------------------------- */
-
-.grid1 {
-
-	padding: 0;
-	overflow-y: auto;
-	display: block;
-	width: 70%;
-	margin-right: auto;
-	margin-left: auto;
-	height: 850px;
-	position: relative;
-	text-align:center;
-
-
-
-}
-
-/* clearfix */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
-
-/* ---- grid-item ---- */
-.grid-item{
-	display: inline-block;
-	border: solid 15px white;
-	margin: 10px; /*space between image*/
-	vertical-align: top;
-	text-align:left;
-}
-
-.grid-item img {
-	float: left;
-	width: 300px;
-	height: auto;
-}
-
-.grid-item--width2 img{ 
-	width: 655px; 
-	height: auto;
-}
-
-.header-gallery{
-	width: 100%;
-	height: 100%;
-	background: white;
-}
-
-.footer-gallery{
-	width: 100%;
-	height: 100%;
-	background: white;
-	color: black;
-	font-size: 2em;
-	float: left;
-}
-
-.footer-gallery a {
-	color: black;
-	text-decoration: none;
-	cursor: default;
-}
-
-.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover {
-	color: red;
-	cursor: pointer;
-}
-
-.footer-gallery .glyphicon-shopping-cart:active,.footer-gallery .glyphicon-shopping-cart:hover {
-	color: #ffcd00;
-	cursor: pointer;
-}
-
-.glyphicon {
-    position: relative;
-    top: 4px;
-    display: inline-block;
-    font-family: 'Glyphicons Halflings';
-    font-style: normal;
-    font-weight: 400;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-
-.glyphicon-shopping-cart, .glyphicon-heart{
-	color: grey;
-}
-
-/* 7 - Gird Masonry End
----------------------------------------------------------------------- */
-
-
-#page-order{
-    background-repeat: no-repeat;
-    background-size: cover;
-}
