@@ -36,7 +36,7 @@ while($row = $doorsQuery->fetch_object()){
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>ORDER US</title>
+  <title>Gallery</title>
 
   <!-- Bootstrap  -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
