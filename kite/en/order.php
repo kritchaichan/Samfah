@@ -7,7 +7,7 @@ $doorsQuery = $objCon->query("
     SELECT
     picture_door.Picture_Door_ID,
     picture_door.Picture_Door_Name,
-	picture_door.Picture_Door_Type,
+	 picture_door.Picture_Door_Type,
     COUNT(picture_door_like.LIKE_ID) As likes
 
     FROM picture_door
@@ -106,17 +106,17 @@ $(document).ready(function(){
   <div class="slide order" id="second">
     <section id="page-order" data-background-image="../images/background/welcome.jpg">
       <div class="container-order">
-        <div class="content-image">
-          <div class="box-catalog">CLASSIC CATALOGUE</div>
-          <div class="grid1">
-          
-              <?php foreach ($doors as $door): ?>
+          <div class="box-catalog">
+            <a href="" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
+            CLASSIC CATALOGUE
+            <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
+          </div>
+          <div class="grid1"><!-- gird1-->
+            <?php foreach ($doors as $door): ?>
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
-              <?php if($door->Picture_Door_Type == "Classic"){
-				$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
-			  }
-			  ?>
+              <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
+            }?>
                 <img src="<?=$path_door?>" alt="door" >
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
