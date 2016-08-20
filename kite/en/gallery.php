@@ -168,7 +168,7 @@
         </div>
     </div>
 </div>
-<!-- end hover gakkery show for medium , small / mobile , tablet -->
+<!-- end hover gallery show for medium , small / mobile , tablet -->
 <!-- contact show large / desktop -->
 <div class="background-contact">
     <div class="border-contact">
