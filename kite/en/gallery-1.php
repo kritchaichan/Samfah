@@ -112,7 +112,6 @@ $(document).ready(function(){
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
                 <a href="order-like.php?type=picture_door&id=<?php echo $door->Picture_Door_ID; ?>" id=""><?php echo $door->likes; ?><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
