@@ -165,16 +165,16 @@ $(document).ready(function(){
                   <label><input type="checkbox" id="acsr2" name="Acsr2" value="Frame"><span>Frame</span></label>
                   <label><input type="checkbox" id="acsr3" name="Acsr3" value="Glass"><span>Glass work</span></label>
                 </div>
-              <div class="col-md-12">
-                <div class="option-product" onclick="$('#color').show();$('#style').hide();"><!--/option-product/-->
-                  <label>Select Wood</label>
-                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="wood_color" id="wood_color" src="../images/no_image.png" alt="ไม้"><span class="wood_color_name"></span></label>
-                </div><!--/end option-product/-->
-                <div class="option-product" onclick="$('#color').hide();$('#style').show();"><!--/option-product/-->
-                  <label>Select Framing</label>
-                  <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="frame" id="frame" src="../images/no_image.png" alt="ไม้"><span class="frame_name"></span></label>
-                </div><!--/end option-product/-->
-              </div>
+                <div class="col-md-12">
+                  <div class="option-product" onclick="$('#color').show();$('#style').hide();"><!--/option-product/-->
+                    <label>Select Wood</label>
+                    <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="wood_color" id="wood_color" src="../images/no_image.png" alt="ไม้"><span class="wood_color_name"></span></label>
+                  </div><!--/end option-product/-->
+                  <div class="option-product" onclick="$('#color').hide();$('#style').show();"><!--/option-product/-->
+                    <label>Select Framing</label>
+                    <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="frame" id="frame" src="../images/no_image.png" alt="ไม้"><span class="frame_name"></span></label>
+                  </div><!--/end option-product/-->
+                </div>
               </div>
               <div class="col-md-4">
                 <div class="col-md-12">
@@ -208,6 +208,10 @@ $(document).ready(function(){
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="col-md-12">
+              <div type="button" id="btn_add_order" class="box-order btn box-form btn-block top30" onClick="JavaScript:doCallAjax();" >+</div>
+              <div class="btn btn-block "><h2>Next</h2></div>
             </div>
           </div>
         </div><!-- /.container -->
