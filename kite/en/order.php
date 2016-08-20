@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 
 require_once ('../app/config.inc.php');
 
@@ -40,10 +40,13 @@ while($row = $doorsQuery->fetch_object()){
 
   <!-- Bootstrap  -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+
+
   <!-- CSS  -->
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
-
+  <!-- Lightbox CSS -->
+  <link rel="stylesheet" type="text/css" href="../assets/css/lightbox.min.css">
   <!-- ICON  -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
@@ -117,7 +120,8 @@ $(document).ready(function(){
               <div class="header-gallery"><!-- header-gallery -->
               <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
             }?>
-                <img src="<?=$path_door?>" alt="door" >
+                
+                <a href="<?=$path_door?>" data-lightbox="image-1" data-title="<?php echo $door->Picture_Door_Name; ?>"><img src="<?=$path_door?>" alt="door" ></a>
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
                 <a href="order-like.php?type=picture_door&id=<?php echo $door->Picture_Door_ID; ?>" id=""><?php echo $door->likes; ?><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
@@ -329,6 +333,9 @@ $(document).ready(function(){
 <!-- Custom JavaScript Functions -->
 <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
 <!-- Masonry js -->
+<script src="../assets/js/lightbox.min.js"></script>
+<script src="../assets/js/lightbox-plus-jquery.min.js"></script>
+<!-- Lightbox js -->
 <script>
   $('#color').hide();
   $('#style').hide();
