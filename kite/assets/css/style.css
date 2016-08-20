@@ -1202,13 +1202,13 @@ height:100%;
 }
 .container-image-hover .textbox {
 position:absolute;
-top:0px;
+top:50px;
 bottom: 0px;
 /*left:0;*/
 right: 0;
-width:45%;
-height:150px;
-margin-right:-170%;
+width:30%;
+height:0px;
+margin-right:-150%;
 font-weight: bold;
 }
 .textbox h1

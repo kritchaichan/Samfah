@@ -9,64 +9,9 @@
         </div>
     </div>
 </div>
-<!-- hover gallery shoe for larg / desktop -->
-<!--<div class="visible-lg">
-    <div class="container">
-        <div class="size-hover-gallery">
-            <a  href="">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="container-image-hover">
-                        <img src="../images/gallery/gallery-hover-1.jpg">
-                        <div class="textbox">
-                            <h1 class="text">SHOWROOM</h1>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="container-image-hover">
-                            <img src="../images/gallery/gallery-hover-2.jpg">
-                            <div class="textbox">
-                                <h1 class="text">FOLIOS</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="container-image-hover">
-                            <img src="../images/gallery/gallery-hover-3.jpg">
-                            <div class="textbox">
-                                <h1 class="text">PROCESS</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="row">
-                    <div class="col-lg-12 col-md-12 col-xs-12">
-                        <div class="container-image-hover">
-                            <img src="../images/gallery/gallery-hover-4.jpg">
-                            <div class="textbox">
-                                <h1 class="text">OTHER CREFITS</h1>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </a>
-        </div>
-    </div>
-</div>-->
 <div class="visible-lg">
     <div class="size-hover-gallery">
-        <a href="">
+        <a href="gallery-1.php">
         <div class="container-image-hover hover-image-fillter">
             <img src="../images/gallery/gallery-hover-1.jpg" class="samfah-first-image-hover-gallery">
             <div class="textbox">
@@ -74,7 +19,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="gallery-1.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-2.jpg">
             <div class="textbox">
@@ -82,7 +27,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="gallery-1.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-3.jpg">
             <div class="textbox">
@@ -90,7 +35,7 @@
             </div>
         </div>
         </a>
-        <a href="">
+        <a href="gallery-1.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-4.jpg">
             <div class="textbox">
