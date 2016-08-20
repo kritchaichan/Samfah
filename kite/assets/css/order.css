@@ -1101,7 +1101,7 @@ input[name="door_color"]:checked + span:before {
 	overflow-y: auto;
 	display: block;
 	width: 70%;
-	min-width: 1000px;
+	min-width: 1300px;
 	margin-right: auto;
 	margin-left: auto;
 	height: 850px;
@@ -1126,13 +1126,14 @@ input[name="door_color"]:checked + span:before {
 	margin: 10px; /*space between image*/
 	vertical-align: top;
 	text-align:left;
+	float: left;
 
 }
 
 .grid-item img {
 	float: left;
-	width: 300px;
-	height: auto;
+    width: auto;
+    height: 300px;
 }
 
 .grid-item--width2 img{ 
