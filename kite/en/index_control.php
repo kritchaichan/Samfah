@@ -42,7 +42,7 @@
             <div class="item">
                 <!-- Set Slide Order Us -->
                 <div class="fill">
-                <?php require_once("order.html"); ?>
+                <?php require_once("order.php"); ?>
                 </div>
             </div>
             

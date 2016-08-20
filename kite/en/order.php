@@ -1,3 +1,33 @@
+<?php
+session_start();
+
+require_once ('../app/config.inc.php');
+
+$doorsQuery = $objCon->query("
+    SELECT
+    picture_door.Picture_Door_ID,
+    picture_door.Picture_Door_Name,
+	picture_door.Picture_Door_Type,
+    COUNT(picture_door_like.LIKE_ID) As likes
+
+    FROM picture_door
+
+    LEFT JOIN picture_door_like
+    ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
+	
+	WHERE Picture_Door_Type = 'Classic'
+
+    GROUP BY picture_door.Picture_Door_Name
+
+");
+
+while($row = $doorsQuery->fetch_object()){
+  $doors[] = $row;
+}
+
+//echo '<pre>',print_r($articles,true),'</pre>';
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,75 +79,18 @@ $(document).ready(function(){
 		});
 	});
 
-
-//----- Ajax no JQuery
-	   /*var HttPRequest = false;
-
-	   function doCallAjax() {
-		  HttPRequest = false;
-		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
-			 HttPRequest = new XMLHttpRequest();
-			 if (HttPRequest.overrideMimeType) {
-				HttPRequest.overrideMimeType('text/html');
-			 }
-		  } else if (window.ActiveXObject) { // IE
-			 try {
-				HttPRequest = new ActiveXObject("Msxml2.XMLHTTP");
-			 } catch (e) {
-				try {
-				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
-				} catch (e) {}
-			 }
-		  } 
-		  
-		  if (!HttPRequest) {
-			 alert('Cannot create XMLHTTP instance');
-			 return false;
-		  }
-	
-			var url = 'order-post.php';
-			var pmeters = "door="+encodeURI(document.getElementById('door').value) +
-			"&x="+encodeURI(document.getElementById('x').value) +
-			"&y="+encodeURI(document.getElementById('y').value) +
-			"&z="+encodeURI(document.getElementById('z').value) + 
-			"&quantity="+encodeURI(document.getElementById('quantity').value) +
-			"&Acsr1="+encodeURI(document.getElementById('acsr1').value) + 
-			"&Acsr2="+encodeURI(document.getElementById('acsr2').value) +
-			"&Acsr3="+encodeURI(document.getElementById('acsr3').value) + 
-			"&door_color="+encodeURI(document.getElementById('door_color').value) +
-			"&framing_style="+encodeURI(document.getElementById('framing_style').value) ;
-			
-			//var pmeters = 'myName='+document.getElementById("txtName").value+'&my2='; // 2 Parameters
-			HttPRequest.open('POST',url,true);
-
-			HttPRequest.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-			HttPRequest.setRequestHeader("Content-length", pmeters.length);
-			HttPRequest.setRequestHeader("Connection", "close");
-			HttPRequest.send(pmeters);
-			
-			HttPRequest.onreadystatechange = function()
-			{
-
-				 if(HttPRequest.readyState == 3)  // Loading Request
-				  {
-				   //document.getElementById("Detail-Order-Door").innerHTML = "Now is Loading...";
-				   alert("Now is Loading...");
-				  }
-				  alert('Please see at web page status = '+HttPRequest.readyState);
-
-				 if(HttPRequest.readyState == 4) // Return Request
-				  {
-				   document.getElementById("Detail-Order-Door").innerHTML = HttPRequest.responseText;
-				   //alert("Success !!"+HttPRequest.responseText);
-				  }
-				
-			}
-
-			/*
-			HttPRequest.onreadystatechange = call function .... // Call other function
-			*/
-
-	   //}
+$(document).ready(function(){
+	$("#btn_likes").click(function(){
+			var likes = "#likes_"+$("#PicID").val();
+			$.post("order-like.php", { 
+			data1: $("#PicTYPE").val(), 
+			data2: $("#PicID").val()},
+				function(result){
+					$("#CPS003").html(result);
+				}
+			);
+		});
+	});
 	   
 	</script>	
 <body>
@@ -141,134 +114,22 @@ $(document).ready(function(){
         <div class="content-image">
           <div class="box-catalog">CLASSIC CATALOGUE</div>
           <div class="grid1">
+          
+              <?php foreach ($doors as $door): ?>
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
+              <?php if($door->Picture_Door_Type == "Classic"){
+				$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
+			  }
+			  ?>
+                <img src="<?=$path_door?>" alt="door" >
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">1169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+                <a href="order-like.php?type=picture_door&id=<?php echo $door->Picture_Door_ID; ?>" id=""><?php echo $door->likes; ?><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
                 <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">1169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">119 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            
-            <div class="grid-item grid-item--width2"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CSP003.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">69 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            
-            <div class="grid-item grid-item--width2"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CSP003.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">69 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            
-            <div class="grid-item grid-item--width2"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CSP003.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">69 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-            
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-            <div class="grid-item grid-item--width2"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CSP003.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">69 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-            <div class="grid-item"><!-- gird-item -->
-              <div class="header-gallery"><!-- header-gallery -->
-                <img src="../images/pic_door_classic/CP1.jpg" alt="door" >
-              </div><!-- /End header-gallery -->
-              <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#">169 <span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
-            </div><!-- /End gird-item -->
-
-
+            <?php endforeach; ?>
 
           </div>   
         </div>
