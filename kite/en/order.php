@@ -31,26 +31,21 @@ while($row = $doorsQuery->fetch_object()){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-	<title>ORDER US</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>ORDER US</title>
 
   <!-- Bootstrap  -->
   <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
   <!-- CSS  -->
   <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
   <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
-  
+
   <!-- ICON  -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-  
-
-  <script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
-  <script type="text/javascript" src="../assets/js/jquery.js"></script>
-    
 <style>
 </style>
 
@@ -312,28 +307,28 @@ $(document).ready(function(){
 
 </body>
 
-  <script>
-
-
+<script>
   $('.grid1').masonry({
   itemSelector: '.grid-item',
    columnWidth: 25
   });
+</script>
 
-  </script>
 
-  <script>
-    $('#color').hide();
-    $('#style').hide();
-  </script>
-  <!-- jQuery Library -->
-  <script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
-  <!-- Modernizr js -->
-  <script type="text/javascript" src="../assets/js/modernizr-2.8.0.min.js"></script>
-  <!-- Plugins -->
-  <script type="text/javascript" src="../assets/js/plugins.js"></script>
-  <!-- Custom JavaScript Functions -->
-  <script type="text/javascript" src="../assets/js/functions.js"></script>
-  <!-- Custom JavaScript Functions -->
+<!-- jQuery Library -->
+<script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
+<!-- Modernizr js -->
+<script type="text/javascript" src="../assets/js/modernizr-2.8.0.min.js"></script>
+<!-- Plugins -->
+<script type="text/javascript" src="../assets/js/plugins.js"></script>
+<!-- Custom JavaScript Functions -->
+<script type="text/javascript" src="../assets/js/functions.js"></script>
+<!-- Custom JavaScript Functions -->
+<script type="text/javascript" src="../assets/js/masonry.pkgd.min.js"></script>
+<!-- Masonry js -->
+<script>
+  $('#color').hide();
+  $('#style').hide();
+</script>
 
 </html>
