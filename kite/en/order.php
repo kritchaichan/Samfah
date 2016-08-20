@@ -136,30 +136,32 @@ $(document).ready(function(){
     
 
     <section id="order_summary">
-        <div class="container-order text-center">
-          <div class="box-order">Our Summary</div>
-          <form action="form.php" method="post" name="form2">
-            <div id="box-product"><!--/box-product/-->
-              <div id="model-product"><!--/model-product/-->
+        <div class="container text-center">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="box-order">Our Summary</div>
+            </div>
+            <div class="col-md-12">
+              <div class="col-md-3">
                 <img src="../images/pic_door_classic/CSP002.jpg" alt="door" >
                 <h5>CP1</h5>
-              </div><!--/end model-product/-->
-              <div id="detail-product"><!--/detail-product/-->
-                <div class="detail-form"><!--/detail-form/-->
-                    <input type="hidden" name="door" id="door" value="CSP006">
-                    <label>Size</label>
-                    <label>X : <input type="number" name="x" id="x" min="1" max="300" class="input_css"> Cm</label>
-                    <label>Y : <input type="number" name="y" id="y" min="1" max="500" class="input_css"> Cm</label>
-                    <label>Thickness : <input type="number" name="z" id="z" min="1" max="500" class="input_css"> Inch</label>
-                    <label>Quantity : <input type="number" name="quantity" id="quantity" min="1" max="100" class="input_css"> Pcs</label>
-                </div><!--/end detail-form/-->
-                <div class="detail-form"><!--/detail-form/-->
-                    <label>Accessories</label>
-                    <label><input type="checkbox" id="acsr1" name="Acsr1" value="Door/Windows"><span>Door/Windows</span></label>
-                    <label><input type="checkbox" id="acsr2" name="Acsr2" value="Frame"><span>Frame</span></label>
-                    <label><input type="checkbox" id="acsr3" name="Acsr3" value="Glass"><span>Glass work</span></label>
-                </div><!--/end detail-form/-->
-                
+              </div>
+              <div class="col-md-5 text-left ">
+                <div class="col-md-7">
+                  <input type="hidden" name="door" id="door" value="CSP006">
+                  <label>Size</label>
+                  <label>X : <input type="number" name="x" id="x" min="1" max="300" class="input_css"> Cm</label>
+                  <label>Y : <input type="number" name="y" id="y" min="1" max="500" class="input_css"> Cm</label>
+                  <label>Thickness : <input type="number" name="z" id="z" min="1" max="500" class="input_css"> Inch</label>
+                  <label>Quantity : <input type="number" name="quantity" id="quantity" min="1" max="100" class="input_css"> Pcs</label>
+                </div>
+                <div class="col-md-5">
+                  <label>Accessories</label>
+                  <label><input type="checkbox" id="acsr1" name="Acsr1" value="Door/Windows"><span>Door/Windows</span></label>
+                  <label><input type="checkbox" id="acsr2" name="Acsr2" value="Frame"><span>Frame</span></label>
+                  <label><input type="checkbox" id="acsr3" name="Acsr3" value="Glass"><span>Glass work</span></label>
+                </div>
+              <div class="col-md-12">
                 <div class="option-product" onclick="$('#color').show();$('#style').hide();"><!--/option-product/-->
                   <label>Select Wood</label>
                   <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="wood_color" id="wood_color" src="../images/no_image.png" alt="ไม้"><span class="wood_color_name"></span></label>
@@ -168,41 +170,42 @@ $(document).ready(function(){
                   <label>Select Framing</label>
                   <label><img style="width:77px; height:77px; border:3px solid black; cursor: pointer;" class="frame" id="frame" src="../images/no_image.png" alt="ไม้"><span class="frame_name"></span></label>
                 </div><!--/end option-product/-->
-              </div><!--/end detail-product*/-->
-              <div class="select-product">
-                <div id="color">
-                  <label><input type="radio" name="door_color" id="door_color" value="makalao" 
-                    onclick="$('.wood_color').attr('src','../images/wood_color/makalao.jpg');
-                    $('.wood_color_name').text('Makalao');$('#color').hide();"><span>Makalao</span>
-                  </label>
-                  <label><input type="radio" name="door_color" id="door_color" value="teak" 
-                    onclick="$('.wood_color').attr('src','../images/wood_color/teak.jpg');
-                    $('.wood_color_name').text('Teak');$('#color').hide();"><span>Teak</span>
-                  </label>
-                  <label><input type="radio" name="door_color" id="door_color" value="laored" 
-                    onclick="$('.wood_color').attr('src','../images/wood_color/laored.jpg');
-                    $('.wood_color_name').text('Laored');$('#color').hide();"><span>Laored</span>
-                  </label>
+              </div>
+              </div>
+              <div class="col-md-4">
+                <div class="col-md-12">
+                  <div id="color">
+                    <label><input type="radio" name="door_color" id="door_color" value="makalao" 
+                      onclick="$('.wood_color').attr('src','../images/wood_color/makalao.jpg');
+                      $('.wood_color_name').text('Makalao');$('#color').hide();"><span>Makalao</span>
+                    </label>
+                    <label><input type="radio" name="door_color" id="door_color" value="teak" 
+                      onclick="$('.wood_color').attr('src','../images/wood_color/teak.jpg');
+                      $('.wood_color_name').text('Teak');$('#color').hide();"><span>Teak</span>
+                    </label>
+                    <label><input type="radio" name="door_color" id="door_color" value="laored" 
+                      onclick="$('.wood_color').attr('src','../images/wood_color/laored.jpg');
+                      $('.wood_color_name').text('Laored');$('#color').hide();"><span>Laored</span>
+                    </label>
+                  </div>
+                  <div id="style">
+                    <label><input type="radio" name="framing_style" id="framing_style" value="makalao" 
+                      onclick="$('.frame').attr('src','../images/wood_frame/makalao.jpg');
+                      $('.frame_name').text('Makalao');$('#style').hide();"><span>Makalao</span>
+                    </label>
+                    <label><input type="radio" name="framing_style" id="framing_style" value="teak" 
+                      onclick="$('.frame').attr('src','../images/wood_frame/teak.jpg');
+                      $('.frame_name').text('Teak');$('#style').hide();"><span>Teak</span>
+                    </label>
+                    <label><input type="radio" name="framing_style" id="framing_style" value="laored" 
+                      onclick="$('.frame').attr('src','../images/wood_frame/laored.jpg');
+                      $('.frame_name').text('Laored');$('#style').hide();"><span>Laored</span>
+                    </label>
+                  </div>
                 </div>
-                <div id="style">
-                  <label><input type="radio" name="framing_style" id="framing_style" value="makalao" 
-                    onclick="$('.frame').attr('src','../images/wood_frame/makalao.jpg');
-                    $('.frame_name').text('Makalao');$('#style').hide();"><span>Makalao</span>
-                  </label>
-                  <label><input type="radio" name="framing_style" id="framing_style" value="teak" 
-                    onclick="$('.frame').attr('src','../images/wood_frame/teak.jpg');
-                    $('.frame_name').text('Teak');$('#style').hide();"><span>Teak</span>
-                  </label>
-                  <label><input type="radio" name="framing_style" id="framing_style" value="laored" 
-                    onclick="$('.frame').attr('src','../images/wood_frame/laored.jpg');
-                    $('.frame_name').text('Laored');$('#style').hide();"><span>Laored</span>
-                  </label>
-                </div>
-              </div><!--/end select-product*/-->
-            </div><!--/end box-product*/-->
-                  </form><!--/end form*/-->
-          <div id="btn_add_order" type="button" class="btn box-form btn-block top30" onClick="JavaScript:doCallAjax();" >+</div>
-          <div class="btn btn-block "><h2>Next</h2></div>
+              </div>
+            </div>
+          </div>
         </div><!-- /.container -->
     </section><!-- /#order_summary -->
     <!-- order_summary Section End -->

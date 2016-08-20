@@ -741,6 +741,7 @@ text-align: justify;
     margin-left: auto;
     margin-right: auto;
     width: 70%;
+    min-width: 1300px;
     background-color: white;
     border: 1px solid white;
     border-radius: 0px;
@@ -749,12 +750,18 @@ text-align: justify;
     padding: 0px;
  }
 
- .box-order{
-	text-align: center;
-	color: black;
-	font-size: 24px;
-    width: 70%;
-	margin-top: 25px;
+
+img[alt="door"]{
+  height: 250px;
+  width: auto;
+}
+
+.box-order {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 100%; 
+    margin-top: 25px;
     margin-right: auto;
     margin-bottom: 25px;
     margin-left: auto;
@@ -764,17 +771,41 @@ text-align: justify;
     -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
     box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
     padding: 0px;
- }
-
+}
+/*
+ .box-order {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 100%; 
+    margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    padding: 0px;
+}*/
 #order_summary{
 	color: black;
 }
 
-#box-product{
+form[name="form2"]{
 	width: 70%;
 	min-height: 600px;
 	display: block;
-	margin: 10px auto;
+	margin: auto;
+	position: relative;
+}
+
+#box-product{
+	/*width: 70%;
+	min-height: 600px;
+	display: block;
+	margin: 10px auto;*/
 	font-size: 14px;
 }
 
@@ -1166,12 +1197,12 @@ input[name="door_color"]:checked + span:before {
 	top: 4px;
 }
 
-.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover {
+.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover,.footer-gallery .glyphicon-heart:visited {
 	color: red;
 	cursor: pointer;
 }
 
-.footer-gallery .glyphicon-shopping-cart:active,.footer-gallery .glyphicon-shopping-cart:hover {
+.footer-gallery .glyphicon-shopping-cart:active,.footer-gallery .glyphicon-shopping-cart:hover ,.footer-gallery .glyphicon-shopping-cart:visited {
 	color: #ffcd00;
 	cursor: pointer;
 }
