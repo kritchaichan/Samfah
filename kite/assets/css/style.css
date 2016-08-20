@@ -1214,6 +1214,7 @@ font-weight: bold;
 .textbox h1
 {
     font-size: 50px;
+    position: absolute;
 }
 .container-image-hover:hover .textbox {
 margin-right:200px;
