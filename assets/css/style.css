@@ -547,6 +547,7 @@ text-align: justify;
     right: 0;
     margin: auto;
     z-index: 0;
+    width: 185px;
 }
 
 /* 3 - Welcome Page 
@@ -1572,6 +1573,7 @@ transition: all 0.9s ease;
 .samfah-image-02 img
 {
     width: 180px;
+    height: 250px;
 }
 .samfah-image-02
 {
@@ -1580,6 +1582,7 @@ transition: all 0.9s ease;
 .samfah-image-03 img
 {
     width: 180px;
+    height: 250px;
 }
 .samfah-about-03-all
 {
