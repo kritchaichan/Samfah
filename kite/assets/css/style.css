@@ -1202,7 +1202,7 @@ height:100%;
 }
 .container-image-hover .textbox {
 position:absolute;
-top:50px;
+top:0;
 bottom: 0px;
 /*left:0;*/
 right: 0;
@@ -1225,6 +1225,39 @@ margin-right:0;
 .size-hover-gallery a
 {
     color: #fff;
+}
+.textbox-re
+{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.textbox-abb
+{
+    position: absolute;
+    top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.textbox-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.textbox-tablecell
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.textbox-vl
+{
+    vertical-align: middle;
 }
 /*.container-image-hover:hover img {
 margin-left:100%;

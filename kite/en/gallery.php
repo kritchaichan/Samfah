@@ -15,31 +15,63 @@
         <div class="container-image-hover hover-image-fillter">
             <img src="../images/gallery/gallery-hover-1.jpg" class="samfah-first-image-hover-gallery">
             <div class="textbox">
-                <h1 class="text">OTHER CREFITS</h1>
+                <div class="textbox-re">
+                    <div class="textbox-abb">
+                        <div class="textbox-table">
+                            <div class="textbox-tablecell textbox-vl">
+                                <h1 class="text">OTHER CREFITS</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </a>
-        <a href="gallery-1.php">
+        <a href="gallery-2.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-2.jpg">
             <div class="textbox">
-                <h1 class="text">FOLIOS</h1>
+                <div class="textbox-re">
+                    <div class="textbox-abb">
+                        <div class="textbox-table">
+                            <div class="textbox-tablecell textbox-vl">
+                                <h1 class="text">FOLIOS</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </a>
-        <a href="gallery-1.php">
+        <a href="gallery-3.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-3.jpg">
             <div class="textbox">
-                <h1 class="text">PROCESS</h1>
+                <div class="textbox-re">
+                    <div class="textbox-abb">
+                        <div class="textbox-table">
+                            <div class="textbox-tablecell textbox-vl">
+                                <h1 class="text">PROCESS</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </a>
-        <a href="gallery-1.php">
+        <a href="gallery-4.php">
         <div class="container-image-hover">
         <img src="../images/gallery/gallery-hover-4.jpg">
             <div class="textbox">
-                <h1 class="text">OTHER CREFITS</h1>
+                <div class="textbox-re">
+                    <div class="textbox-abb">
+                        <div class="textbox-table">
+                            <div class="textbox-tablecell textbox-vl">
+                                <h1 class="text">OTHER CREFITS</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         </a>
