@@ -1880,9 +1880,14 @@ transition: all 0.9s ease;
         bottom: 10%;
     }
     /* cover our story mobile */
-    .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
+    .samfah-cover-order-re,.samfah-cover-gallery-re
     {
         height: 232px;
+    }
+    .samfah-cover-ourstory-re
+    {
+        height: 280px;
+        min-height: 0px;
     }
     /* end cover our story mobile */
     .samfah-border-blog-contact
