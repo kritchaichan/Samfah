@@ -14,7 +14,7 @@ $doorsQuery = $objCon->query("
 
     LEFT JOIN picture_door_like
     ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
-	
+
 	WHERE Picture_Door_Type = 'Classic'
 
     GROUP BY picture_door.Picture_Door_Name
@@ -58,17 +58,17 @@ while($row = $doorsQuery->fetch_object()){
 $(document).ready(function(){
 	$("#btn_add_order").click(function(){
 
-			$.post("order-post.php", { 
-			data1: $("#door").val(), 
-			data2: $("#x").val(), 
-			data3: $("#y").val(), 
-			data4: $("#z").val(), 
+			$.post("order-post.php", {
+			data1: $("#door").val(),
+			data2: $("#x").val(),
+			data3: $("#y").val(),
+			data4: $("#z").val(),
 			data5: $("#quantity").val(),
 			data6: $("#acsr1").val(),
 			data7: $("#acsr2").val(),
 			data8: $("#acsr3").val(),
 			data9: $("#door_color").val(),
-			data10: $("#framing_style").val()}, 
+			data10: $("#framing_style").val()},
 				function(result){
 					$("#detailsorders").html(result);
 				}
@@ -93,7 +93,7 @@ $(document).ready(function(){
 				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
 				} catch (e) {}
 			 }
-		  } 
+		  }
 		  if (!HttPRequest) {
 			 alert('Cannot create XMLHTTP instance');
 			 return false;
@@ -113,16 +113,16 @@ $(document).ready(function(){
 				  }
 			}
 	   }
-	</script>	
+	</script>
 <body>
 <div id="main-order">
-  
+
   <div class="samfah-cover-order-re">
       <div class="samfah-cover-order-abb">
           <div class="samfah-cover-order-table">
               <div class="samfah-cover-order-tc samfah-cover-order-vl">
                   <div class="samfah-heading-in-cover-order">
-                      <h1>ORDER</h1>
+                      <h1>ORDER US</h1>
                   </div>
               </div>
           </div>
@@ -138,7 +138,7 @@ $(document).ready(function(){
             <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
           </div>
           <div class="grid1"><!-- gird1-->
-            <?php foreach ($doors as $door): ?>	
+            <?php foreach ($doors as $door): ?>
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
               <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
@@ -158,14 +158,14 @@ $(document).ready(function(){
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
 
-          </div>   
+          </div>
         </div>
-      </div><!-- /.container -->  
+      </div><!-- /.container -->
     </section><!-- /#page-top -->
-    <!-- Page Top Section  End -->  
+    <!-- Page Top Section  End -->
 
 
-    
+
 
     <section id="order_summary">
         <div class="container text-center">
@@ -207,29 +207,29 @@ $(document).ready(function(){
               <div class="col-md-4">
                 <div class="col-md-12">
                   <div id="color">
-                    <label><input type="radio" name="door_color" id="door_color" value="makalao" 
+                    <label><input type="radio" name="door_color" id="door_color" value="makalao"
                       onclick="$('.wood_color').attr('src','../images/wood_color/makalao.jpg');
                       $('.wood_color_name').text('Makalao');$('#color').hide();"><span>Makalao</span>
                     </label>
-                    <label><input type="radio" name="door_color" id="door_color" value="teak" 
+                    <label><input type="radio" name="door_color" id="door_color" value="teak"
                       onclick="$('.wood_color').attr('src','../images/wood_color/teak.jpg');
                       $('.wood_color_name').text('Teak');$('#color').hide();"><span>Teak</span>
                     </label>
-                    <label><input type="radio" name="door_color" id="door_color" value="laored" 
+                    <label><input type="radio" name="door_color" id="door_color" value="laored"
                       onclick="$('.wood_color').attr('src','../images/wood_color/laored.jpg');
                       $('.wood_color_name').text('Laored');$('#color').hide();"><span>Laored</span>
                     </label>
                   </div>
                   <div id="style">
-                    <label><input type="radio" name="framing_style" id="framing_style" value="makalao" 
+                    <label><input type="radio" name="framing_style" id="framing_style" value="makalao"
                       onclick="$('.frame').attr('src','../images/wood_frame/makalao.jpg');
                       $('.frame_name').text('Makalao');$('#style').hide();"><span>Makalao</span>
                     </label>
-                    <label><input type="radio" name="framing_style" id="framing_style" value="teak" 
+                    <label><input type="radio" name="framing_style" id="framing_style" value="teak"
                       onclick="$('.frame').attr('src','../images/wood_frame/teak.jpg');
                       $('.frame_name').text('Teak');$('#style').hide();"><span>Teak</span>
                     </label>
-                    <label><input type="radio" name="framing_style" id="framing_style" value="laored" 
+                    <label><input type="radio" name="framing_style" id="framing_style" value="laored"
                       onclick="$('.frame').attr('src','../images/wood_frame/laored.jpg');
                       $('.frame_name').text('Laored');$('#style').hide();"><span>Laored</span>
                     </label>
@@ -289,20 +289,20 @@ $(document).ready(function(){
                     <td colspan="1"><label>Facebook Name :</label></td>
                     <td colspan="3"><input type="text" name="fbname" class="form-control"/></td>
                   </tr>
-                    
+
                 </tbody>
               </table>
             </div>
             <h5 class="text-center top17" style="vertical-align:top;">your expected delivery date : <input type="text" name="day" size="5">/<input type="text" name="month" size="5">/<input type="text" name="year" size="5"></h5>
           </form>
-          
+
           <h5 class="top30">
             Please confirm your purchase order by clicking "confirm". We will contact back in 24 hrs.
           </h5><!-- /.section-description -->
-          
+
           <h4 class="">
             Thank you for your order.
-          </h4><!-- /.section-description --> 
+          </h4><!-- /.section-description -->
 
           <dib type="button" class="btn box-form btn-block top30">Confirm</dib>
         </div><!-- /.container -->

@@ -12,28 +12,28 @@
 *    2.7 - Text
 *    2.8 - Scroll Bar
 *  3 - Welcome Page
-*  4 - Main Menu 
+*  4 - Main Menu
 *  5 - Page Top Section
 *  6 - About Us Section
 *  7 - Subscribe Section
 *  8 - Contact Section
-*  9 - Footer Section  
-*  10 - Media Query 
+*  9 - Footer Section
+*  10 - Media Query
 *    10.1 - media screen and (max-width: 992px)
 *    10.2 - media screen and (max-width: 768px)
-*    10.3 - media screen and (max-width: 1170px) 
+*    10.3 - media screen and (max-width: 1170px)
 *  11 - Preloader
-*  
+*
 ---------------------------------------------------------------------- */
 
 .hidden-animate{
      opacity:0;
 }
 .visible-animate{
-     opacity:1; 
+     opacity:1;
 }
 
-.loader 
+.loader
 {
 	border: 50px solid #f3f3f3;
 	border-radius: 100%;
@@ -70,7 +70,7 @@
   src: url('../fonts/kunlasatri.ttf');
   unicode-range: U+0E00-U+0E7F;
 }
-/* 1 - Import Google Font End 
+/* 1 - Import Google Font End
 ---------------------------------------------------------------------- */
 
 
@@ -80,7 +80,7 @@
 /* 2 - Global Style
 ---------------------------------------------------------------------- */
 body{
-	
+
 	background-color: white	;
 	color: white;
   	font-family: "PT Sans Narrow", "kunlasatri";
@@ -114,7 +114,7 @@ body{
 }
 .medium {
 	width: 100%;
-	max-width: 100%; 
+	max-width: 100%;
 	height: auto;
 }
 
@@ -222,7 +222,7 @@ a:focus{
 	        transition:all .25s;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
- 	outline: none; 
+ 	outline: none;
  	color: #ffffff;
 }
 .form-control,
@@ -248,7 +248,7 @@ a:focus{
 	display:inline-block;
 	width:120px;
 	height:120px;
-	
+
 	-webkit-border-radius:100%;
 	   -moz-border-radius:100%;
 	    -ms-border-radius:100%;
@@ -272,7 +272,7 @@ a:focus{
 	position:absolute;
 	top:20px;
 	left:35px;
-	
+
 	-webkit-transform:rotate(45deg);
 	   -moz-transform:rotate(45deg);
 	    -ms-transform:rotate(45deg);
@@ -343,7 +343,7 @@ a:focus{
 }
 .social-btn-box,
 .social-btn-box a{
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -391,18 +391,18 @@ a:focus{
    color: #ffffff;
 }
 
-.form-control:-moz-placeholder { 
-   color: #ffffff;  
+.form-control:-moz-placeholder {
+   color: #ffffff;
 }
 
-.form-control::-moz-placeholder { 
-   color: #ffffff;  
+.form-control::-moz-placeholder {
+   color: #ffffff;
 }
 
 .form-control:-ms-input-placeholder{
 	color:#ffffff;
 }
-/* 2.3 - Placeholder color End 
+/* 2.3 - Placeholder color End
 ------------------------------------------ */
 
 
@@ -419,7 +419,7 @@ a:focus{
 	padding-top:20px !important;
 }
 
-/* 2.4 - Height Resize End 
+/* 2.4 - Height Resize End
 ------------------------------------------ */
 
 /* 2.5 - Position
@@ -521,7 +521,7 @@ text-align: justify;
 /* 2.8 - Scroll Bar End
 ------------------------------------------ */
 
-/* 2 - Global Style End 
+/* 2 - Global Style End
 ---------------------------------------------------------------------- */
 
 
@@ -531,7 +531,7 @@ text-align: justify;
 
 
 
-/* 3 - Welcome Page 
+/* 3 - Welcome Page
 ---------------------------------------------------------------------- */
 
 .resize250{
@@ -550,7 +550,7 @@ text-align: justify;
     width: 185px;
 }
 
-/* 3 - Welcome Page 
+/* 3 - Welcome Page
 ---------------------------------------------------------------------- */
 
 
@@ -562,11 +562,11 @@ text-align: justify;
 
 /* 4 - Main Menu
 ---------------------------------------------------------------------- */
-.navbar-default .navbar-nav>li>a:hover, 
+.navbar-default .navbar-nav>li>a:hover,
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a,
-.navbar-default .navbar-nav>.active>a, 
-.navbar-default .navbar-nav>.active>a:hover, 
+.navbar-default .navbar-nav>.active>a,
+.navbar-default .navbar-nav>.active>a:hover,
 .navbar-default .navbar-nav>.active>a:focus{
 	font-size: 22px;
 	color:#000;
@@ -585,7 +585,7 @@ text-align: justify;
 	margin-left:10px;
 	-webkit-font-smoothing:antialiased;
 	-moz-osx-font-smoothing:grayscale;
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -597,7 +597,7 @@ text-align: justify;
 	padding:5px 15px;
 	font-weight:400;
 	font-style:italic;
-	
+
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -607,7 +607,7 @@ text-align: justify;
 .navbar-nav>li>a:hover{
 	padding-left:25px;
 }
-.navbar-default .navbar-collapse, 
+.navbar-default .navbar-collapse,
 .navbar-default .navbar-form{
 	border-color: transparent;
 }
@@ -654,7 +654,7 @@ text-align: justify;
 	#headernavigation{
 		background:rgba(0,0,0,.5);
 	}
-	.navbar-default .navbar-toggle:hover, 
+	.navbar-default .navbar-toggle:hover,
 	.navbar-default .navbar-toggle:focus{
 		background-color:transparent;
 	}
@@ -674,13 +674,13 @@ text-align: justify;
 		float:none !important;
 	}
 }
-/* 4 - Main Menu End 
+/* 4 - Main Menu End
 ---------------------------------------------------------------------- */
 
 
 
 
-/* 5 - Page Top Section 
+/* 5 - Page Top Section
 ---------------------------------------------------------------------- */
 .site-title{
 	text-align:center;
@@ -695,7 +695,7 @@ text-align: justify;
 	content:none;
 }
 
-/* 5 - Page Top Section End 
+/* 5 - Page Top Section End
 ---------------------------------------------------------------------- */
 
 
@@ -710,7 +710,7 @@ text-align: justify;
     background-attachment: fixed;
 }
 
-/* 6 - About Us Section End 
+/* 6 - About Us Section End
 ---------------------------------------------------------------------- */
 
 
@@ -777,7 +777,7 @@ form.news-letter .btn:hover{
 	left: 25px;
 	bottom: -24px;
 }
-/* 7 - Subscribe Section End 
+/* 7 - Subscribe Section End
 ---------------------------------------------------------------------- */
 
 
@@ -793,7 +793,7 @@ form.news-letter .btn:hover{
 	     -o-transform:rotate(180deg);
 	        transform:rotate(180deg);
 }
-#contact-form .col-sm-6, 
+#contact-form .col-sm-6,
 #contact-form .col-sm-10,
 #contact-form .col-sm-2{
 	padding:0;
@@ -877,13 +877,13 @@ form.news-letter .btn:hover{
 	font-size: 1.125em;
 }
 
-/* 8 - Contact Section End 
+/* 8 - Contact Section End
 ---------------------------------------------------------------------- */
 
 
 
 
-/* 9 - Footer Section  
+/* 9 - Footer Section
 ---------------------------------------------------------------------- */
 #footer-section{
 	width: 100%;
@@ -891,7 +891,7 @@ form.news-letter .btn:hover{
 }
 #footer-section p{
 	margin: 0;
-	padding: 25px 15px; 
+	padding: 25px 15px;
 	text-align: center;
 	line-height: 30px;
 	color: #1a1a1a;
@@ -899,14 +899,14 @@ form.news-letter .btn:hover{
 #footer-section p a{
 	color: #3498db;
 }
-/* 9 - Footer Section End 
+/* 9 - Footer Section End
 ---------------------------------------------------------------------- */
 
 
 
 
 
-/* 10 - Media Query 
+/* 10 - Media Query
 ---------------------------------------------------------------------- */
 
 /* 10.1 - media screen and (max-width: 992px)
@@ -994,7 +994,7 @@ form.news-letter .btn:hover{
 	right: 0;*/
 
 	/*bottom: 0;*/
-	
+
 	/*width: 175px;
 	height: 175px;
 	margin: auto;*/
@@ -1488,7 +1488,7 @@ transition: all 0.9s ease;
 }
 .samfah-heading-in-cover-order h1
 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
 }
 /* end cover order */
@@ -1530,7 +1530,7 @@ transition: all 0.9s ease;
 }
 .samfah-cover-gallery-heading h1
 {
-    font-size: 60px;
+    font-size: 40px;
     font-weight: bold;
 }
 /* end cover gallery */
@@ -1745,11 +1745,11 @@ transition: all 0.9s ease;
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
-    cursor: pointer;    
+    cursor: pointer;
 }
 .samfah-google-map iframe
 {
-    
+
 }
 .address-contact
 {
@@ -1783,9 +1783,9 @@ transition: all 0.9s ease;
 {
     padding-top: 10px !important;
 }
-@media screen and (max-width: 640px) 
+@media screen and (max-width: 640px)
 {
-    .carousel-indicators 
+    .carousel-indicators
     {
         bottom: 0;
         top: 193px;
@@ -1821,11 +1821,11 @@ transition: all 0.9s ease;
     {
         text-align: center;
     }
-    .detail-wood-02 
+    .detail-wood-02
     {
         text-align: center;
     }
-    .detail-wood-02 img 
+    .detail-wood-02 img
     {
         width: 285px;
     }
@@ -1869,7 +1869,7 @@ transition: all 0.9s ease;
     }
     .samfah-google-map
     {
-        
+
     }
     .samfah-contact-bg
     {
@@ -1972,11 +1972,11 @@ transition: all 0.9s ease;
     {
         padding-top: 12px;
     }
-    /* end background hover gallery mobile */ 
+    /* end background hover gallery mobile */
 }
-@media only screen and (min-width: 641px) and (max-width: 1025px) 
+@media only screen and (min-width: 641px) and (max-width: 1025px)
 {
-    .carousel-indicators 
+    .carousel-indicators
     {
         bottom: 0;
         top: 275px;
@@ -2094,5 +2094,5 @@ transition: all 0.9s ease;
     {
         padding-top: 12px;
     }
-    /* end background hover gallery mobile */ 
+    /* end background hover gallery mobile */
 }
