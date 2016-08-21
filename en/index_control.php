@@ -41,7 +41,7 @@
             <div class="item">
                 <!-- Set Slide Gallery -->
                 <div class="fill">
-                <?php require_once("gallery.php"); ?>
+                <?php require_once("gallery.html"); ?>
                 </div>
             </div>
             <div class="item">
