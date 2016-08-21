@@ -88,6 +88,11 @@
         $( ".ff" ).slideToggle("slow");
         });
     </script>
+    <script>
+        $( "#botton-chang-map-2" ).click(function() {
+        $( ".ff" ).slideToggle("slow");
+        });
+    </script>
     <!-- end chang map our story -->
     <!-- chang map gallery -->
     <script>
