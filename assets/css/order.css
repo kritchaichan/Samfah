@@ -1,0 +1,1249 @@
+/* Table of contents
+---------------------------------------------------------------------- /
+*
+*  1 - Import Google Font
+*  2 - Global Style
+*    2.1 - Next Section
+*    2.2 - Social Button
+*    2.3 - Placeholder color
+*    2.4 - Height Resize
+*    2.7 - Position
+*    2.6 - Focus
+*    2.7 - Text
+*  3 - Contact Section 
+*  4 - Media Query 
+*    10.1 - media screen and (max-width: 992px)
+*    10.2 - media screen and (max-width: 768px)
+*    10.3 - media screen and (max-width: 1170px) 
+*  5 - Form Section
+*  6 - Order Summary Section
+*  7 - Gird Masonry
+---------------------------------------------------------------------- */
+
+
+
+
+/* 1 - Import Google Font
+---------------------------------------------------------------------- */
+@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+}
+
+@font-face {
+  font-family: 'kunlasatri';
+  src: url('../fonts/kunlasatri.ttf');
+  unicode-range: U+0E00-U+0E7F;
+}
+/* 1 - Import Google Font End 
+---------------------------------------------------------------------- */
+
+/* 2 - Global Style
+---------------------------------------------------------------------- */
+
+}
+
+.scroller {
+  overflow: auto;
+  height: 500px;
+}
+
+.small{
+	width: 50%;
+	max-width: 50%;
+	height: auto;
+}
+.medium {
+	width: 100%;
+	max-width: 100%; 
+	height: auto;
+}
+
+.large {
+	width: 130%;
+	max-width: 130%;
+	height: auto;
+}
+
+.x-large {
+	width: 150%;
+	max-width: 150%;
+	height: auto;
+}
+
+.border-white{
+	border-style: solid;
+    border-color: #ffffff;
+	border-width: 8px;
+	padding: 20px;
+}
+
+.top5 { margin-top:5px; }
+.top7 { margin-top:7px; }
+.top10 { margin-top:10px; }
+.top15 { margin-top:15px; }
+.top17 { margin-top:17px; }
+.top30 { margin-top:30px; }
+
+a{
+	color: #3498db;
+}
+a:focus{
+	outline:none;
+	outline-offset:inherit;
+}
+.container-order{
+	background: no-repeat;
+    background-position:top center;
+    background-attachment:inherit;
+    background-size:cover;
+    height: 950px;
+ 
+}
+.pattern{
+	background:rgba(0,0,0,.4) url(../images/pattern.png);
+	padding-top:100px;
+}
+.container{
+	overflow:hidden;
+}
+.section-name{
+	font-weight:700;
+	text-align:center;
+	text-transform:uppercase;
+	margin:0;
+}
+.section-name span{
+	display:inline-block;
+	position:relative;
+	padding-bottom:15px;
+}
+.section-name span:before,
+.section-name span:after{
+	content:"";
+	width:100%;
+	height:10px;
+	border-bottom:1px double #fff;
+	position:absolute;
+	left:0;
+}
+.section-name span:before{
+	bottom:0;
+}
+.section-name span:after{
+	bottom:2px;
+}
+.section-title{
+	text-align:center;
+	text-transform:uppercase;
+	font-weight:300;
+	font-size:80px;
+}
+.section-description{
+	font-weight:300;
+	text-align:center;
+	line-height:30px;
+}
+.form-control{
+	padding: 6px 30px;
+}
+.form-control,
+.btn{
+	background-color:transparent;
+
+	-webkit-border-radius:0;
+	   -moz-border-radius:0;
+	    -ms-border-radius:0;
+	     -o-border-radius:0;
+	        border-radius:0;
+
+	-webkit-transition:all .25s;
+	   -moz-transition:all .25s;
+	    -ms-transition:all .25s;
+	     -o-transition:all .25s;
+	        transition:all .25s;
+}
+.btn:focus, .btn:active:focus, .btn.active:focus {
+ 	outline: none; 
+ 	color: #ffffff;
+}
+.form-control,
+.form-control:focus{
+	border-color:#fff;
+	color:#fff;
+
+	-webkit-box-shadow:none;
+	   -moz-box-shadow:none;
+	    -ms-box-shadow:none;
+	     -o-box-shadow:none;
+	        box-shadow:none;
+}
+
+
+/* 2.1 - Next Section
+------------------------------------------ */
+.next-section{
+	text-align:center;
+}
+.next-section a{
+	cursor:pointer;
+	display:inline-block;
+	width:120px;
+	height:120px;
+	
+	-webkit-border-radius:100%;
+	   -moz-border-radius:100%;
+	    -ms-border-radius:100%;
+	     -o-border-radius:100%;
+	        border-radius:100%;
+
+	background-color:rgba(0,0,0,.2);
+	box-shadow: 0 0 1px rgba(255,255,255,.2);
+	margin:70px;
+	padding-top:45px;
+	position:relative;
+}
+
+.next-section a span{
+	display:inline-block;
+	width:50px;
+	height:50px;
+	border:2px solid #fff;
+	border-left-color:transparent;
+	border-top-color:transparent;
+	position:absolute;
+	top:20px;
+	left:35px;
+	
+	-webkit-transform:rotate(45deg);
+	   -moz-transform:rotate(45deg);
+	    -ms-transform:rotate(45deg);
+	     -o-transform:rotate(45deg);
+	        transform:rotate(45deg);
+
+	opacity:.4;
+
+	-webkit-transition:all .25s;
+	   -moz-transition:all .25s;
+	    -ms-transition:all .25s;
+	     -o-transition:all .25s;
+	        transition:all .25s;
+}
+.next-section a:hover span{
+	opacity:1;
+}
+/* 2.1 - Next Section
+------------------------------------------ */
+
+
+
+/* 2.2 - Social Button
+------------------------------------------ */
+.social-btn-container{
+	text-align:center;
+	margin:50px auto 0 auto;
+}
+.social-btn-container .social-btn-box{
+	display:inline-block;
+	width:60px;
+	height:60px;
+
+	-webkit-transform:rotate(45deg);
+	   -moz-transform:rotate(45deg);
+	    -ms-transform:rotate(45deg);
+	     -o-transform:rotate(45deg);
+	        transform:rotate(45deg);
+
+	border:1px solid #fff;
+
+	-webkit-border-radius:5px;
+	   -moz-border-radius:5px;
+	    -ms-border-radius:5px;
+	     -o-border-radius:5px;
+	        border-radius:5px;
+
+	margin:15px;
+	position:relative;
+	overflow:hidden;
+}
+.social-btn-container .social-btn-box a{
+	color:#fff;
+	font-size:26px;
+	line-height:80px;
+	display:inline-block;
+	width:80px;
+	height:80px;
+	position:absolute;
+	top:-10px;
+	left:-10px;
+
+	-webkit-transform:rotate(-45deg);
+	   -moz-transform:rotate(-45deg);
+	    -ms-transform:rotate(-45deg);
+	     -o-transform:rotate(-45deg);
+	        transform:rotate(-45deg);
+}
+.social-btn-box,
+.social-btn-box a{
+	
+	-webkit-transition:all .25s;
+	   -moz-transition:all .25s;
+	    -ms-transition:all .25s;
+	     -o-transition:all .25s;
+	        transition:all .25s;
+}
+.social-btn-box:hover{
+	border-color:transparent;
+}
+.social-btn-box .facebook-btn:hover{
+	background:#3B5998;
+	color: #fff;
+}
+.social-btn-box .twitter-btn:hover{
+	background:#55ACEE;
+	color: #fff;
+}
+.social-btn-box .linkedin-btn:hover{
+	background:#0077b5;
+	color: #fff;
+}
+.social-btn-box .google-plus-btn:hover{
+	background:#db514f;
+	color: #fff;
+}
+.social-btn-box .youtube-btn:hover{
+	background:#cc181e;
+	color: #fff;
+}
+.social-btn-box .github-btn:hover{
+	background:#2b2e30;
+	color: #fff;
+}
+.social-btn-box .a:hover{
+	background:#3498db;
+	color: #fff;
+}
+/* 2.2 - Social Button
+------------------------------------------ */
+
+
+/* 2.3 - Placeholder color
+------------------------------------------ */
+.form-control::-webkit-input-placeholder {
+   color: #ffffff;
+}
+
+.form-control:-moz-placeholder { 
+   color: #ffffff;  
+}
+
+.form-control::-moz-placeholder { 
+   color: #ffffff;  
+}
+
+.form-control:-ms-input-placeholder{
+	color:#ffffff;
+}
+/* 2.3 - Placeholder color End 
+------------------------------------------ */
+
+
+/* 2.4 - Height Resize
+------------------------------------------ */
+
+.pattern.height-resize{
+	padding-top: 40px;
+}
+.height-resize .time-count-container{
+	margin-top: 20px !important;
+}
+.height-resize .team-container .col-sm-4{
+	padding-top:20px !important;
+}
+
+/* 2.4 - Height Resize End 
+------------------------------------------ */
+
+/* 2.5 - Position
+------------------------------------------ */
+
+.center-page{
+	position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.left{
+
+}
+/* 2.5 - Position End
+------------------------------------------ */
+
+/* 2.6 - Focus
+------------------------------------------ */
+.focus {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+       -o-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+          transition: all 1s ease;
+}
+
+.focus:hover {
+  opacity: 0.5;
+}
+
+
+/* 2.6 - Focus End
+------------------------------------------ */
+
+
+/* 2.7 - Text
+------------------------------------------ */
+
+.Paratext {
+	text-indent: 1.5em; /*  Paragrahp  */
+	text-align: justify;
+}
+
+.justify {
+text-align: justify;
+}
+
+.Fontsize-large{
+	font-size: large;
+}
+
+.Fontsize-x-large{
+	font-size: x-large;
+}
+
+.Fontsize-xx-large{
+	font-size: xx-large;
+}
+
+.Fontsize-small{
+	font-size: small;
+}
+
+.Fontsize-x-small{
+	font-size: x-small;
+}
+
+
+
+/* 2.7 - Text End
+------------------------------------------ */
+
+
+/* 2 - Global Style End 
+---------------------------------------------------------------------- */
+
+
+/* 3 - Contact Section
+---------------------------------------------------------------------- */
+#contact .next-section a{
+
+	-webkit-transform:rotate(180deg);
+	   -moz-transform:rotate(180deg);
+	    -ms-transform:rotate(180deg);
+	     -o-transform:rotate(180deg);
+	        transform:rotate(180deg);
+}
+#contact-form .col-sm-6, 
+#contact-form .col-sm-10,
+#contact-form .col-sm-2{
+	padding:0;
+}
+#contact-form{
+	margin-top:70px;
+	margin-bottom:10px;
+}
+#contact-form  input{
+	height:60px;
+}
+#contact-form #first_name{
+	border-right:0px solid transparent;
+	border-bottom:0px solid transparent;
+}
+#contact-form #last_name{
+	border-bottom:0px solid transparent;
+}
+#contact-form  #email{
+	border-right:0px solid transparent;
+}
+#contact-form textarea.form-control{
+	height:130px;
+	border-top:0px solid transparent;
+	padding-top: 20px;
+}
+#contact-form  .btn{
+	font-size:50px;
+	height:130px;
+	border:1px solid #fff;
+	border-left:0px solid transparent;
+	border-top:0px solid transparent;
+}
+#contact-form  .btn:hover{
+	color:#3498db;
+}
+#contact-form  .col-sm-6,
+#contact-form  .col-sm-10{
+	position: relative;
+}
+.first-name-error,
+.last-name-error,
+.contact-email-error,
+.contact-subject-error,
+.contact-message-error{
+	color: #ffffff;
+	position: absolute;
+	background: rgba(52, 152, 219,1);
+	display: none;
+	left: 25px;
+	top: -30px;
+	padding: 5px 10px;
+	border-radius: 3px;
+}
+
+.first-name-error:after,
+.last-name-error:after,
+.contact-email-error:after,
+.contact-subject-error:after,
+.contact-message-error:after{
+	position: absolute;
+	content: "";
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 12px;
+	border-color: rgba(52, 152, 219,1) transparent  transparent transparent;
+	left: 25px;
+	bottom: -24px;
+}
+#contact-loading{
+	display: none;
+	cursor: inherit;
+	line-height: 110px;
+}
+#contact-loading:hover{
+	color: inherit;
+}
+.contact-message{
+	text-align: center;
+	font-size: 1.125em;
+}
+
+/* 3 - Contact Section End 
+---------------------------------------------------------------------- */
+
+
+
+
+
+/* 4 - Media Query 
+---------------------------------------------------------------------- */
+
+/* 4.1 - media screen and (max-width: 992px)
+------------------------------------------------ */
+@media screen and (max-width: 992px){
+	.container{
+		width:100%;
+		max-width:992px;
+	}
+}
+@media (min-width: 830px){
+	.container{
+		width:100%;
+		max-width:830px;
+	}
+}
+
+/*@media screen and (max-width: 1000px){
+	.container-order{
+		width:100%;
+		max-width:1000px;
+	}
+}
+@media (min-width: 1000px){
+	.container-order{
+		width:100%;
+		max-width:1000px;
+	}
+}
+*/
+
+
+/* 4.1 - media screen and (max-width: 992px)  End
+------------------------------------------------ */
+
+
+
+
+/* 4.2 - media screen and (max-width: 768px)
+------------------------------------------------ */
+
+
+
+@media screen and (max-width: 768px){
+	.section-title{
+		font-size:40px;
+	}
+	#contact-form #first_name{
+		border-right:1px solid #fff;
+	}
+	#contact-form #subject{
+		border-top:0px solid transparent;
+	}
+	#contact-form  #email{
+		border-right:1px solid #fff;
+	}
+		#contact-form  .btn{
+	border-left:1px solid #fff;
+	}
+}
+
+/* 4.2 - media screen and (max-width: 768px) End
+------------------------------------------------ */
+
+
+/* 4.3 - media screen and (max-width: 1170px)
+------------------------------------------------ */
+@media (min-width: 1170px){
+	.container{
+		width:1170px;
+	}
+}
+/* 4.3 - media screen and (max-width: 1170px) End
+------------------------------------------------ */
+
+
+/* 4 - Media Query End
+---------------------------------------------------------------------- */
+
+
+
+
+
+
+/*small*/
+@media only screen and (max-width: 40em) 
+{
+    .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+    .samfah-image-about-profile img
+    {
+        width: 384px;
+    }
+    .samfah-content-02 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+}
+
+/*medium*/
+@media only screen and (min-width: 40.063em) and (max-width: 64em) 
+{ 
+    .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+}
+
+/* 5 - Form Section 
+---------------------------------------------------------------------- */
+#form{
+	color: black;
+	width: 100%;
+}
+
+#form div{
+	padding-right: 0px;
+    padding-left: 0px;
+}
+.box-form{
+	font-size: 24px;
+	width: 70%;
+	margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    padding: 0px;
+ }
+
+.btn-form:active , .btn-block:active{
+	box-shadow: none;
+	outline: none;
+}
+
+ .box-form h1{
+ 	margin: 0;
+    padding: 15px;
+ }
+
+ #form input{
+ 	border-bottom: dotted 1px black;
+ 	height: 20px;
+ 	padding-right: 0px;
+    padding-left: 0px;
+    color: black;
+ }
+
+ #form table{
+ 	margin: 0 auto;
+ }
+
+
+/* 5 - Form Section  End 
+---------------------------------------------------------------------- */
+    
+/* 6 - Order Summary Section
+---------------------------------------------------------------------- */
+.box-catalog{
+	text-align: center;
+	color: black;
+	font-size: 24px;
+	margin-bottom: 25px;
+    /* margin-top: 25px; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    padding: 0px;
+ }
+
+
+img[alt="door"]{
+  height: 250px;
+  width: auto;
+}
+
+.box-order {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 100%; 
+    margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    padding: 0px;
+}
+/*
+ .box-order {
+    text-align: center;
+    color: black;
+    font-size: 24px;
+    width: 100%; 
+    margin-top: 25px;
+    margin-right: auto;
+    margin-bottom: 25px;
+    margin-left: auto;
+    background-color: #e8e8e8;
+    border: 1px solid #e8e8e8;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.05);
+    padding: 0px;
+}*/
+#order_summary{
+	color: black;
+}
+
+form[name="form2"]{
+	width: 70%;
+	min-height: 600px;
+	display: block;
+	margin: auto;
+	position: relative;
+}
+
+#box-product{
+	/*width: 70%;
+	min-height: 600px;
+	display: block;
+	margin: 10px auto;*/
+	font-size: 14px;
+}
+
+#model-product{
+  width: 200px;
+  height: 350px;
+  float: left;
+}
+
+#model-product img{
+  width: 180px;
+}
+
+#detail-product{
+  width: 400px;
+  height: 350px;
+  float: left;
+  text-align: left;
+  margin: 0px 0px;
+}
+
+#model-product h5{
+  border: 0px;
+  padding:0px;
+  margin: 0px;
+}
+
+.detail-form{
+  width: 200px;
+  height: 150px;
+  float: left;
+}
+
+.option-product{
+  width: 100px;
+  float: left;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.select-product{
+  width: 200px;
+  height: 350px;
+  float: left;
+  overflow: auto;
+  margin: 15px 0px;
+}
+
+
+/* HTML5 Boilerplate accessible hidden styles */
+input[name="door"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 0px;
+}
+
+input[name="door"] + span {
+  display: block;
+  cursor: pointer;
+  line-height: 19px;
+  vertical-align: bottom;
+}
+
+/* the basic, unchecked style */
+input[name="door"] + span:before {
+  
+  content: '';
+  display: inline-block;
+  /*background-color: #000;*/
+  /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .5), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/  
+  border: 1px solid black;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  margin: 1px 0px;
+  border-radius: 5em;
+  margin-right: 0.5em;
+  font-size: 14px;
+  vertical-align: top;
+  transition: 0.5s ease all;
+  /*
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin: 1px 0px;
+  border-radius: 0em;
+  border: 0.15em solid #fff;
+  background-color: #aaa;
+  box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+  margin-right: 0.5em;
+  transition: 0.5s ease all;*/
+}
+
+/* the checked style using the :checked pseudo class */
+input[name="door"]:checked + span:before {
+  
+  content: "\2713";
+  /*background-color: #000;*/
+  /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
+  /*text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);*/
+  color: #000;
+  text-align: center;
+  line-height: 20px;
+}
+
+
+/* HTML5 Boilerplate accessible hidden styles */
+input[name="Acsr1"]{
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 0px;
+}
+
+input[name="Acsr1"] + span {
+  display: block;
+  cursor: pointer;
+  line-height: 19px;
+  vertical-align: bottom;
+}
+
+/* the basic, unchecked style */
+input[name="Acsr1"] + span:before {
+  
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px 0px;
+  border-radius: 1em;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 0.05em #000;
+  margin-right: 0.5em;
+  vertical-align: top;
+  transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+input[name="Acsr1"]:checked + span:before {
+  background: #555;
+  box-shadow: 0 0 0 0.1em #000;
+}
+
+/* HTML5 Boilerplate accessible hidden styles */
+input[name="Acsr2"]{
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 0px;
+}
+
+input[name="Acsr2"] + span {
+  display: block;
+  cursor: pointer;
+  line-height: 19px;
+  vertical-align: bottom;
+}
+
+/* the basic, unchecked style */
+input[name="Acsr2"] + span:before {
+  
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px 0px;
+  border-radius: 1em;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 0.05em #000;
+  margin-right: 0.5em;
+  vertical-align: top;
+  transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+input[name="Acsr2"]:checked + span:before {
+  background: #555;
+  box-shadow: 0 0 0 0.1em #000;
+}
+
+/* HTML5 Boilerplate accessible hidden styles */
+input[name="Acsr3"]{
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 0px;
+}
+
+input[name="Acsr3"] + span {
+  display: block;
+  cursor: pointer;
+  line-height: 19px;
+  vertical-align: bottom;
+}
+
+/* the basic, unchecked style */
+input[name="Acsr3"] + span:before {
+  
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 1px 0px;
+  border-radius: 1em;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 0.05em #000;
+  margin-right: 0.5em;
+  vertical-align: top;
+  transition: 0.5s ease all;
+}
+
+/* the checked style using the :checked pseudo class */
+input[name="Acsr3"]:checked + span:before {
+  background: #555;
+  box-shadow: 0 0 0 0.1em #000;
+}
+
+
+.model{
+	width: 150px;
+  
+}
+
+#order_summary label {
+  display: block;
+  margin: 0px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* HTML5 Boilerplate accessible hidden styles */
+input[name="framing_style"], input[name="door_color"] {
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
+  width: 0px;
+}
+
+input[name="framing_style"] + span , input[name="door_color"] + span {
+  display: block;
+  cursor: pointer;
+  color: black;
+}
+
+/* the basic, unchecked style */
+input[name="framing_style"] + span:before , input[name="door_color"] + span:before { 
+  
+  content: '';
+  margin: 0 auto;
+  display: block;
+  width: 100px;
+  height: 75px;
+  border:2px solid black;
+}
+
+input[value="makalao"] + span:before {
+  background: url(../../images/wood_color/makalao.jpg)no-repeat center center;
+  background-size: 100px;
+}
+
+input[value="teak"] + span:before {
+  background: url(../../images/wood_color/teak.jpg)no-repeat center center;
+  background-size: 100px;
+}
+
+input[value="laored"] + span:before {
+  background: url(../../images/wood_color/laored.jpg)no-repeat center center;
+  background-size: 100px;
+}
+
+/* the checked style using the :checked pseudo class */
+input[name="door_color"]:checked + span:before {
+  
+}
+
+.frame_name, .wood_color_name{
+	display: block;
+}
+
+.input_css{
+  border-radius: 10px;
+  border: 1px solid black;
+  text-align: center;
+
+}
+
+.form_css{
+  text-align: left;
+  width:100%;
+  border: 0px;
+  border-bottom: 1px dotted black;
+  /*-moz-text-decoration: underline dotted black;
+  -webkit-text-decoration: underline dotted black;
+  text-decoration: underline dotted black;*/
+}
+
+/* 6 - Order Summary Section End
+---------------------------------------------------------------------- */
+
+
+/* 7 - Gird Masonry
+---------------------------------------------------------------------- */
+
+.grid1 {
+
+	padding: 0;
+	overflow-y: auto;
+	display: block;
+	width: 70%;
+	margin-right: auto;
+	margin-left: auto;
+	height: 850px;
+	position: relative;
+	text-align:center;
+
+
+
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- grid-item ---- */
+.grid-item{
+	display: inline-block;
+	border: solid 15px white;
+	margin: 10px; /*space between image*/
+	vertical-align: top;
+	text-align:left;
+	float: left;
+
+}
+
+.grid-item img {
+	float: left;
+    width: auto;
+    height: 300px;
+}
+
+.grid-item--width2 img{ 
+	width: 655px; 
+	height: auto;
+}
+
+.header-gallery{
+	width: 100%;
+	height: 100%;
+	background: white;
+}
+
+.footer-gallery{
+	width: 100%;
+	height: 100%;
+	background: white;
+	color: black;
+	font-size: 2em;
+	float: left;
+}
+
+.footer-gallery a {
+	color: black;
+	text-decoration: none;
+	cursor: default;
+}
+
+.footer-gallery .glyphicon-heart, .footer-gallery .glyphicon-shopping-cart{
+	top: 4px;
+}
+
+.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover,.footer-gallery .glyphicon-heart:visited {
+	color: red;
+	cursor: pointer;
+}
+
+.footer-gallery .glyphicon-shopping-cart:active,.footer-gallery .glyphicon-shopping-cart:hover ,.footer-gallery .glyphicon-shopping-cart:visited {
+	color: #ffcd00;
+	cursor: pointer;
+}
+
+.glyphicon {
+    position: relative;
+    top: 0px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.glyphicon-shopping-cart, .glyphicon-heart{
+	color: grey;
+}
+
+/* 7 - Gird Masonry End
+---------------------------------------------------------------------- */
+
+
+#page-order{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.arrow-btn, .arrow-btn:hover, .arrow-btn:active {
+	text-decoration: none;
+	color: black;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 36px;
+    font-size: larger;
+
+}
+
+.glyphicon-menu-left:before {
+    content: "\2770";
+}
+.glyphicon-menu-right:before {
+    content: "\2771";
+}
+
