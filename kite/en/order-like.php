@@ -28,7 +28,7 @@ switch ($type) {
     break;
 }
 
-/*$doorsQuery = $objCon->query("
+$doorsQuery = $objCon->query("
     SELECT
     COUNT(picture_door_like.LIKE_ID) As likes
 
@@ -45,16 +45,15 @@ switch ($type) {
 ");
 
 while($row = $doorsQuery->fetch_object()){
-	$doors[] = $row;
+	$ds[] = $row;
 }
 
-foreach ($doors as $door){
+foreach ($ds as $door){
 	echo $door->likes;	
-}*/
-
-header('Location: order.php#page-order');
 }
 
+//header('Location: order.php#page-order');
+}
 
  ?>
  

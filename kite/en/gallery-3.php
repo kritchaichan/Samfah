@@ -77,18 +77,43 @@ $(document).ready(function(){
     });
   });
 
-$(document).ready(function(){
-  $("#btn_likes").click(function(){
-      var likes = "#likes_"+$("#PicID").val();
-      $.post("order-like.php", { 
-      data1: $("#PicTYPE").val(), 
-      data2: $("#PicID").val()},
-        function(result){
-          $("#CPS003").html(result);
-        }
-      );
-    });
-  });
+	//Ajax Btn Likes
+	var HttPRequest = false;
+	   function doCallAjax(PicID) {
+		  HttPRequest = false;
+		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
+			 HttPRequest = new XMLHttpRequest();
+			 if (HttPRequest.overrideMimeType) {
+				HttPRequest.overrideMimeType('text/html');
+			 }
+		  } else if (window.ActiveXObject) { // IE
+			 try {
+				HttPRequest = new ActiveXObject("Msxml2.XMLHTTP");
+			 } catch (e) {
+				try {
+				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
+				} catch (e) {}
+			 }
+		  } 
+		  if (!HttPRequest) {
+			 alert('Cannot create XMLHTTP instance');
+			 return false;
+		  }
+			var url = "order-like.php?type=picture_door&id="+PicID;
+			HttPRequest.open('GET',url,true);
+			HttPRequest.send(null);
+			HttPRequest.onreadystatechange = function()
+			{
+				 if(HttPRequest.readyState == 3)  // Loading Request
+				  {
+				   document.getElementById("likes"+PicID).innerHTML = "Now is Loading...";
+				  }
+				 if(HttPRequest.readyState == 4) // Return Request
+				  {
+				   document.getElementById("likes"+PicID).innerHTML = HttPRequest.responseText;
+				  }
+			}
+	   }
      
   </script> 
 <body>
@@ -102,16 +127,16 @@ $(document).ready(function(){
             <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
           </div>
           <div class="grid1"><!-- gird1-->
-            <?php foreach ($doors as $door): ?>
+            <?php foreach ($doors as $door): ?>	
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
               <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
             }?>
-                
                 <a href="<?=$path_door?>" data-lightbox="image-1" data-title="<?php echo $door->Picture_Door_Name; ?>"><img src="<?=$path_door?>" alt="door" ></a>
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="order-like.php?type=picture_door&id=<?php echo $door->Picture_Door_ID; ?>" id=""><?php echo $door->likes; ?><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+                <a href="#page-order" id="" onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);"><span id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
