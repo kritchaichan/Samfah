@@ -156,8 +156,8 @@
                         <h1>CONTACT US</h1>
                     </div>
                     <div class="address-1 ff-gallery">
-                        <p>ชั้น 2 เบลล์ คอนโด (อยู่ด้านหลังเซนทรัลพระราม 9) 33/4 ถนนพระราม 9 เขตห้วยขวาง กรุงเทพฯ</p>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.311418118858!2d100.56714951529739!3d13.760084200807574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29e8bebe79b15%3A0x7e096fb783c7a968!2z4LiE4Lit4LiZ4LmC4LiU4LmA4Lia4LilIOC4nuC4o-C4sOC4o-C4suC4oSA5IEJlbGxlIEdyYW5kIFJhbWE5!5e0!3m2!1sth!2sth!4v1471186176291" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
+                        <p>หมู่ที่ 8 91 ถนนตลิ่งชัน-สุพรรณบุรี Tambon Lahan, Amphoe Bang Bua Thong, Chang Wat Nonthaburi 11110</p>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.2743983651633!2d100.38671036605916!3d13.977195163950775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e28f2d53f2b8db%3A0xa07865089c9b4726!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5geC4i-C4oeC4n-C5ieC4suC4nOC4peC4tOC4leC4oOC4seC4k-C4keC5jOC5hOC4oeC5iSDguIjguLPguIHguLHguJQ!5e1!3m2!1sen!2sth!4v1471753922712" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     <div class="address-2 ff-gallery">
                         <p>เมืองพัทยา อำเภอ บางละมุง ชลบุรี 20150</p>
