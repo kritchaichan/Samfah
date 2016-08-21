@@ -550,6 +550,11 @@ text-align: justify;
     width: 185px;
 }
 
+#page-top{
+	min-width: 100%;
+	min-height: 100%;
+}
+
 /* 3 - Welcome Page
 ---------------------------------------------------------------------- */
 
