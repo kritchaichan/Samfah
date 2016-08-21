@@ -1157,6 +1157,8 @@ input[name="door_color"]:checked + span:before {
 	text-align:left;
 	float: left;
     border-radius: 8px;
+    /*min-width: 230px;
+    max-width: 480px;*/
 
 }
 
@@ -1248,3 +1250,19 @@ input[name="door_color"]:checked + span:before {
     content: "\2771";
 }
 
+
+.post-caption{
+	margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: 100%;
+    font-family: inherit;
+    vertical-align: baseline;
+}
+
+.number-like{
+	width: 20px;
+}

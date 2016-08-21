@@ -146,8 +146,14 @@ $(document).ready(function(){
                 <a href="<?=$path_door?>" data-lightbox="image-1" data-title="<?php echo $door->Picture_Door_Name; ?>"><img src="<?=$path_door?>" alt="door" ></a>
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#page-order" id="" onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);"><span id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                <div class="post-caption"></div>
+                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);">
+                  <span class="number-like" id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span>
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                </a>
+                <a>
+                  <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+                </a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
