@@ -1156,6 +1156,7 @@ input[name="door_color"]:checked + span:before {
 	vertical-align: top;
 	text-align:left;
 	float: left;
+    border-radius: 8px;
 
 }
 
@@ -1181,7 +1182,7 @@ input[name="door_color"]:checked + span:before {
 	height: 100%;
 	background: white;
 	color: black;
-	font-size: 2em;
+	font-size: 1.5em;
 	float: left;
 }
 
@@ -1196,7 +1197,7 @@ input[name="door_color"]:checked + span:before {
 }
 
 .footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover,.footer-gallery .glyphicon-heart:visited {
-	color: red;
+	color: #807f7f;
 	cursor: pointer;
 }
 
@@ -1218,7 +1219,7 @@ input[name="door_color"]:checked + span:before {
 
 
 .glyphicon-shopping-cart, .glyphicon-heart{
-	color: grey;
+	color: #b7b7b7;
 }
 
 /* 7 - Gird Masonry End
