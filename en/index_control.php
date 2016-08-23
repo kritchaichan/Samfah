@@ -100,6 +100,11 @@
         $( ".ff-gallery" ).slideToggle("slow");
         });
     </script>
+    <script>
+        $( "#botton-chang-map-2-gallery" ).click(function() {
+        $( ".ff-gallery" ).slideToggle("slow");
+        });
+    </script>
     <!-- end chang map gallery -->
     <!-- chang order -->
     <script>

@@ -1275,6 +1275,10 @@ margin-right:0;
 {
     vertical-align: middle;
 }
+.samfah-botton-contact
+{
+    
+}
 /*.container-image-hover:hover img {
 margin-left:100%;
 }*/
@@ -1652,11 +1656,16 @@ transition: all 0.9s ease;
     display: inline-block;
     margin-top: 20px;
     cursor: pointer;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 .botton-chang-map p
 {
     margin: 0px 0px 0px;
     padding: 10px;
+    font-size: 24px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 .background-contact
 {
@@ -1789,6 +1798,11 @@ transition: all 0.9s ease;
 }
 @media screen and (max-width: 640px)
 {
+    .botton-chang-map
+    {
+        display: -webkit-box;
+        display: -moz-box;
+    }
     .carousel-indicators
     {
         bottom: 0;
