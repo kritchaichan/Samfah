@@ -90,122 +90,73 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                     <!-- /.col-lg-12 -->
 
                     <div class="row">
-                      <div class="radio-inline" class="col-lg-6">
-                          <label>Gallery Type</label>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>Radio 1
-                              </label>
-                          </div>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                              </label>
-                          </div>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                              </label>
-                          </div>
-                      </div>
-                      <div class="radio-inline" class="col-lg-6">
-                          <label>Order Type</label>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">Radio 1
-                              </label>
-                          </div>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">Radio 2
-                              </label>
-                          </div>
-                          <div class="radio">
-                              <label>
-                                  <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">Radio 3
-                              </label>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- End Radio Button Group -->
-
-                  <div class="form-group">
-                    <form name="upload" method="post" action="upload_picture.php?Action=Save" style="text-align: left;" enctype="multipart/form-data">
-                      <label>เลือกรูปภาพที่ต้องการ</label>
-                      <input type="file" name="fileField" id="fileField" accept="image/JPG" onchange="readURL(this);">
-                      <label><img id="blah" src="../../images/no_image.png" alt="your image" /></label>
-                      <label><input class="btn btn-lg btn-default btn-block" type="Submit" name="Insert" value="Insert" class="button"></label>
-                    </form>
+                        <form name="upload" method="POST" action="upload_picture-action.php" style="text-align: left;" enctype="multipart/form-data">
+                            <div class="radio-inline">
+                                <label>Gallery Type</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="Showroom" checked>SHOWROOM
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios2" value="Folios">FOLIOS
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios3" value="Process">PROCESS
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios4" value="Othercrafts">OTHER CRAFTS
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="radio-inline">
+                                <label>Order Type</label>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios5" value="Classic">CLASSIC
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios6" value="Contemporary">CONTEMPORARY
+                                    </label>
+                                </div>
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" name="optionsRadios" id="optionsRadios7" value="Modern">MODERN
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                                  <label>Code Name</label>
+                                                  <input type="text" name="codename" value="" class="form-control">
+                                                  <p class="help-block">Example : CPS002,CTG005 etc.</p>
+                            </div>
+                            <div class="form-group">
+                                                  <label>Caption</label>
+                                                  <input type="text" name="caption" value="" class="form-control">
+                                                  <p class="help-block">Example : Wonderful Door.</p>
+                            </div>
+                            <div class="form-group">
+                                <label>เลือกรูปภาพที่ต้องการ</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="file" name="fileToUpload" id="fileToUpload" accept="image/JPG" onchange="readURL(this);">
+                            </div>
+                            <div class="form-group">
+                                <img id="blah" src="../../images/no_image.png" alt="your image" />
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-lg btn-default btn-block" type="Submit" name="Action" value="Save" >
+                            </div>
+                        </form>
                   </div>
                   <!-- End Form Input Picture -->
-                  <?php
-                  @ini_set('display_errors', '0');
-								if($_GET["Action"] == "Save")
-								{
-										//@ini_set('display_errors', '0');
-										 //image upload
-										$filename = $_FILES['fileToUpload']['name'] ;
-										$array_last = explode("." , $filename);
-										$name = $array_last[0];
-										$num = count($array_last)-1;
-										$lastname = strtolower($array_last[$num]);
-
-										if(!file_exists($_FILES['fileToUpload']['tmp_name']) || !is_uploaded_file($_FILES['fileToUpload']['tmp_name'])) {
-								        echo '<script>alert("Can\'t Upload Image Please Upload try again.");</script>';
-										}
-										// Allow certain file formats
-										else if($lastname != "jpg" && $lastname != "jpeg") {
-										echo '<script>alert("Sorry, only JPG, JPEG files are allowed.");</script>';
-										}
-										else if ($_FILES["fileToUpload"]["size"] > 200000) {
-										echo '<script>alert("Sorry, your file is too large.");</script>';
-										}
-										else
-											{
-
-												$door_c = substr($name,0,2);
-
-													if($door_c == "CS"){
-														$location = "pic_door_classic";
-														$type = "Classic";
-														$db = "classic";
-
-													}
-													else if ($door_c == "CT"){
-														$location = "pic_door_contemporary";
-														$type = "Contemporary";
-														$db = "contemporary";
-													}
-													else if($door_c == "MD"){
-														$location = "pic_door_modern";
-														$type = "Modern";
-														$db = "modern";
-													}
-
-												//end upload image
-												$date=  date('Y-m-d H:i:s');
-												$sql="insert into ".$db;
-												$sql.=" (name,type,date) VALUES ";
-												$sql.=" ('{$name}','{$type}','{$date}') ";
-
-												$result = mysql_query ($sql);
-
-												if($result == false){
-										       		echo '<script>alert("Upload Image Unsuccess!");</script>';
-												}
-												else if ($result == true){
-
-												}
-												    $newname = $name . "." . $array_last[1];
-													$path = getcwd().DIRECTORY_SEPARATOR;
-													$newpath = substr($path, 0,29);
-													$target = $newpath."/".$location."/".$newname;
-													move_uploaded_file($_FILES['fileToUpload']['tmp_name'] , $target);
-													echo '<script>alert("Upload Image Success!");</script>';
-											}
-								}
-						?>
-
 
                 </div>
                 <!-- /.row -->

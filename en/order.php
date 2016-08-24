@@ -7,7 +7,7 @@ $doorsQuery = $objCon->query("
     SELECT
     picture_door.Picture_Door_ID,
     picture_door.Picture_Door_Name,
-	 picture_door.Picture_Door_Type,
+	  picture_door.Picture_Door_Type,
     COUNT(picture_door_like.LIKE_ID) As likes
 
     FROM picture_door
@@ -15,9 +15,11 @@ $doorsQuery = $objCon->query("
     LEFT JOIN picture_door_like
     ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
 
-	WHERE Picture_Door_Type = 'Classic'
+	  WHERE Picture_Door_Type = 'Classic'
 
     GROUP BY picture_door.Picture_Door_Name
+
+    ORDER BY picture_door.Picture_Door_ID
 
 ");
 
