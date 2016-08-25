@@ -14,8 +14,8 @@ $doorsQuery = $objCon->query("
 
     LEFT JOIN picture_door_like
     ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
-  
-  WHERE Picture_Door_Type = 'Classic'
+
+  WHERE Picture_Door_Type = 'Process'
 
     GROUP BY picture_door.Picture_Door_Name
 
@@ -58,17 +58,17 @@ while($row = $doorsQuery->fetch_object()){
 $(document).ready(function(){
   $("#btn_add_order").click(function(){
 
-      $.post("order-post.php", { 
-      data1: $("#door").val(), 
-      data2: $("#x").val(), 
-      data3: $("#y").val(), 
-      data4: $("#z").val(), 
+      $.post("order-post.php", {
+      data1: $("#door").val(),
+      data2: $("#x").val(),
+      data3: $("#y").val(),
+      data4: $("#z").val(),
       data5: $("#quantity").val(),
       data6: $("#acsr1").val(),
       data7: $("#acsr2").val(),
       data8: $("#acsr3").val(),
       data9: $("#door_color").val(),
-      data10: $("#framing_style").val()}, 
+      data10: $("#framing_style").val()},
         function(result){
           $("#detailsorders").html(result);
         }
@@ -94,7 +94,7 @@ $(document).ready(function(){
 				   HttPRequest = new ActiveXObject("Microsoft.XMLHTTP");
 				} catch (e) {}
 			 }
-		  } 
+		  }
 		  if (!HttPRequest) {
 			 alert('Cannot create XMLHTTP instance');
 			 return false;
@@ -114,8 +114,8 @@ $(document).ready(function(){
 				  }
 			}
 	   }
-     
-  </script> 
+
+  </script>
 <body>
 <div id="main-order">
   <div class="slide order" id="second">
@@ -127,25 +127,28 @@ $(document).ready(function(){
             <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
           </div>
           <div class="grid1"><!-- gird1-->
-            <?php foreach ($doors as $door): ?>	
+            <?php foreach ($doors as $door): ?>
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
-              <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
+              <?php if($door->Picture_Door_Type == "process"){$path_door  = '../images/process/'.$door->Picture_Door_Name.'.jpg';
             }?>
                 <a href="<?=$path_door?>" data-lightbox="image-1" data-title="<?php echo $door->Picture_Door_Name; ?>"><img src="<?=$path_door?>" alt="door" ></a>
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
-                <a href="#page-order" id="" onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);"><span id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></a>
-                <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
-              </div><!-- /End footer-gallery -->
+                <div class="post-caption"></div>
+                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);">
+                  <span class="number-like" id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span>
+                  <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+                </a>
+                <a>
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
 
-          </div>   
+          </div>
         </div>
-      </div><!-- /.container -->  
+      </div><!-- /.container -->
     </section><!-- /#page-top -->
-    <!-- Page Top Section  End -->  
+    <!-- Page Top Section  End -->
   </div>
 </div>
 
