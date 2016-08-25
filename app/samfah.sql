@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-08-25 21:37:22
+Date: 2016-08-25 23:14:26
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -189,30 +189,6 @@ INSERT INTO `picture_door` VALUES ('95', 'DUP20', 'Showroom', null, '2016-08-23 
 INSERT INTO `picture_door` VALUES ('96', 'DUP21', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('97', 'DUP22', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('98', 'DUP26', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('99', 'DUP', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('100', 'DUP1', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('101', 'DUP2', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('102', 'DUP3', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('103', 'DUP4', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('104', 'DUP5', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('105', 'DUP6', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('106', 'DUP7', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('107', 'DUP8', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('108', 'DUP9', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('109', 'DUP10', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('110', 'DUP11', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('111', 'DUP12', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('112', 'DUP13', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('113', 'DUP14', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('114', 'DUP15', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('115', 'DUP16', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('116', 'DUP17', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('117', 'DUP18', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('118', 'DUP19', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('119', 'DUP20', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('120', 'DUP21', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('121', 'DUP22', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('122', 'DUP26', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('123', 'MDG001', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('124', 'MDG002', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('125', 'MDG003', 'Showroom', null, '2016-08-23 00:00:00');
@@ -223,76 +199,7 @@ INSERT INTO `picture_door` VALUES ('129', 'MDG002', 'Showroom', null, '2016-08-2
 INSERT INTO `picture_door` VALUES ('130', 'MDG003', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('131', 'MDG004', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('132', 'MDG005', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('133', 'MDP001', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('134', 'MDP002', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('135', 'MDP003', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('136', 'MDP004', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('137', 'MDP005', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('138', 'MDP006', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('139', 'MDP007', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('140', 'MDP008', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('141', 'MDP009', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('142', 'MDP010', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('143', 'MDP011', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('144', 'MDP012', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('145', 'MDP013', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('146', 'MDP014', 'showrooom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('147', 'MDP015', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('148', 'MDP001', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('149', 'MDP002', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('150', 'MDP003', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('151', 'MDP004', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('152', 'MDP005', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('153', 'MDP006', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('154', 'MDP007', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('155', 'MDP008', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('156', 'MDP009', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('157', 'MDP010', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('158', 'MDP011', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('159', 'MDP012', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('160', 'MDP013', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('161', 'MDP014', 'showrooom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('162', 'MDP015', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('163', 'folios-1', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('164', 'folios-2', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('165', 'folios-3', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('166', 'folios-4', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('167', 'folios-5', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('168', 'folios-6', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('169', 'folios-7', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('170', 'folios-8', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('171', 'folios-9', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('172', 'folios-10', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('173', 'folios-11', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('174', 'folios-12', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('175', 'folios-13', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('176', 'folios-14', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('177', 'folios-15', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('178', 'folios-16', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('179', 'folios-17', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('180', 'folios-18', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('181', 'folios-19', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('182', 'folios-20', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('183', 'folios-21', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('184', 'folios-22', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('185', 'folios-23', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('186', 'folios-24', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('187', 'folios-25', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('188', 'folios-26', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('189', 'folios-27', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('190', 'folios-28', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('191', 'folios-29', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('192', 'folios-30', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('193', 'folios-31', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('194', 'folios-32', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('195', 'folios-33', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('196', 'folios-34', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('197', 'folios-35', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('198', 'folios-36', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('199', 'folios-37', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('200', 'folios-38', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('201', 'folios-39', 'Folios', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('202', 'folios-40', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('203', 'folios-1', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('204', 'folios-2', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('205', 'folios-3', 'Folios', null, '2016-08-24 00:00:00');
@@ -350,7 +257,6 @@ INSERT INTO `picture_door` VALUES ('256', 'process-15', 'Process', null, '2016-0
 INSERT INTO `picture_door` VALUES ('257', 'process-16', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('258', 'process-17', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('259', 'process-18', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('260', 'process-19', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('261', 'process-20', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('262', 'process-21', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('263', 'process-22', 'Process', null, '2016-08-24 00:00:00');
@@ -361,34 +267,6 @@ INSERT INTO `picture_door` VALUES ('267', 'process-26', 'Process', null, '2016-0
 INSERT INTO `picture_door` VALUES ('268', 'process-27', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('269', 'process-28', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('270', 'process-8', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('271', 'process-1', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('272', 'process-2', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('273', 'process-3', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('274', 'process-4', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('275', 'process-5', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('276', 'process-6', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('277', 'process-7', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('278', 'process-9', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('279', 'process-10', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('280', 'process-11', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('281', 'process-12', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('282', 'process-13', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('283', 'process-14', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('284', 'process-15', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('285', 'process-16', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('286', 'process-17', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('287', 'process-18', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('288', 'process-19', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('289', 'process-20', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('290', 'process-21', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('291', 'process-22', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('292', 'process-23', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('293', 'process-24', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('294', 'process-25', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('295', 'process-26', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('296', 'process-27', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('297', 'process-28', 'Process', null, '2016-08-24 00:00:00');
-INSERT INTO `picture_door` VALUES ('298', 'process-8', 'Process', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('299', 'folios-41', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('300', 'folios-42', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('301', 'folios-43', 'Folios', null, '2016-08-24 00:00:00');
@@ -417,50 +295,11 @@ CREATE TABLE `picture_door_like` (
   `Picture_Door_ID` varchar(30) NOT NULL,
   `Session_ID` varchar(40) NOT NULL,
   PRIMARY KEY (`LIKE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=123 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of picture_door_like
 -- ----------------------------
-INSERT INTO `picture_door_like` VALUES ('84', '1', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('85', '2', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('86', '3', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('87', '4', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('88', '9', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('89', '8', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('90', '13', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('91', '12', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('92', '11', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('93', '10', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('94', '5', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('95', '6', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('96', '7', '7de9ug4rrdbm0k807o8vih5g03');
-INSERT INTO `picture_door_like` VALUES ('97', '2', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('98', '6', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('99', '7', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('100', '13', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('101', '12', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('102', '11', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('103', '10', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('104', '5', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('105', '8', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('106', '9', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('107', '4', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('108', '3', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('109', '1', '50suvda952adj9842964jqbnl6');
-INSERT INTO `picture_door_like` VALUES ('110', '7', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('111', '8', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('112', '6', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('113', '11', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('114', '2', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('115', '9', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('116', '13', 'ij7qhrpk8k3hqi5maadnc2dh37');
-INSERT INTO `picture_door_like` VALUES ('117', '1', '3o6u3c0ig9u9ucga8quun5def2');
-INSERT INTO `picture_door_like` VALUES ('118', '2', '3o6u3c0ig9u9ucga8quun5def2');
-INSERT INTO `picture_door_like` VALUES ('119', '6', '3o6u3c0ig9u9ucga8quun5def2');
-INSERT INTO `picture_door_like` VALUES ('120', '49', 'rv933237ac1bq9e1umic3bvc95');
-INSERT INTO `picture_door_like` VALUES ('121', '48', 'rv933237ac1bq9e1umic3bvc95');
-INSERT INTO `picture_door_like` VALUES ('122', '47', 'rv933237ac1bq9e1umic3bvc95');
 
 -- ----------------------------
 -- Table structure for user_bo

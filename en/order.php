@@ -19,7 +19,7 @@ $doorsQuery = $objCon->query("
 
     GROUP BY picture_door.Picture_Door_Name
 
-    ORDER BY picture_door.Picture_Door_ID
+    ORDER BY picture_door.Picture_Door_ID Desc
 
 ");
 
@@ -80,7 +80,7 @@ $(document).ready(function(){
 	});
 	//Ajax Btn Likes
 	var HttPRequest = false;
-	   function doCallAjax(PicID) {
+	   function doCallAjax(PicID,PicTYPE) {
 		  HttPRequest = false;
 		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
 			 HttPRequest = new XMLHttpRequest();
@@ -100,7 +100,8 @@ $(document).ready(function(){
 			 alert('Cannot create XMLHTTP instance');
 			 return false;
 		  }
-			var url = "order-like.php?type=picture_door&id="+PicID;
+			var url = "order-like.php?check=picture_door&id="+PicID+"&type="+PicTYPE;
+			//var url = "order-like.php?type=picture_door&id="+PicID;
 			HttPRequest.open('GET',url,true);
 			HttPRequest.send(null);
 			HttPRequest.onreadystatechange = function()
@@ -143,13 +144,15 @@ $(document).ready(function(){
             <?php foreach ($doors as $door): ?>
             <div class="grid-item"><!-- gird-item -->
               <div class="header-gallery"><!-- header-gallery -->
-              <?php if($door->Picture_Door_Type == "Classic"){$path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
-            }?>
+              <?php if($door->Picture_Door_Type == "Classic"){
+				  $path_door  = '../images/pic_door_classic/'.$door->Picture_Door_Name.'.jpg';
+				  $type = $door->Picture_Door_Type;
+				  }?>
                 <a href="<?=$path_door?>" data-lightbox="image-1" data-title="<?php echo $door->Picture_Door_Name; ?>"><img src="<?=$path_door?>" alt="door" ></a>
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
                 <div class="post-caption"></div>
-                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);">
+                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>,'<?php echo $door->Picture_Door_Type; ?>');">
                   <span class="number-like" id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span>
                   <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 </a>

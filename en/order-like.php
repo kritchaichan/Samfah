@@ -2,13 +2,15 @@
 session_start();
 require_once ('../app/config.inc.php');
 
-if(isset($_GET['type'],$_GET['id'])){
-
-$type = $_GET['type'];
+if(isset($_GET['check'],$_GET['type'],$_GET['id'])){
+//if(isset($_GET['type'],$_GET['id'])){
+$check = $_GET['check'];
 $id = $_GET['id'];
+$type = $_GET['type'];
 $session_id = session_id();
 
-switch ($type) {
+switch ($check) {
+//switch ($type) {
   case 'picture_door':
     $objCon->query("
     INSERT INTO picture_door_like (Picture_Door_ID,Session_ID)
@@ -36,8 +38,8 @@ $doorsQuery = $objCon->query("
 
     LEFT JOIN picture_door_like
     ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
-	
-	WHERE picture_door.Picture_Door_Type = 'Classic' AND picture_door.Picture_Door_ID = '{$id}'
+
+	WHERE picture_door.Picture_Door_Type = '{$type}' AND picture_door.Picture_Door_ID = '{$id}'
 
     GROUP BY picture_door.Picture_Door_Name
 
@@ -49,12 +51,10 @@ while($row = $doorsQuery->fetch_object()){
 }
 
 foreach ($ds as $door){
-	echo $door->likes;	
+	echo $door->likes;
 }
 
 //header('Location: order.php#page-order');
 }
 
  ?>
- 
- 

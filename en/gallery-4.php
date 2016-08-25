@@ -7,7 +7,7 @@ $doorsQuery = $objCon->query("
     SELECT
     picture_door.Picture_Door_ID,
     picture_door.Picture_Door_Name,
-   picture_door.Picture_Door_Type,
+    picture_door.Picture_Door_Type,
     COUNT(picture_door_like.LIKE_ID) As likes
 
     FROM picture_door
@@ -15,9 +15,11 @@ $doorsQuery = $objCon->query("
     LEFT JOIN picture_door_like
     ON picture_door.Picture_Door_ID = picture_door_like.Picture_Door_ID
 
-  WHERE Picture_Door_Type = 'Classic'
+    WHERE Picture_Door_Type = 'Classic'
 
     GROUP BY picture_door.Picture_Door_Name
+
+    ORDER BY picture_door.Picture_Door_ID Desc
 
 ");
 
@@ -79,7 +81,7 @@ $(document).ready(function(){
 
 	//Ajax Btn Likes
 	var HttPRequest = false;
-	   function doCallAjax(PicID) {
+	   function doCallAjax(PicID,PicTYPE) {
 		  HttPRequest = false;
 		  if (window.XMLHttpRequest) { // Mozilla, Safari,...
 			 HttPRequest = new XMLHttpRequest();
@@ -99,7 +101,7 @@ $(document).ready(function(){
 			 alert('Cannot create XMLHTTP instance');
 			 return false;
 		  }
-			var url = "order-like.php?type=picture_door&id="+PicID;
+			var url = "order-like.php?check=picture_door&id="+PicID+"&type="+PicTYPE;
 			HttPRequest.open('GET',url,true);
 			HttPRequest.send(null);
 			HttPRequest.onreadystatechange = function()
@@ -136,11 +138,12 @@ $(document).ready(function(){
               </div><!-- /End header-gallery -->
               <div class="footer-gallery"><!-- /footer-gallery -->
                 <div class="post-caption"></div>
-                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>);">
+                <a onClick="JavaScript:doCallAjax(<?php echo $door->Picture_Door_ID; ?>,'<?php echo $door->Picture_Door_Type; ?>');">
                   <span class="number-like" id="likes<?php echo $door->Picture_Door_ID; ?>"><?php echo $door->likes; ?></span>
                   <span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
                 </a>
                 <a>
+              </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
 
