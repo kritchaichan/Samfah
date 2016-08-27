@@ -91,7 +91,7 @@ if($_POST["Action"] == "Save")
         echo $target;
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'] , $target);
         echo '<script>alert("Upload Image Success!");</script>';
-        //echo '<script>window.location.href = "upload_picture.php";</script>';
+        echo '<script>window.location.href = "upload_picture.php";</script>';
         //header('Location:upload_picture.php');
       }
   }
