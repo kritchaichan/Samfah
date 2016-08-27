@@ -33,14 +33,37 @@ if($_POST["Action"] == "Save")
   echo '<script>alert("Sorry, only JPG, JPEG files are allowed.");</script>';
   echo '<script>window.location.href = "upload_picture.php";</script>';
   }
-  else if ($_FILES["fileToUpload"]["size"] > 500000) {
+  else if ($_FILES["fileToUpload"]["size"] > 5000000) {
   echo '<script>alert("Sorry, your file is too large 5MB.");</script>';
   echo '<script>window.location.href = "upload_picture.php";</script>';
   }
   else
   {
-      //--SET DIRECTORY IMAGE
-      if($type == "Classic"){
+    //--SET DIRECTORY IMAGE
+    switch ($type) {
+      case 'Classic':
+        $location = "images\pic_door_classic";
+        break;
+      case 'Contemporary':
+        $location = "images\pic_door_contemporary";
+        break;
+      case 'Modern':
+        $location = "images\pic_door_modern";
+        break;
+      case 'Showroom':
+        $location = "images\showroom";
+        break;
+      case 'Folios':
+        $location = 'images\folios';
+        break;
+      case 'Process':
+        $location = "images\process";
+        break;
+      case 'Othercrafts':
+        $location = "images\pic_door_modern";
+        break;
+    }
+      /*if($type == "Classic"){
         $location = "images\pic_door_classic";
       }
       else if ($type == "Contemporary"){
@@ -48,7 +71,7 @@ if($_POST["Action"] == "Save")
       }
       else if($type == "Modern"){
         $location = "images\pic_door_modern";
-      }
+      }*/
       //end upload image
       $date = date('Y-m-d H:i:s');
       $sql  = "INSERT INTO picture_door ";
@@ -68,7 +91,7 @@ if($_POST["Action"] == "Save")
         echo $target;
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'] , $target);
         echo '<script>alert("Upload Image Success!");</script>';
-        echo '<script>window.location.href = "upload_picture.php";</script>';
+        //echo '<script>window.location.href = "upload_picture.php";</script>';
         //header('Location:upload_picture.php');
       }
   }
