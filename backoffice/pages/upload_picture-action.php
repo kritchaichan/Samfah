@@ -39,7 +39,7 @@ if($_POST["Action"] == "Save")
   }
   else
   {
-    //--SET DIRECTORY IMAGE
+    //--SET DIRECTORY IMAGE LOCAL
     switch ($type) {
       case 'Classic':
         $location = "images\pic_door_classic";
@@ -63,15 +63,32 @@ if($_POST["Action"] == "Save")
         $location = "images\pic_door_modern";
         break;
     }
-      /*if($type == "Classic"){
-        $location = "images\pic_door_classic";
-      }
-      else if ($type == "Contemporary"){
-        $location = "images\pic_door_contemporary";
-      }
-      else if($type == "Modern"){
-        $location = "images\pic_door_modern";
-      }*/
+	
+	//--SET DIRECTORY IMAGE HOST
+    /*switch ($type) {
+      case 'Classic':
+        $location = "images/pic_door_classic";
+        break;
+      case 'Contemporary':
+        $location = "images/pic_door_contemporary";
+        break;
+      case 'Modern':
+        $location = "images/pic_door_modern";
+        break;
+      case 'Showroom':
+        $location = "images/showroom";
+        break;
+      case 'Folios':
+        $location = 'images/folios';
+        break;
+      case 'Process':
+        $location = "images/process";
+        break;
+      case 'Othercrafts':
+        $location = "images/pic_door_modern";
+        break;
+    }*/
+	
       //end upload image
       $date = date('Y-m-d H:i:s');
       $sql  = "INSERT INTO picture_door ";
@@ -86,8 +103,10 @@ if($_POST["Action"] == "Save")
       else{
         $newname = $codename . "." . $array_last[1];
         $path = getcwd().DIRECTORY_SEPARATOR;
-        $newpath = substr($path, 0,22);
-        $target = $newpath."\\".$location."\\".$newname;
+        $newpath = substr($path, 0,22); //path local
+        $target = $newpath."\\".$location."\\".$newname; //path local
+        //$newpath = substr($path, 0,28); //path host
+        //$target = $newpath.'/'.$location.'/'.$newname; //path host
         echo $target;
         move_uploaded_file($_FILES['fileToUpload']['tmp_name'] , $target);
         echo '<script>alert("Upload Image Success!");</script>';
