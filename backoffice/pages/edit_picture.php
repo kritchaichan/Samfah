@@ -171,6 +171,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
+              select:true,
               responsive: true
         });
     });
