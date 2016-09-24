@@ -75,6 +75,9 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <a href="upload_picture.php"><i class="fa fa-file-picture-o fa-fw"></i> Upload Picture</a>
                         </li>
                         <li>
+                            <a href="edit_picture.php"><i class="fa fa-table fa-fw"></i> Edit Picture</a>
+                        </li>
+                        <li>
                             <a href="tables.php"><i class="fa fa-table fa-fw"></i> Orders</a>
                         </li>
                     </ul>

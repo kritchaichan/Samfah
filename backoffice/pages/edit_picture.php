@@ -92,7 +92,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Orders</h1>
+                    <h1 class="page-header">Pictures Information</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -108,39 +108,26 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th>Order NO.</th>
-                                        <th>FirstName</th>
-                                        <th>LastName</th>
-                                        <th>Mobile NO.</th>
-                                        <th>Date for Order</th>
+                                        <th></th>
+                                        <th>Picture Name</th>
+                                        <th>Picture Type</th>
+                                        <th>Picture Caption</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                    </tr>
                                   <?php
                                   require_once('../../app/config.inc.php');
-                                  $strsql  = "SELECT orders.Order_ID as orders,customers.Customer_FirstName as firstname,customers.Customer_LastName as lastname, ";
-                                  $strsql .= "customers.Customer_Mobile as mobile,orders.Date_for_Orders as dateorder ";
+                                  $strsql  = "SELECT * ";
                                   $strsql .= "FROM ";
-                                  $strsql .= "orders,customers ";
-                                  $strsql .= "WHERE ";
-                                  $strsql .= "orders.Customer_ID = customers.Customer_ID "; // เลือก ตารางที่เราเก็บข้อมูล
+                                  $strsql .= "picture_door ";
                                   $result = mysqli_query($objCon,$strsql);
                                   ?>
                                   <?php   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ ?>
                                   <tr class="odd_gradeX">
-
-                                  <td><?php echo $row['orders']?></td>
-                                  <td><?php echo $row['firstname']?></td>
-                                  <td><?php echo $row['lastname']?></td>
-                                  <td><?php echo $row['mobile']?></td>
-                                  <td><?php echo $row['dateorder']?></td>
+                                  <td></td>
+                                  <td><?php echo $row['Picture_Door_Name']?></td>
+                                  <td><?php echo $row['Picture_Door_Type']?></td>
+                                  <td><?php echo $row['Picture_Door_Caption']?></td>
 
                                   </tr>
                                   <?php } ?>
@@ -172,6 +159,8 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables/js/dataTables.buttons.min.js"></script>
+    <script src="../vendor/datatables/js/dataTables.select.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
