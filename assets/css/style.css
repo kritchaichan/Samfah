@@ -1288,6 +1288,11 @@ margin-right:0;
 {
     
 }
+.delete-padding
+{
+    padding-left: 0px;
+    padding-right: 0px;
+}
 /*.container-image-hover:hover img {
 margin-left:100%;
 }*/
@@ -1616,6 +1621,7 @@ transition: all 0.9s ease;
 .samfah-detail-wood
 {
     background-color: #fff;
+    padding: 190px;
 }
 .row-wood-01,.row-wood-02,.row-wood-03,.row-wood-04
 {
