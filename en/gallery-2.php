@@ -125,7 +125,7 @@ $(document).ready(function(){
       <div class="container-order">
           <div class="box-catalog">
             <a href="" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
-            Folios
+            PROCESS
             <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
           </div>
           <div class="grid1"><!-- gird1-->

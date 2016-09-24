@@ -159,6 +159,9 @@ $(document).ready(function(){
                 <a>
                   <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
                 </a>
+                <a style="display:block; word-break: break-word;">
+                  <span>TESTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT</span>
+                </a>
               </div><!-- /End footer-gallery -->
             </div><!-- /End gird-item -->
             <?php endforeach; ?>
