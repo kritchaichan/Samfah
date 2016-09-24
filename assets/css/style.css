@@ -1221,16 +1221,16 @@ width:100%;
 height:100%;
 }
 .container-image-hover .textbox {
-position:absolute;
-top: 40px;
-top:0;
-bottom: 0px;
-/*left:0;*/
-right: 0;
-width:30%;
-height:0px;
-margin-right:-150%;
-font-weight: bold;
+position: absolute;
+    top: 40px;
+    top: 40px;
+    bottom: 0px;
+    /* left: 0; */
+    right: -60px;
+    width: 30%;
+    height: 0px;
+    margin-right: -150%;
+    font-weight: bold;
 }
 .textbox h1
 {
@@ -1284,14 +1284,27 @@ margin-right:0;
 {
     vertical-align: middle;
 }
-.samfah-botton-contact
+.samfah-botton-contact p
 {
-    
+    display: inline-block;
+    font-size: 24px;
+    text-align: left;
 }
 .delete-padding
 {
     padding-left: 0px;
     padding-right: 0px;
+}
+input[type="radio"]:checked:before {
+    content: "";
+    display: block;
+    position: relative;
+    top: 3px;
+    left: 3px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #3d3d3d;
 }
 /*.container-image-hover:hover img {
 margin-left:100%;
@@ -1467,7 +1480,7 @@ transition: all 0.9s ease;
 }
 .samfah-text-in-cover h1
 {
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
 }
 /* end cover ourstory */
@@ -1551,7 +1564,7 @@ transition: all 0.9s ease;
 }
 .samfah-cover-gallery-heading h1
 {
-    font-size: 40px;
+    font-size: 60px;
     font-weight: bold;
 }
 /* end cover gallery */
@@ -1698,7 +1711,7 @@ transition: all 0.9s ease;
 {
     border-style: solid;
     border-width: 10px;
-    border-color: #fff;
+    border-color: rgba(255, 255, 255, .5);
     padding: 20px;
     text-align: center;
 }

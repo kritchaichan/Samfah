@@ -106,12 +106,17 @@
         });
     </script>
     <!-- end chang map gallery -->
-    <!-- chang order -->
+    <!-- chang map order -->
     <script>
         $( "#botton-chang-map-order" ).click(function() {
         $( ".ff-order" ).slideToggle("slow");
         });
     </script>
-    <!-- end chang order -->
+    <script>
+        $( "#botton-chang-map-2-order" ).click(function() {
+        $( ".ff-order" ).slideToggle("slow");
+        });
+    </script>
+    <!-- end chang map order -->
 </body>
 </html>

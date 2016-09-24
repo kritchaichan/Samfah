@@ -140,7 +140,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                   <td><?php echo $row['firstname']?></td>
                                   <td><?php echo $row['lastname']?></td>
                                   <td><?php echo $row['mobile']?></td>
-                                  <td><?php echo $row['dateorder']?></td>
+                                  <td class="center"><?php echo $row['dateorder']?></td>
 
                                   </tr>
                                   <?php } ?>

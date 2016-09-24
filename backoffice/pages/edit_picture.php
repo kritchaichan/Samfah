@@ -25,7 +25,11 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <link href="../vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- DataTables CSS -->
-    <link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+    <!--<link href="../vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">-->
+    <link href="../vendor/datatables-editor/css/jquery.dataTables.css" rel="stylesheet" >
+    <link href="../vendor/datatables-editor/css/buttons.dataTables.min.css" rel="stylesheet" >
+    <link href="../vendor/datatables-editor/css/select.dataTables.min.css" rel="stylesheet" >
+    <link href="../vendor/datatables-editor/css/editor.dataTables.min.css" rel="stylesheet" >
 
     <!-- DataTables Responsive CSS -->
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
@@ -108,10 +112,10 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                        <th></th>
                                         <th>Picture Name</th>
                                         <th>Picture Type</th>
                                         <th>Picture Caption</th>
+                                        <th>Edit</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -124,11 +128,10 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                   ?>
                                   <?php   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ ?>
                                   <tr class="odd_gradeX">
-                                  <td></td>
                                   <td><?php echo $row['Picture_Door_Name']?></td>
                                   <td><?php echo $row['Picture_Door_Type']?></td>
                                   <td><?php echo $row['Picture_Door_Caption']?></td>
-
+                                  <td class="center"><a href="#"><span class="glyphicon glyphicon-pencil"></span></a> | <a href="#"><span class="glyphicon glyphicon-trash"></a></td>
                                   </tr>
                                   <?php } ?>
                                 </tbody>
@@ -159,8 +162,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables/js/dataTables.buttons.min.js"></script>
-    <script src="../vendor/datatables/js/dataTables.select.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
@@ -171,7 +172,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script type="text/javascript" charset="utf-8">
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-              select:true,
               responsive: true
         });
     });
