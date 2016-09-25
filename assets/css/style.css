@@ -54,6 +54,16 @@
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
+.loader-g
+{
+	border: 50px solid #f3f3f3;
+	border-radius: 100%;
+	border-top: 50px solid #8B5E35;
+	width: 300px;
+	height: 300px;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
 @-webkit-keyframes spin {
   0% { -webkit-transform: rotate(0deg); }
   100% { -webkit-transform: rotate(360deg); }
@@ -1422,7 +1432,7 @@ transition: all 0.9s ease;
 .samfah-image-about-profile img
 {
     width: 400px;
-    height: 650px;
+    height: 570px;
 }
 .samfah-border-about
 {
@@ -1431,6 +1441,7 @@ transition: all 0.9s ease;
     border-width: medium;
     text-align: left;
     padding: 10px;
+    margin-bottom: 70px;
 }
 .samfah-image-heading
 {
@@ -1658,7 +1669,7 @@ transition: all 0.9s ease;
 .samfah-image-02
 {
     letter-spacing: 20px;
-    margin-top: 10px;
+        margin-top: 45px;
 }
 .samfah-image-03 img
 {
