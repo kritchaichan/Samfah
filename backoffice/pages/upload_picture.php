@@ -93,6 +93,9 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                     <!-- /.col-lg-12 -->
 
                     <div class="row">
+                        <div class="col-lg-12">
+                            <div class="panel panel-default">
+                              <div class="panel-body">
                         <form name="upload" method="POST" action="upload_picture-action.php" style="text-align: left;" enctype="multipart/form-data">
                             <div class="radio-inline">
                                 <label>Gallery Type</label>
@@ -160,6 +163,12 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                         </form>
                   </div>
                   <!-- End Form Input Picture -->
+              </div>
+              <!-- /.panel-body -->
+              </div>
+              <!-- /.panel -->
+          </div>
+          <!-- /.col-lg-12 -->
 
                 </div>
                 <!-- /.row -->
