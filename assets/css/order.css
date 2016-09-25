@@ -645,10 +645,10 @@ text-align: justify;
         right: 0;
         display: block;
     }
-    .samfah-image-about-profile img
+    /*.samfah-image-about-profile img
     {
         width: 384px;
-    }
+    }*/
     .samfah-content-02 p
 {
     text-align: left;
@@ -1151,7 +1151,7 @@ input[name="door_color"]:checked + span:before {
 /* ---- grid-item ---- */
 .grid-item {
     /* display: inline-block; */
-    border: solid 7px white;
+    border: solid 15px white;
     margin: 10px;
     vertical-align: top;
     text-align: left;
@@ -1270,5 +1270,4 @@ img[alt="door"] {
 
 .number-like{
 	width: 20px;
-	font-size: 0.7em;
 }
