@@ -74,7 +74,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <a href="edit_picture.php"><i class="fa fa-table fa-fw"></i> Edit Picture</a>
                         </li>
                         <li>
-                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Orders</a>
+                            <a href="orders.php"><i class="fa fa-table fa-fw"></i> Orders</a>
                         </li>
                     </ul>
                 </div>

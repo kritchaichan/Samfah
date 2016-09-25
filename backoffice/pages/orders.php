@@ -29,12 +29,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     <!-- DataTables Responsive CSS -->
     <link href="../vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
-  	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.2.0/css/buttons.dataTables.min.css">
-  	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
-  	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/css/editor.dataTables.min.css">
-  	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/syntax/shCore.css">
-  	<!--<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/demo.css">-->
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,83 +42,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.0/js/dataTables.buttons.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/js/dataTables.editor.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/syntax/shCore.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/demo.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/editor-demo.js">
-	</script>
-
-	<script type="text/javascript" language="javascript" class="init">
-	var editor; // use a global for the submit and return data rendering in the examples
-
-	$(document).ready(function() {
-		editor = new $.fn.dataTable.Editor( {
-			ajax: "../lib/dbpicture.php",
-			table: "#dataTables-example",
-			fields: [ {
-					label: "Picture Name :",
-					name: "Picture_Door_Name"
-				}, {
-					label: "Picture Type :",
-					name: "Picture_Door_Type"
-				}, {
-					label: "Picture Caption :",
-					name: "Picture_Door_Caption"
-				}
-			]
-		} );
-
-    editor.on( 'onInitEdit', function () {
-    editor.disable('Picture_Door_Name');
-    editor.disable('Picture_Door_Type');
-    } );
-
-		// Activate an inline edit on click of a table cell
-		/*$('#dataTables-example').on( 'click', 'tbody td:not(:first-child)', function (e) {
-			editor.inline( this );
-		} );*/
-
-		$('#dataTables-example').DataTable( {
-			dom: "Bfrtip",
-			ajax: "../lib/dbpicture.php",
-			columns: [
-				{
-					data: null,
-					defaultContent: '',
-					className: 'select-checkbox',
-					orderable: false
-				},
-				{ data: "Picture_Door_Name" },
-				{ data: "Picture_Door_Type"  },
-				{ data: "Picture_Door_Caption" }
-			],
-			select: {
-				style:    'os',
-				selector: 'td:first-child'
-			},
-			buttons: [
-				{ extend: "edit",   editor: editor },
-				{ extend: "remove", editor: editor }
-			]
-		} );
-	} );
-    </script>
 
 </head>
 
@@ -175,7 +92,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Pictures Information</h1>
+                    <h1 class="page-header">Orders</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -191,13 +108,35 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <thead>
                                     <tr>
-                                    	<th></th>
-                                        <th>Picture Name</th>
-                                        <th>Picture Type</th>
-                                        <th>Picture Caption</th>
+                                        <th>Order NO.</th>
+                                        <th>FirstName</th>
+                                        <th>LastName</th>
+                                        <th>Mobile NO.</th>
+                                        <th>Date for Order</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                  <?php
+                                  require_once('../../app/config.inc.php');
+                                  $strsql  = "SELECT orders.Order_ID as orders,customers.Customer_FirstName as firstname,customers.Customer_LastName as lastname, ";
+                                  $strsql .= "customers.Customer_Mobile as mobile,orders.Date_for_Orders as dateorder ";
+                                  $strsql .= "FROM ";
+                                  $strsql .= "orders,customers ";
+                                  $strsql .= "WHERE ";
+                                  $strsql .= "orders.Customer_ID = customers.Customer_ID "; // เลือก ตารางที่เราเก็บข้อมูล
+                                  $result = mysqli_query($objCon,$strsql);
+                                  ?>
+                                  <?php   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ ?>
+                                  <tr class="odd_gradeX">
+
+                                  <td><a href="orders-details.php?id=<?=$row['orders']?>" target="_blank"><?php echo $row['orders']?></a></td>
+                                  <td><?php echo $row['firstname']?></td>
+                                  <td><?php echo $row['lastname']?></td>
+                                  <td><?php echo $row['mobile']?></td>
+                                  <td class="center"><?php echo $row['dateorder']?></td>
+
+                                  </tr>
+                                  <?php } ?>
                                 </tbody>
                             </table>
                             <!-- /.table-responsive -->
@@ -216,7 +155,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
+    <script src="../vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -224,8 +163,22 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script type="text/javascript" charset="utf-8">
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable({
+              responsive: true
+        });
+    });
+    </script>
 
 </body>
 

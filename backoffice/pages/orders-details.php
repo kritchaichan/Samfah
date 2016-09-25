@@ -46,6 +46,10 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 </head>
 
 <body>
+  <?php
+  $orderID = $_GET["id"];
+
+  ?>
 
     <div id="wrapper">
 
@@ -80,7 +84,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                             <a href="edit_picture.php"><i class="fa fa-table fa-fw"></i> Edit Picture</a>
                         </li>
                         <li>
-                            <a href="tables.php"><i class="fa fa-table fa-fw"></i> Orders</a>
+                            <a href="orders.php"><i class="fa fa-table fa-fw"></i> Orders</a>
                         </li>
                     </ul>
                 </div>
@@ -92,7 +96,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Orders</h1>
+                    <h1 class="page-header">Order Details No.<?=$orderID?></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -101,52 +105,11 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Order by Customers
+                            Order Details No.<?=$orderID?>
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th>Order NO.</th>
-                                        <th>FirstName</th>
-                                        <th>LastName</th>
-                                        <th>Mobile NO.</th>
-                                        <th>Date for Order</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd gradeX">
-                                        <td>Trident</td>
-                                        <td>Internet Explorer 4.0</td>
-                                        <td>Win 95+</td>
-                                        <td class="center">4</td>
-                                        <td class="center">X</td>
-                                    </tr>
-                                  <?php
-                                  require_once('../../app/config.inc.php');
-                                  $strsql  = "SELECT orders.Order_ID as orders,customers.Customer_FirstName as firstname,customers.Customer_LastName as lastname, ";
-                                  $strsql .= "customers.Customer_Mobile as mobile,orders.Date_for_Orders as dateorder ";
-                                  $strsql .= "FROM ";
-                                  $strsql .= "orders,customers ";
-                                  $strsql .= "WHERE ";
-                                  $strsql .= "orders.Customer_ID = customers.Customer_ID "; // เลือก ตารางที่เราเก็บข้อมูล
-                                  $result = mysqli_query($objCon,$strsql);
-                                  ?>
-                                  <?php   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ ?>
-                                  <tr class="odd_gradeX">
 
-                                  <td><?php echo $row['orders']?></td>
-                                  <td><?php echo $row['firstname']?></td>
-                                  <td><?php echo $row['lastname']?></td>
-                                  <td><?php echo $row['mobile']?></td>
-                                  <td class="center"><?php echo $row['dateorder']?></td>
-
-                                  </tr>
-                                  <?php } ?>
-                                </tbody>
-                            </table>
-                            <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -180,11 +143,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript" charset="utf-8">
-    $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-              responsive: true
-        });
-    });
     </script>
 
 </body>
