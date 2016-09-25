@@ -34,7 +34,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
   	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/css/editor.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/syntax/shCore.css">
-  	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/demo.css">
+  	<!--<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/demo.css">-->
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,7 +48,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <!-- DataTables JavaScript -->
     <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
@@ -69,10 +69,10 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 	</script>
 	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/editor-demo.js">
 	</script>
-    
+
 	<script type="text/javascript" language="javascript" class="init">
 	var editor; // use a global for the submit and return data rendering in the examples
-	
+
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../lib/dbpicture.php",
@@ -89,12 +89,12 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 				}
 			]
 		} );
-	
+
 		// Activate an inline edit on click of a table cell
 		$('#dataTables-example').on( 'click', 'tbody td:not(:first-child)', function (e) {
 			editor.inline( this );
 		} );
-	
+
 		$('#dataTables-example').DataTable( {
 			dom: "Bfrtip",
 			ajax: "../lib/dbpicture.php",
