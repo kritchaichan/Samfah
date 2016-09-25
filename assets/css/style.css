@@ -25,7 +25,10 @@
 *  11 - Preloader
 *
 ---------------------------------------------------------------------- */
-
+.number-font
+{
+    font-size: 20px;
+}
 .hidden-animate{
      opacity:0;
 }

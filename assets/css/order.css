@@ -10,11 +10,11 @@
 *    2.7 - Position
 *    2.6 - Focus
 *    2.7 - Text
-*  3 - Contact Section
-*  4 - Media Query
+*  3 - Contact Section 
+*  4 - Media Query 
 *    10.1 - media screen and (max-width: 992px)
 *    10.2 - media screen and (max-width: 768px)
-*    10.3 - media screen and (max-width: 1170px)
+*    10.3 - media screen and (max-width: 1170px) 
 *  5 - Form Section
 *  6 - Order Summary Section
 *  7 - Gird Masonry
@@ -38,7 +38,7 @@
   src: url('../fonts/kunlasatri.ttf');
   unicode-range: U+0E00-U+0E7F;
 }
-/* 1 - Import Google Font End
+/* 1 - Import Google Font End 
 ---------------------------------------------------------------------- */
 
 /* 2 - Global Style
@@ -58,7 +58,7 @@
 }
 .medium {
 	width: 100%;
-	max-width: 100%;
+	max-width: 100%; 
 	height: auto;
 }
 
@@ -101,7 +101,7 @@ a:focus{
     background-attachment:inherit;
     background-size:cover;
     height: 950px;
-
+ 
 }
 .pattern{
 	background:rgba(0,0,0,.4) url(../images/pattern.png);
@@ -167,7 +167,7 @@ a:focus{
 	        transition:all .25s;
 }
 .btn:focus, .btn:active:focus, .btn.active:focus {
- 	outline: none;
+ 	outline: none; 
  	color: #ffffff;
 }
 .form-control,
@@ -193,7 +193,7 @@ a:focus{
 	display:inline-block;
 	width:120px;
 	height:120px;
-
+	
 	-webkit-border-radius:100%;
 	   -moz-border-radius:100%;
 	    -ms-border-radius:100%;
@@ -217,7 +217,7 @@ a:focus{
 	position:absolute;
 	top:20px;
 	left:35px;
-
+	
 	-webkit-transform:rotate(45deg);
 	   -moz-transform:rotate(45deg);
 	    -ms-transform:rotate(45deg);
@@ -288,7 +288,7 @@ a:focus{
 }
 .social-btn-box,
 .social-btn-box a{
-
+	
 	-webkit-transition:all .25s;
 	   -moz-transition:all .25s;
 	    -ms-transition:all .25s;
@@ -336,18 +336,18 @@ a:focus{
    color: #ffffff;
 }
 
-.form-control:-moz-placeholder {
-   color: #ffffff;
+.form-control:-moz-placeholder { 
+   color: #ffffff;  
 }
 
-.form-control::-moz-placeholder {
-   color: #ffffff;
+.form-control::-moz-placeholder { 
+   color: #ffffff;  
 }
 
 .form-control:-ms-input-placeholder{
 	color:#ffffff;
 }
-/* 2.3 - Placeholder color End
+/* 2.3 - Placeholder color End 
 ------------------------------------------ */
 
 
@@ -364,7 +364,7 @@ a:focus{
 	padding-top:20px !important;
 }
 
-/* 2.4 - Height Resize End
+/* 2.4 - Height Resize End 
 ------------------------------------------ */
 
 /* 2.5 - Position
@@ -442,7 +442,7 @@ text-align: justify;
 ------------------------------------------ */
 
 
-/* 2 - Global Style End
+/* 2 - Global Style End 
 ---------------------------------------------------------------------- */
 
 
@@ -456,7 +456,7 @@ text-align: justify;
 	     -o-transform:rotate(180deg);
 	        transform:rotate(180deg);
 }
-#contact-form .col-sm-6,
+#contact-form .col-sm-6, 
 #contact-form .col-sm-10,
 #contact-form .col-sm-2{
 	padding:0;
@@ -540,14 +540,14 @@ text-align: justify;
 	font-size: 1.125em;
 }
 
-/* 3 - Contact Section End
+/* 3 - Contact Section End 
 ---------------------------------------------------------------------- */
 
 
 
 
 
-/* 4 - Media Query
+/* 4 - Media Query 
 ---------------------------------------------------------------------- */
 
 /* 4.1 - media screen and (max-width: 992px)
@@ -633,7 +633,7 @@ text-align: justify;
 
 
 /*small*/
-@media only screen and (max-width: 40em)
+@media only screen and (max-width: 40em) 
 {
     .samfah-heading-ourstory h1
     {
@@ -664,8 +664,8 @@ text-align: justify;
 }
 
 /*medium*/
-@media only screen and (min-width: 40.063em) and (max-width: 64em)
-{
+@media only screen and (min-width: 40.063em) and (max-width: 64em) 
+{ 
     .samfah-heading-ourstory h1
     {
         color: #fff;
@@ -678,7 +678,7 @@ text-align: justify;
     }
 }
 
-/* 5 - Form Section
+/* 5 - Form Section 
 ---------------------------------------------------------------------- */
 #form{
 	color: black;
@@ -727,9 +727,9 @@ text-align: justify;
  }
 
 
-/* 5 - Form Section  End
+/* 5 - Form Section  End 
 ---------------------------------------------------------------------- */
-
+    
 /* 6 - Order Summary Section
 ---------------------------------------------------------------------- */
 .box-catalog{
@@ -740,7 +740,7 @@ text-align: justify;
     /* margin-top: 25px; */
     margin-left: auto;
     margin-right: auto;
-    width: 70%;
+    width: 100%;
     background-color: white;
     border: 1px solid white;
     border-radius: 0px;
@@ -759,7 +759,7 @@ img[alt="door"]{
     text-align: center;
     color: black;
     font-size: 24px;
-    width: 100%;
+    width: 100%; 
     margin-top: 25px;
     margin-right: auto;
     margin-bottom: 25px;
@@ -776,7 +776,7 @@ img[alt="door"]{
     text-align: center;
     color: black;
     font-size: 24px;
-    width: 100%;
+    width: 100%; 
     margin-top: 25px;
     margin-right: auto;
     margin-bottom: 25px;
@@ -856,12 +856,12 @@ form[name="form2"]{
 
 /* HTML5 Boilerplate accessible hidden styles */
 input[name="door"] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px; margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
   width: 0px;
 }
 
@@ -874,11 +874,11 @@ input[name="door"] + span {
 
 /* the basic, unchecked style */
 input[name="door"] + span:before {
-
+  
   content: '';
   display: inline-block;
   /*background-color: #000;*/
-  /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .5), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
+  /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .5), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/  
   border: 1px solid black;
   width: 19px;
   height: 19px;
@@ -905,7 +905,7 @@ input[name="door"] + span:before {
 
 /* the checked style using the :checked pseudo class */
 input[name="door"]:checked + span:before {
-
+  
   content: "\2713";
   /*background-color: #000;*/
   /*box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);*/
@@ -918,12 +918,12 @@ input[name="door"]:checked + span:before {
 
 /* HTML5 Boilerplate accessible hidden styles */
 input[name="Acsr1"]{
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px; margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
   width: 0px;
 }
 
@@ -936,7 +936,7 @@ input[name="Acsr1"] + span {
 
 /* the basic, unchecked style */
 input[name="Acsr1"] + span:before {
-
+  
   content: '';
   display: inline-block;
   width: 10px;
@@ -958,12 +958,12 @@ input[name="Acsr1"]:checked + span:before {
 
 /* HTML5 Boilerplate accessible hidden styles */
 input[name="Acsr2"]{
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px; margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
   width: 0px;
 }
 
@@ -976,7 +976,7 @@ input[name="Acsr2"] + span {
 
 /* the basic, unchecked style */
 input[name="Acsr2"] + span:before {
-
+  
   content: '';
   display: inline-block;
   width: 10px;
@@ -998,12 +998,12 @@ input[name="Acsr2"]:checked + span:before {
 
 /* HTML5 Boilerplate accessible hidden styles */
 input[name="Acsr3"]{
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px; margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
   width: 0px;
 }
 
@@ -1016,7 +1016,7 @@ input[name="Acsr3"] + span {
 
 /* the basic, unchecked style */
 input[name="Acsr3"] + span:before {
-
+  
   content: '';
   display: inline-block;
   width: 10px;
@@ -1039,7 +1039,7 @@ input[name="Acsr3"]:checked + span:before {
 
 .model{
 	width: 150px;
-
+  
 }
 
 #order_summary label {
@@ -1051,12 +1051,12 @@ input[name="Acsr3"]:checked + span:before {
 
 /* HTML5 Boilerplate accessible hidden styles */
 input[name="framing_style"], input[name="door_color"] {
-  border: 0;
-  clip: rect(0 0 0 0);
-  height: 1px; margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  border: 0; 
+  clip: rect(0 0 0 0); 
+  height: 1px; margin: -1px; 
+  overflow: hidden; 
+  padding: 0; 
+  position: absolute; 
   width: 0px;
 }
 
@@ -1067,8 +1067,8 @@ input[name="framing_style"] + span , input[name="door_color"] + span {
 }
 
 /* the basic, unchecked style */
-input[name="framing_style"] + span:before , input[name="door_color"] + span:before {
-
+input[name="framing_style"] + span:before , input[name="door_color"] + span:before { 
+  
   content: '';
   margin: 0 auto;
   display: block;
@@ -1094,7 +1094,7 @@ input[value="laored"] + span:before {
 
 /* the checked style using the :checked pseudo class */
 input[name="door_color"]:checked + span:before {
-
+  
 }
 
 .frame_name, .wood_color_name{
@@ -1151,7 +1151,7 @@ input[name="door_color"]:checked + span:before {
 /* ---- grid-item ---- */
 .grid-item {
     /* display: inline-block; */
-    border: solid 15px white;
+    border: solid 7px white;
     margin: 10px;
     vertical-align: top;
     text-align: left;
@@ -1173,8 +1173,8 @@ img[alt="door"] {
     /* width: 200px; */
 }
 
-.grid-item--width2 img{
-	width: 655px;
+.grid-item--width2 img{ 
+	width: 655px; 
 	height: auto;
 }
 
@@ -1270,4 +1270,5 @@ img[alt="door"] {
 
 .number-like{
 	width: 20px;
+	font-size: 0.7em;
 }
