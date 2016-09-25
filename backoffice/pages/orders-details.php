@@ -47,7 +47,32 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
 <body>
   <?php
-  $orderID = $_GET["id"];
+  $orderID = $_GET["orderid"];
+  $customerID = $_GET["customerid"];
+
+  require_once('../../app/config.inc.php');
+  $strsql  = "SELECT * ";
+  $strsql .= "FROM ";
+  $strsql .= "orders,customers,orders_details ";
+  $strsql .= "WHERE ";
+  $strsql .= "orders.Customer_ID = customers.Customer_ID AND "; // เลือก ตารางที่เราเก็บข้อมูล
+  $strsql .= "orders.Order_ID = orders_details.Order_ID AND "; // เลือก ตารางที่เราเก็บข้อมูล
+  $strsql .= "orders.Order_ID = 1"; // เลือก ตารางที่เราเก็บข้อมูล
+  $result = mysqli_query($objCon,$strsql);
+  if (!$result) {
+    printf("Error: %s\n", mysqli_error($objCon));
+    exit();
+  }
+  while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
+      $firstname = $row['Customer_FirstName'];
+      $lastname = $row['Customer_LastName'];
+      $address = $row['Customer_Address'];
+      $phone = $row['Customer_Phone'];
+      $mobile = $row['Customer_Mobile'];
+      $email = $row['Customer_Email'];
+      $lineid = $row['Customer_LineID'];
+      $fbname = $row['Customer_FBName'];
+  }
 
   ?>
 
@@ -96,7 +121,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Order Details No.<?=$orderID?></h1>
+                    <h1 class="page-header">Order No.<?=$orderID?></h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -105,7 +130,44 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Order Details No.<?=$orderID?>
+                            Customer Information
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                          <table cellpadding="5" style="font-weight:bold; text-align:left;">
+  										<tr>
+  											<td>Firstname : </td>
+  											<td><?=$firstname ?></td>
+  											<td>Lastname : </td>
+  											<td><?=$lastname ?></td>
+  										</tr>
+  										<tr>
+  											<td style="vertical-align:top;">Delivered Address : </td>
+  											<td colspan="3"><?=$address ?></td>
+  										</tr>
+  										<tr>
+                        <td>Telephone No :</td>
+                        <td><?=$phone ?></td>
+  											<td>Mobile Phone No :</td>
+  											<td><?=$mobile ?></td>
+  										</tr>
+  										<tr>
+  											<td>Email :</td>
+  											<td><?=$email ?></td>
+  											<td>Line ID :</td>
+  											<td><?=$lineid ?></td>
+  										</tr>
+  										<tr>
+  											<td>Facebook Name :</td>
+  											<td><?=$fbname ?></td>
+  										</tr>
+  									</table>
+
+
+                        </div>
+                        <!-- /.panel-body -->
+                        <div class="panel-heading">
+                            Order Details
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">

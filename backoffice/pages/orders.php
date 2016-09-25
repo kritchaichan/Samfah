@@ -118,7 +118,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                 <tbody>
                                   <?php
                                   require_once('../../app/config.inc.php');
-                                  $strsql  = "SELECT orders.Order_ID as orders,customers.Customer_FirstName as firstname,customers.Customer_LastName as lastname, ";
+                                  $strsql  = "SELECT customers.Customer_ID as customerid,orders.Order_ID as orders,customers.Customer_FirstName as firstname,customers.Customer_LastName as lastname, ";
                                   $strsql .= "customers.Customer_Mobile as mobile,orders.Date_for_Orders as dateorder ";
                                   $strsql .= "FROM ";
                                   $strsql .= "orders,customers ";
@@ -129,7 +129,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                   <?php   while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){ ?>
                                   <tr class="odd_gradeX">
 
-                                  <td><a href="orders-details.php?id=<?=$row['orders']?>" target="_blank"><?php echo $row['orders']?></a></td>
+                                  <td><a href="orders-details.php?orderid=<?=$row['orders']?>&customerid=<?=$row['customerid']?>" target="_blank"><?php echo $row['orders']?></a></td>
                                   <td><?php echo $row['firstname']?></td>
                                   <td><?php echo $row['lastname']?></td>
                                   <td><?php echo $row['mobile']?></td>
