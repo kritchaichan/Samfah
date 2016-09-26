@@ -1,0 +1,13 @@
+# Do not remove this line or mod_rewrite rules and search engine friendly URLs will stop working
+RewriteBase /
+
+#Custom Directory Index Files
+DirectoryIndex welcome.html welcome.php welcome.htm index.html home.html
+
+#Disable Directory Listing
+RedirectMatch 403 ^.*/sub/folder/index\.php$
+
+#Insert www in URL(Protect Duplicate Content)
+RewriteEngine On
+RewriteCond %{HTTP_HOST} ^viralpatel\.net$
+RewriteRule (.*) http://www.viralpatel.net/$1 [R=301,L]
