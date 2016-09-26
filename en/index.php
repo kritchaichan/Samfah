@@ -20,6 +20,13 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
+</div>
+<!-- Preloader End-->
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
