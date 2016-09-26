@@ -1189,7 +1189,7 @@ img[alt="door"] {
 	height: 100%;
 	background: white;
 	color: black;
-	font-size: 1.5em;
+	font-size: 1em;
 	float: left;
 }
 
@@ -1208,7 +1208,7 @@ img[alt="door"] {
 	cursor: pointer;
 }
 
-.glyphicon-heart:visited{
+.glyphicon-heart:before:visited {
 	color: red;
 }
 
