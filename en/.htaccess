@@ -2,7 +2,7 @@
 RewriteBase /
 
 #Custom Directory Index Files
-DirectoryIndex welcome.html welcome.php welcome.htm index.html home.html
+DirectoryIndex index.php
 
 #Disable Directory Listing
 RedirectMatch 403 ^.*/sub/folder/index\.php$
