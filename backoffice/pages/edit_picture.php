@@ -54,21 +54,21 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
     <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.0/js/dataTables.buttons.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/js/dataTables.editor.min.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/syntax/shCore.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/demo.js">
-	</script>
-	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/editor-demo.js">
-	</script>
+  	</script>
+  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.0/js/dataTables.buttons.min.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/js/dataTables.editor.min.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/syntax/shCore.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/demo.js">
+  	</script>
+  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/editor-demo.js">
+  	</script>
 
 	<script type="text/javascript" language="javascript" class="init">
 	var editor; // use a global for the submit and return data rendering in the examples
@@ -78,6 +78,9 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 			ajax: "../lib/dbpicture.php",
 			table: "#dataTables-example",
 			fields: [ {
+					label: "Picture NO. :",
+					name: "Picture_Door_ID"
+				}, {
 					label: "Picture Name :",
 					name: "Picture_Door_Name"
 				}, {
@@ -91,6 +94,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 		} );
 
     editor.on( 'onInitEdit', function () {
+    editor.disable('Picture_Door_ID');
     editor.disable('Picture_Door_Name');
     editor.disable('Picture_Door_Type');
     } );
@@ -110,6 +114,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 					className: 'select-checkbox',
 					orderable: false
 				},
+        { data: "Picture_Door_ID" },
 				{ data: "Picture_Door_Name" },
 				{ data: "Picture_Door_Type"  },
 				{ data: "Picture_Door_Caption" }
@@ -192,6 +197,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                 <thead>
                                     <tr>
                                     	<th></th>
+                                        <th>Picture No.</th>
                                         <th>Picture Name</th>
                                         <th>Picture Type</th>
                                         <th>Picture Caption</th>
@@ -214,9 +220,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     </div>
     <!-- /#wrapper -->
-
-    <!-- jQuery -->
-    <!--<script src="../vendor/jquery/jquery.min.js"></script>-->
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
