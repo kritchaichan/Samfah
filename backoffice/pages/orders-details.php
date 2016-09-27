@@ -281,6 +281,12 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                           <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
+                        <form name="print" method="POST" action="print-order.php" >
+                        <input type="hidden" name="orderid" value="<?=$orderID?>">
+                        <input type="hidden" name="customerid" value="<?=$customerID?>">
+                        <input class="btn btn-lg btn-default btn-block" type="Submit" name="Action" value="Print Order" >
+                        </form>
+
                     </div>
                     <!-- /.panel -->
                 </div>
