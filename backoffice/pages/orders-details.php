@@ -281,10 +281,10 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
                           <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
-                        <form name="print" method="POST" action="print-order.php" >
+                        <form name="print" method="POST" action="print-order.php">
                         <input type="hidden" name="orderid" value="<?=$orderID?>">
                         <input type="hidden" name="customerid" value="<?=$customerID?>">
-                        <input class="btn btn-lg btn-default btn-block" type="Submit" name="Action" value="Print Order" >
+                        <input class="btn btn-lg btn-default btn-block" type="button" name="btnSubmit" value="Print Order" onclick="submitForm()" />
                         </form>
 
                     </div>
@@ -307,6 +307,14 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <script type="text/javascript">
+      function submitForm()
+      {
+      document.print.target = "Print PDF";
+      window.open("","Print PDF","width=900,height=900,toolbar=0");
+      document.print.submit();
+      }
+    </script>
 
 </body>
 
