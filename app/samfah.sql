@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50621
 File Encoding         : 65001
 
-Date: 2016-08-25 23:14:26
+Date: 2016-09-28 00:03:24
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,11 +31,13 @@ CREATE TABLE `customers` (
   `Customer_FBName` varchar(20) DEFAULT NULL,
   `Customer_Status` varchar(10) NOT NULL,
   PRIMARY KEY (`Customer_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of customers
 -- ----------------------------
+INSERT INTO `customers` VALUES ('00001', 'Akkara', 'Terananont', '297/2 Sailurt Road 10270', '-', '0817142992', 'disoder@windowslive.com', 'akkara.te', 'Akkara Terananont', '1');
+INSERT INTO `customers` VALUES ('00002', 'JoJo', 'JoeStar', '297/2 Sailurt Road 10270', '-', '0817142992', 'disoder@windowslive.com', 'akkara.te', 'Akkara Terananont', '1');
 
 -- ----------------------------
 -- Table structure for orders
@@ -47,11 +49,13 @@ CREATE TABLE `orders` (
   `Date_for_Reserve` datetime NOT NULL,
   `Customer_ID` int(5) unsigned zerofill NOT NULL,
   PRIMARY KEY (`Order_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders
 -- ----------------------------
+INSERT INTO `orders` VALUES ('000001', '2016-08-25', '2016-08-25 23:46:48', '00001');
+INSERT INTO `orders` VALUES ('000002', '2016-08-25', '2016-08-25 23:46:48', '00002');
 
 -- ----------------------------
 -- Table structure for orders_details
@@ -61,21 +65,25 @@ CREATE TABLE `orders_details` (
   `Orders_Details_ID` int(11) NOT NULL AUTO_INCREMENT,
   `Order_ID` int(6) unsigned zerofill NOT NULL,
   `Picture_Door_ID` varchar(30) NOT NULL,
-  `Orders_Details_Height` decimal(4,2) NOT NULL,
-  `Orders_Details_Width` decimal(4,2) NOT NULL,
-  `Orders_Details_Thickness` decimal(2,2) NOT NULL,
-  `Orders_Details_Accessories_Framing` varchar(3) NOT NULL,
-  `Orders_Details_Accessories_GlassWork` varchar(3) NOT NULL,
+  `Orders_Details_Height` decimal(6,2) NOT NULL,
+  `Orders_Details_Width` decimal(6,2) NOT NULL,
+  `Orders_Details_Thickness` decimal(3,2) NOT NULL,
+  `Orders_Details_Quantity` int(11) NOT NULL,
+  `Orders_Details_Accessories_Framing` varchar(10) NOT NULL,
+  `Orders_Details_Accessories_GlassWork` varchar(10) NOT NULL,
   `Orders_Details_Wood_for_Door` varchar(10) NOT NULL,
   `Orders_Details_Wood_for_Framing` varchar(10) NOT NULL,
   `Orders_Details_Remark` varchar(1000) DEFAULT NULL,
   `Orders_Details_Delivery_Date` date DEFAULT NULL,
   PRIMARY KEY (`Orders_Details_ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of orders_details
 -- ----------------------------
+INSERT INTO `orders_details` VALUES ('1', '000001', 'CSP002', '200.00', '150.00', '1.50', '2', 'Framing', 'Glass work', 'Teak', 'Teak', 'Call me later. 1', '2016-08-25');
+INSERT INTO `orders_details` VALUES ('2', '000001', 'CSP003', '200.00', '150.00', '3.00', '1', 'Framing', 'Glass work', 'Teak', 'Teak', 'Call me later. 2', '2016-08-25');
+INSERT INTO `orders_details` VALUES ('3', '000002', 'CSP005', '200.00', '150.00', '3.00', '1', 'Framing', 'Glass work', 'Teak', 'Teak', 'Call me later. 1', '2016-08-25');
 
 -- ----------------------------
 -- Table structure for picture_door
@@ -93,9 +101,9 @@ CREATE TABLE `picture_door` (
 -- ----------------------------
 -- Records of picture_door
 -- ----------------------------
-INSERT INTO `picture_door` VALUES ('1', 'CSP002', 'Classic', null, '2015-06-15 06:22:13');
-INSERT INTO `picture_door` VALUES ('2', 'CSP003', 'Classic', null, '2015-06-15 11:05:13');
-INSERT INTO `picture_door` VALUES ('3', 'CSP004', 'Classic', null, '2015-06-15 20:17:14');
+INSERT INTO `picture_door` VALUES ('1', 'CSP002', 'Classic', 'Test555', '2015-06-15 06:22:13');
+INSERT INTO `picture_door` VALUES ('2', 'CSP003', 'Classic', 'Test123555', '2015-06-15 11:05:13');
+INSERT INTO `picture_door` VALUES ('3', 'CSP004', 'Classic', '55555', '2015-06-15 20:17:14');
 INSERT INTO `picture_door` VALUES ('4', 'CSP005', 'Classic', null, '2015-06-15 12:30:29');
 INSERT INTO `picture_door` VALUES ('5', 'CSP006', 'Classic', null, '2015-06-15 13:19:36');
 INSERT INTO `picture_door` VALUES ('6', 'CSP007', 'Classic', null, '2015-06-15 07:20:29');
@@ -127,7 +135,7 @@ INSERT INTO `picture_door` VALUES ('32', 'CTP011', 'Contemporary', null, '2015-0
 INSERT INTO `picture_door` VALUES ('33', 'CTP012', 'Contemporary', null, '2015-06-18 21:02:28');
 INSERT INTO `picture_door` VALUES ('34', 'CTP013', 'Contemporary', null, '2015-06-18 21:02:29');
 INSERT INTO `picture_door` VALUES ('35', 'CTP014', 'Contemporary', null, '2015-06-18 21:02:30');
-INSERT INTO `picture_door` VALUES ('36', 'MDG001', 'Mordern', null, '2015-06-15 06:22:13');
+INSERT INTO `picture_door` VALUES ('36', 'MDG001', 'Mordern', '5555', '2015-06-15 06:22:13');
 INSERT INTO `picture_door` VALUES ('37', 'MDG004', 'Mordern', null, '2015-06-15 11:05:13');
 INSERT INTO `picture_door` VALUES ('38', 'MDG005', 'Mordern', null, '2015-06-15 20:17:14');
 INSERT INTO `picture_door` VALUES ('39', 'MDP001', 'Mordern', null, '2015-06-15 12:30:29');
@@ -192,13 +200,9 @@ INSERT INTO `picture_door` VALUES ('98', 'DUP26', 'Showroom', null, '2016-08-23 
 INSERT INTO `picture_door` VALUES ('123', 'MDG001', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('124', 'MDG002', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('125', 'MDG003', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('126', 'MDG004', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('127', 'MDG005', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('128', 'MDG001', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('129', 'MDG002', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('130', 'MDG003', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('131', 'MDG004', 'Showroom', null, '2016-08-23 00:00:00');
-INSERT INTO `picture_door` VALUES ('132', 'MDG005', 'Showroom', null, '2016-08-23 00:00:00');
 INSERT INTO `picture_door` VALUES ('163', 'folios-1', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('203', 'folios-1', 'Folios', null, '2016-08-24 00:00:00');
 INSERT INTO `picture_door` VALUES ('204', 'folios-2', 'Folios', null, '2016-08-24 00:00:00');
@@ -295,7 +299,7 @@ CREATE TABLE `picture_door_like` (
   `Picture_Door_ID` varchar(30) NOT NULL,
   `Session_ID` varchar(40) NOT NULL,
   PRIMARY KEY (`LIKE_ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=177 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of picture_door_like
