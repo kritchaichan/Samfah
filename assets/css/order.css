@@ -1151,7 +1151,7 @@ input[name="door_color"]:checked + span:before {
 /* ---- grid-item ---- */
 .grid-item {
     /* display: inline-block; */
-    border: solid 15px white;
+    border: solid 5px white;
     margin: 10px;
     vertical-align: top;
     text-align: left;
@@ -1189,7 +1189,7 @@ img[alt="door"] {
 	height: 100%;
 	background: white;
 	color: black;
-	font-size: 1.5em;
+	font-size: 1em;
 	float: left;
 }
 
@@ -1203,9 +1203,13 @@ img[alt="door"] {
 	top: 4px;
 }
 
-.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover,.footer-gallery .glyphicon-heart:visited {
+.footer-gallery .glyphicon-heart:active,.footer-gallery .glyphicon-heart:hover,.footer-gallery {
 	color: #807f7f;
 	cursor: pointer;
+}
+
+.glyphicon-heart:before:visited {
+	color: red;
 }
 
 .footer-gallery .glyphicon-shopping-cart:active,.footer-gallery .glyphicon-shopping-cart:hover ,.footer-gallery .glyphicon-shopping-cart:visited {
@@ -1270,4 +1274,5 @@ img[alt="door"] {
 
 .number-like{
 	width: 20px;
+	font-size: 0.5em;
 }

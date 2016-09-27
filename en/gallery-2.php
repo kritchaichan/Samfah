@@ -119,6 +119,13 @@ $(document).ready(function(){
 
   </script>
 <body>
+<!-- Preloader -->
+<div id="preloader">
+    <div id="loader">
+        <div class="loader"></div>
+    </div>
+</div>
+<!-- Preloader End-->
 <div id="main-order">
   <div class="slide order" id="second">
     <section id="page-order" data-background-image="../images/background/welcome.jpg">
