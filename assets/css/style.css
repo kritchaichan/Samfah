@@ -1897,8 +1897,16 @@ transition: all 0.9s ease;
 {
     padding-top: 10px !important;
 }
+.image-custom
+{
+    height: 940px !important;
+}
 @media screen and (max-width: 640px)
 {
+    .image-custom
+    {
+        height: 100% !important;
+    }
     .main-wood
     {
         position: static;
