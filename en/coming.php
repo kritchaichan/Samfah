@@ -22,17 +22,25 @@
 </head>
 <body>
 
-    <div class="samfah-cover-order-re">
-      <div class="samfah-cover-order-abb">
-          <div class="samfah-cover-order-table">
-              <div class="samfah-cover-order-tc samfah-cover-order-vl">
-                  <div class="samfah-heading-in-cover-order">
-                      <h1>COMING SOON</h1>
-                  </div>
-              </div>
-          </div>
-      </div>
-  	</div>
+    <div class="samfah-cover-ourstory-re">
+    <img src="../images/background/order.jpg" class="image-custom">
+    <div class="bg-dot">
+            <ol class="carousel-indicators">
+                <li data-target="#myCarousel" data-slide-to="0"></li>
+                <li data-target="#myCarousel" data-slide-to="1"></li>
+                <li data-target="#myCarousel" data-slide-to="2" class="active-1"></li>
+            </ol>
+        </div>
+    <div class="samfah-cover-ourstory-abb">
+        <div class="samfah-cover-ourstory-table">
+            <div class="samfah-cover-ourstory-tc samfah-cover-ourstory-vl">
+                <div class="samfah-text-in-cover">
+                    <h1>COMMING SOON</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- end hover gallery show for medium , small / mobile , tablet -->
 <!-- contact show large / desktop -->
 <div class="background-contact">
@@ -43,17 +51,21 @@
                     <div class="samfah-heading-contact">
                         <h1>CONTACT US</h1>
                     </div>
-                    <div class="address-1 ff-order">
-                        <!--<p>๙๑ หมู่ที่ ๘ ถนนตลิ่งชัน-สุพรรณบุรี ตำบลละหาร อำเภอบางบัวทอง จังหวัดนนทบุรี ๑๑๑๑๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>-->
+                    <div class="address-1 ff-gallery">
+                        <p>๙๑ หมู่ที่ ๘ ถนนตลิ่งชัน-สุพรรณบุรี ตำบลละหาร อำเภอบางบัวทอง จังหวัดนนทบุรี ๑๑๑๑๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1894.2743983651633!2d100.38671036605916!3d13.977195163950775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e28f2d53f2b8db%3A0xa07865089c9b4726!2z4Lia4Lij4Li04Lip4Lix4LiXIOC5geC4i-C4oeC4n-C5ieC4suC4nOC4peC4tOC4leC4oOC4seC4k-C4keC5jOC5hOC4oeC5iSDguIjguLPguIHguLHguJQ!5e1!3m2!1sen!2sth!4v1471753922712" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
-                    <div class="address-2 ff-order">
-                        <!--<p>๘๔-๘๘ ถนนบริพัตร แขวงบ้านบาตร เขตป้อมปราบศัตรูพ่าย จังหวัดกรุงเทพมหานคร ๑๐๑๐๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>-->
+                    <div class="address-2 ff-gallery">
+                        <p>๘๔-๘๘ ถนนบริพัตร แขวงบ้านบาตร เขตป้อมปราบศัตรูพ่าย จังหวัดกรุงเทพมหานคร ๑๐๑๐๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2011.321487937505!2d100.50483921723284!3d13.753041479612898!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e299165297b7e7%3A0x68aab2899e66498b!2z4LmB4LiL4Lih4Lif4LmJ4LiyIOC4geC4suC4o-C4iuC5iOC4suC4hw!5e1!3m2!1sth!2sth!4v1471764042023" width="100%" height="500" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                     <div class="samfah-botton-contact">
-                        <p><input type="radio" name="address-3" id="botton-chang-map-order" checked>โชว์รูม : ๙๑ หมู่ที่ ๘ ถนนตลิ่งชัน-สุพรรณบุรี ตำบลละหาร อำเภอบางบัวทอง จังหวัดนนทบุรี ๑๑๑๑๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>
-                        <p><input type="radio" name="address-3" id="botton-chang-map-2-order">โรงงาน : ๘๔-๘๘ ถนนบริพัตร แขวงบ้านบาตร เขตป้อมปราบศัตรูพ่าย จังหวัดกรุงเทพมหานคร ๑๐๑๐๐ เบอร์โทรศัพท์ ๐๘๑-๘๓๘-๑๓๖๘ , ๐๘๕-๙๒๐-๙๖๓๖</p>
+                        <div class="botton-chang-map">
+                            <p id="botton-chang-map-gallery"><i class="fa fa-refresh" aria-hidden="true"></i>    โชว์รูม</p>
+                        </div>
+                        <div class="botton-chang-map">
+                            <p id="botton-chang-map-2-gallery"><i class="fa fa-refresh" aria-hidden="true"></i>    โรงงาน</p>
+                        </div>
                     </div>
                 </div>
             </div>
