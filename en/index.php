@@ -20,23 +20,16 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
-<!-- Preloader -->
-<div id="preloader">
-    <div id="loader">
-        <div class="loader"></div>
-    </div>
-</div>
-<!-- Preloader End-->
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
-        <div class="bg-dot">
+        <!--<div class="bg-dot">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
                 <li data-target="#myCarousel" data-slide-to="2"></li>
             </ol>
-        </div>
+        </div>-->
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
             <div class="item active">
@@ -91,9 +84,25 @@
     </script>
     <!-- chang map our story -->
     <script>
-        $( "#botton-chang-map" ).click(function() {
-        $( ".ff" ).slideToggle("slow");
-        });
+        $(document).ready(function(){
+            
+            $( "#dd" ).click(function() {
+            $( ".ff" ).slideToggle("slow");
+            });
+            
+            $( "#dd-2" ).click(function() {
+            $( ".ff" ).slideToggle("slow");
+            }); 
+            
+            $( "#dd-3" ).click(function() {
+            $( ".ff-gallery" ).slideToggle("slow");
+            }); 
+            
+            $( "#dd-4" ).click(function() {
+            $( ".ff-gallery" ).slideToggle("slow");
+            }); 
+        })
+        
     </script>
     <script>
         $( "#botton-chang-map-2" ).click(function() {
@@ -124,6 +133,28 @@
         $( ".ff-order" ).slideToggle("slow");
         });
     </script>
+    <script>
+$(document).ready(function(){
+    $( "#dd" ).last().addClass( "botton-ra-click" );
+    $( "#dd-3" ).last().addClass( "botton-ra-click" );
+    $("#dd").click(function(){
+        $("#dd").addClass("botton-ra-click");
+        $("#dd-2").removeClass("botton-ra-click");
+    });
+     $("#dd-2").click(function(){
+        $("#dd-2").addClass("botton-ra-click");
+        $("#dd").removeClass("botton-ra-click");
+    });
+    $("#dd-3").click(function(){
+        $("#dd-3").addClass("botton-ra-click");
+        $("#dd-4").removeClass("botton-ra-click");
+    });
+     $("#dd-4").click(function(){
+        $("#dd-4").addClass("botton-ra-click");
+        $("#dd-3").removeClass("botton-ra-click");
+    });
+});
+</script>
     <!-- end chang map order -->
 </body>
 </html>
