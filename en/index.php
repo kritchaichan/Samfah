@@ -86,20 +86,37 @@
     <script>
         $(document).ready(function(){
             
-            $( "#dd" ).click(function() {
-            $( ".ff" ).slideToggle("slow");
+            $( "#dd-1" ).click(function() {
+            $( ".ff-1" ).fadeIn("slow");
+                $( ".ff-2" ).fadeOut("slow");
             });
             
             $( "#dd-2" ).click(function() {
-            $( ".ff" ).slideToggle("slow");
+            $( ".ff-2" ).fadeIn("slow");
+                $( ".ff-1" ).fadeOut("slow");
             }); 
             
             $( "#dd-3" ).click(function() {
-            $( ".ff-gallery" ).slideToggle("slow");
+            $( ".ff-gallery-1" ).fadeIn("slow");
+                $( ".ff-gallery-2" ).fadeOut("slow");
             }); 
             
             $( "#dd-4" ).click(function() {
-            $( ".ff-gallery" ).slideToggle("slow");
+            $( ".ff-gallery-2" ).fadeIn("slow");
+                $( ".ff-gallery-1" ).fadeOut("slow");
+            
+            }); 
+            
+            $( "#dd-5" ).click(function() {
+            $( ".ff-order-1" ).fadeIn("slow");
+                $( ".ff-order-2" ).fadeOut("slow");
+            
+            }); 
+            
+            $( "#dd-6" ).click(function() {
+            $( ".ff-order-2" ).fadeIn("slow");
+                $( ".ff-order-1" ).fadeOut("slow");
+            
             }); 
         })
         
@@ -135,15 +152,16 @@
     </script>
     <script>
 $(document).ready(function(){
-    $( "#dd" ).last().addClass( "botton-ra-click" );
+    $( "#dd-1" ).last().addClass( "botton-ra-click" );
     $( "#dd-3" ).last().addClass( "botton-ra-click" );
-    $("#dd").click(function(){
-        $("#dd").addClass("botton-ra-click");
+    $( "#dd-5" ).last().addClass( "botton-ra-click" );
+    $("#dd-1").click(function(){
+        $("#dd-1").addClass("botton-ra-click");
         $("#dd-2").removeClass("botton-ra-click");
     });
      $("#dd-2").click(function(){
         $("#dd-2").addClass("botton-ra-click");
-        $("#dd").removeClass("botton-ra-click");
+        $("#dd-1").removeClass("botton-ra-click");
     });
     $("#dd-3").click(function(){
         $("#dd-3").addClass("botton-ra-click");
@@ -152,6 +170,14 @@ $(document).ready(function(){
      $("#dd-4").click(function(){
         $("#dd-4").addClass("botton-ra-click");
         $("#dd-3").removeClass("botton-ra-click");
+    });
+    $("#dd-5").click(function(){
+        $("#dd-5").addClass("botton-ra-click");
+        $("#dd-6").removeClass("botton-ra-click");
+    });
+    $("#dd-6").click(function(){
+        $("#dd-6").addClass("botton-ra-click");
+        $("#dd-5").removeClass("botton-ra-click");
     });
 });
 </script>
