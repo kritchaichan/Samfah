@@ -131,9 +131,9 @@ $(document).ready(function(){
     <section id="page-order" data-background-image="../images/background/welcome.jpg">
       <div class="container-order">
           <div class="box-catalog">
-            <a href="" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
+            <a href="gallery-2.php" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
             PROCESS
-            <a href="" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
+            <a href="gallery-4.php" class="arrow-btn pull-right"><span class="glyphicon glyphicon-menu-right"></span></a>
           </div>
           <div class="grid1"><!-- gird1-->
             <?php foreach ($doors as $door): ?>
