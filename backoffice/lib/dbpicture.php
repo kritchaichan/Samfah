@@ -9,7 +9,8 @@ Editor::inst($db, 'picture_door', 'Picture_Door_ID')
   Field::inst('Picture_Door_ID')->validator('Validate::notEmpty'),
   Field::inst('Picture_Door_Name')->validator('Validate::notEmpty'),
   Field::inst('Picture_Door_Type')->validator('Validate::notEmpty'),
-  Field::inst('Picture_Door_Caption')
+  Field::inst('Picture_Door_Caption'),
+  Field::inst('Picture_Door_Sequence_Number')
  )
  ->process($_POST)
  ->json();

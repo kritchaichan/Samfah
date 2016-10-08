@@ -72,14 +72,15 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
 	<script type="text/javascript" language="javascript" class="init">
 	var editor; // use a global for the submit and return data rendering in the examples
-
+  var selectedID;
+  var selectedType;
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../lib/dbpicture.php",
 			table: "#dataTables-example",
 			fields: [ {
 					label: "Picture NO. :",
-					name: "Picture_Door_ID"
+					name: "Picture_Door_Sequence_Number"
 				}, {
 					label: "Picture Name :",
 					name: "Picture_Door_Name"
@@ -94,17 +95,11 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 		} );
 
     editor.on( 'onInitEdit', function () {
-    editor.disable('Picture_Door_ID');
     editor.disable('Picture_Door_Name');
     editor.disable('Picture_Door_Type');
     } );
 
-		// Activate an inline edit on click of a table cell
-		/*$('#dataTables-example').on( 'click', 'tbody td:not(:first-child)', function (e) {
-			editor.inline( this );
-		} );*/
-
-		$('#dataTables-example').DataTable( {
+    var table = $('#dataTables-example').DataTable( {
 			dom: "Bfrtip",
 			ajax: "../lib/dbpicture.php",
 			columns: [
@@ -114,7 +109,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 					className: 'select-checkbox',
 					orderable: false
 				},
-        { data: "Picture_Door_ID" },
+        { data: "Picture_Door_Sequence_Number" },
 				{ data: "Picture_Door_Name" },
 				{ data: "Picture_Door_Type"  },
 				{ data: "Picture_Door_Caption" }
@@ -127,9 +122,57 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 				{ extend: "edit",   editor: editor },
 				{ extend: "remove", editor: editor }
 			]
-		} );
-	} );
-    </script>
+    });
+
+$('#dataTables-example').on( 'click','tr', function () {
+  var data = table.row( this ).data();
+  selectedID = objToStringWithID(data);
+  selectedType = objToStringWithType(data);
+});
+
+editor.on( 'submitSuccess', function ( e, type ) {
+    alert( 'Update Data Success.');
+});
+
+editor.on( 'open', function ( e, type ) {
+  //alert( 'The cell clicked on had the value of '+selectedID+selectedType);
+});
+
+});
+
+function objToStringWithID (obj) {
+    var result = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            result = obj['Picture_Door_ID'];
+        }
+    }
+    return result;
+}
+
+function objToStringWithType (obj) {
+    var result = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            result = obj['Picture_Door_Type'];
+        }
+    }
+    return result;
+}
+
+
+/*function objToString (obj) {
+    var str = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            str += p + '::' + obj[p] + '\n';
+        }
+    }
+    return str;
+}*/
+
+
+</script>
 
 </head>
 

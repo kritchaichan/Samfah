@@ -19,7 +19,7 @@ $doorsQuery = $objCon->query("
 
     GROUP BY picture_door.Picture_Door_Name
 
-    ORDER BY picture_door.Picture_Door_ID Desc
+    ORDER BY picture_door.Picture_Door_Sequence_Number
 
 ");
 
