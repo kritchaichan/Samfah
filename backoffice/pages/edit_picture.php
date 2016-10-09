@@ -74,6 +74,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 	var editor; // use a global for the submit and return data rendering in the examples
   var selectedID;
   var selectedType;
+  var selectedName;
   var selectedevent;
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
@@ -129,6 +130,7 @@ $('#dataTables-example').on( 'click','tr', function () {
   var data = table.row( this ).data();
   selectedID = objToStringWithID(data);
   selectedType = objToStringWithType(data);
+  selectedName = objToStringWithName(data);
 });
 
 
@@ -136,6 +138,27 @@ $('#dataTables-example').on( 'click','tr', function () {
 editor.on( 'open', function ( e, type, data ) {
   //alert( 'The cell clicked on had the value of '+data);
   selectedevent = data;
+});
+
+editor.on( 'preSubmit', function () {
+  if(selectedevent === 'edit'){
+    //alert( 'Edit Success.');
+  }
+  else if(selectedevent === 'remove'){
+    if (window.XMLHttpRequest){
+        xmlhttp=new XMLHttpRequest();
+    }
+    else{
+        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
+    xmlhttp.open("GET", SendVariable, false);
+    xmlhttp.send();
+    //alert( 'Delete Success.');
+    selectedID = '';
+    selectedType = '';
+    selectedName = '';
+  }
 });
 
 editor.on( 'submitSuccess', function ( e, type, data ) {
@@ -159,7 +182,6 @@ function objToStringWithID (obj) {
     }
     return result;
 }
-
 function objToStringWithType (obj) {
     var result = '';
     for (var p in obj) {
@@ -169,7 +191,15 @@ function objToStringWithType (obj) {
     }
     return result;
 }
-
+function objToStringWithName (obj) {
+    var result = '';
+    for (var p in obj) {
+        if (obj.hasOwnProperty(p)) {
+            result = obj['Picture_Door_Name'];
+        }
+    }
+    return result;
+}
 
 function objToString (obj) {
     var str = '';
