@@ -52,6 +52,7 @@ while($row = $doorsQuery->fetch_object()){
   <!-- ICON  -->
   <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
+  body{overflow: hidden;}
 </style>
 
 </head>
@@ -128,7 +129,7 @@ $(document).ready(function(){
 <!-- Preloader End-->
 <div id="main-order">
   <div class="slide order" id="second">
-    <section id="page-order" data-background-image="../images/background/welcome.jpg">
+    <section id="page-top" class="section-style center-page" data-background-image="../images/background/welcome-2.jpg">
       <div class="container-order">
           <div class="box-catalog">
             <a href="gallery-3.php" class="arrow-btn pull-left"><span class="glyphicon glyphicon-menu-left"></span></a>
