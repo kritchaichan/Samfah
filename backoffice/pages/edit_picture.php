@@ -74,6 +74,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 	var editor; // use a global for the submit and return data rendering in the examples
   var selectedID;
   var selectedType;
+  var selectedevent;
 	$(document).ready(function() {
 		editor = new $.fn.dataTable.Editor( {
 			ajax: "../lib/dbpicture.php",
@@ -130,13 +131,22 @@ $('#dataTables-example').on( 'click','tr', function () {
   selectedType = objToStringWithType(data);
 });
 
-editor.on( 'submitSuccess', function ( e, type ) {
-    alert( 'Update Data Success.');
+
+
+editor.on( 'open', function ( e, type, data ) {
+  //alert( 'The cell clicked on had the value of '+data);
+  selectedevent = data;
 });
 
-editor.on( 'open', function ( e, type ) {
-  //alert( 'The cell clicked on had the value of '+selectedID+selectedType);
+editor.on( 'submitSuccess', function ( e, type, data ) {
+  if(selectedevent === 'edit'){
+    alert( 'Edit Success.');
+  }
+  else if(selectedevent === 'remove'){
+    alert( 'Delete Success.');
+  }
 });
+
 
 });
 
@@ -161,7 +171,7 @@ function objToStringWithType (obj) {
 }
 
 
-/*function objToString (obj) {
+function objToString (obj) {
     var str = '';
     for (var p in obj) {
         if (obj.hasOwnProperty(p)) {
@@ -169,7 +179,7 @@ function objToStringWithType (obj) {
         }
     }
     return str;
-}*/
+}
 
 
 </script>
