@@ -1156,7 +1156,7 @@ input[name="door_color"]:checked + span:before {
     vertical-align: top;
     text-align: left;
     float: left;
-    border-radius: 8px;
+    border-radius: 0px;
     width: auto;
     /* height: 400px; */
 }
@@ -1189,8 +1189,8 @@ img[alt="door"] {
 	height: 100%;
 	background: white;
 	color: black;
-	font-size: 1em;
-	float: left;
+	font-size: 1.3em;
+	text-align: right;
 }
 
 .footer-gallery a {

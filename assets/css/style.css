@@ -46,11 +46,11 @@
 
 .loader
 {
-	border: 50px solid #f3f3f3;
+	border: 45px solid #f3f3f3;
 	border-radius: 100%;
-	border-top: 50px solid #8B5E35;
-	width: 300px;
-	height: 300px;
+	border-top: 45px solid #a9a9a9;
+	width: 240px;
+	height: 240px;
 	-webkit-animation: spin 2s linear infinite;
 	animation: spin 2s linear infinite;
 }
@@ -1013,28 +1013,20 @@ form.news-letter .btn:hover{
 
 }
 
-/*#loader {
- 	position: absolute;
- 	top: 8%;
-	left: 0;
-	right: 0;*/
-
-	/*bottom: 0;*/
-
-	/*width: 175px;
-	height: 175px;
-	margin: auto;*/
-/*}*/
-
 #loader {
- 	position: relative;
+ 	/*position: relative;
     top: 280px;
-    /* left: 0; */
-    /* right: 0; */
-    /* bottom: 0; */
     width: 300px;
     margin: auto;
-    display: block;
+    display: block;*/
+    position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 240px;
+	width: 240px;
+	margin-top: -120px;
+	margin-left: -120px;
+
 }
 #loader .dot {
 	position: absolute;
