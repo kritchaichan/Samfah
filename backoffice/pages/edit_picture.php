@@ -55,122 +55,74 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
     <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
   	</script>
-  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/buttons/1.2.0/js/dataTables.buttons.min.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="https://cdn.datatables.net/select/1.2.0/js/dataTables.select.min.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/js/dataTables.editor.min.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/syntax/shCore.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/demo.js">
-  	</script>
-  	<script type="text/javascript" language="javascript" src="../vendor/datatables-editor/examples/resources/editor-demo.js">
-  	</script>
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-editor/js/dataTables.altEditor.free.js"></script>
+    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
 
 	<script type="text/javascript" language="javascript" class="init">
-	var editor; // use a global for the submit and return data rendering in the examples
-  var selectedID;
-  var selectedType;
-  var selectedName;
-  var selectedevent;
-	$(document).ready(function() {
-		editor = new $.fn.dataTable.Editor( {
-			ajax: "../lib/dbpicture.php",
-			table: "#dataTables-example",
-			fields: [ {
-					label: "Picture NO. :",
-					name: "Picture_Door_Sequence_Number"
-				}, {
-					label: "Picture Name :",
-					name: "Picture_Door_Name"
-				}, {
-					label: "Picture Type :",
-					name: "Picture_Door_Type"
-				}, {
-					label: "Picture Caption :",
-					name: "Picture_Door_Caption"
-				}
-			]
-		} );
+  $(document).ready(function() {
 
-    editor.on( 'onInitEdit', function () {
-    editor.disable('Picture_Door_Name');
-    editor.disable('Picture_Door_Type');
-    } );
+    var columnDefs = [{
+          title: "Picture ID",
+          id: "Picture_Door_ID",
+          data: "Picture_Door_ID",
+          type: "number"
+        }, {
+          title: "Picture Name",
+          id: "Picture_Door_Name",
+          data: "Picture_Door_Name",
+          type: "text"
+        }, {
+          title: "Picture Type",
+          id: "Picture_Door_Type",
+          data: "Picture_Door_Type",
+          type: "text"
+        }, {
+          title: "Picture Caption",
+          id: "Picture_Door_Caption",
+          data: "Picture_Door_Caption",
+          type: "readonly"
+        },{
+          title: "Picture NO.",
+          id: "Picture_Door_Sequence_Number",
+          data: "Picture_Door_Sequence_Number",
+          type: "text"
+        }]
 
-    var table = $('#dataTables-example').DataTable( {
-			dom: "Bfrtip",
-			ajax: "../lib/dbpicture.php",
-			columns: [
-				{
-					data: null,
-					defaultContent: '',
-					className: 'select-checkbox',
-					orderable: false
-				},
-        { data: "Picture_Door_Sequence_Number" },
-				{ data: "Picture_Door_Name" },
-				{ data: "Picture_Door_Type"  },
-				{ data: "Picture_Door_Caption" }
-			],
-			select: {
-				style:    'os',
-				selector: 'td:first-child'
-			},
-			buttons: [
-				{ extend: "edit",   editor: editor },
-				{ extend: "remove", editor: editor }
-			]
-    });
+          var myTable;
 
-$('#dataTables-example').on( 'click','tr', function () {
-  var data = table.row( this ).data();
-  selectedID = objToStringWithID(data);
-  selectedType = objToStringWithType(data);
-  selectedName = objToStringWithName(data);
-});
+          myTable = $('#dataTables-example').DataTable({
+            dom: 'Bfrltip',                   //Element order: Button container(B) is essential.
+             ajax: "../lib/dbpicture.php",   //Receiving data from this source.
+               columns: columnDefs,            //Columns defined above.
+               select: 'single',               //Only single column selection is implemented.
+               altEditor: true,                //Enable altEditor.
+               responsive: true,               //Enable responsiveness.
+               buttons: [                     //All implemented buttons. Do not change name attribute.
+                 {
+              extend: 'selected', // Bind to Selected row
+              text: 'Edit',
+              name: 'edit'        // do not change name
+            },
+            {
+              extend: 'selected', // Bind to Selected row
+              text: 'Delete',
+              name: 'delete'      // do not change name
+           }]
 
+          });
 
-
-editor.on( 'open', function ( e, type, data ) {
-  //alert( 'The cell clicked on had the value of '+data);
-  selectedevent = data;
-});
-
-editor.on( 'preSubmit', function () {
-  if(selectedevent === 'edit'){
-    //alert( 'Edit Success.');
-  }
-  else if(selectedevent === 'remove'){
-    if (window.XMLHttpRequest){
-        xmlhttp=new XMLHttpRequest();
+        });
+// If the user has unsaved changes when reloading/leaving the page, then
+// an alert is displayed asking the user to confirm the action
+$(window).bind('beforeunload',function(){
+   if(!$('#cancelButton').is(':disabled')){
+   return "";
     }
-    else{
-        xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-    }
-    var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
-    xmlhttp.open("GET", SendVariable, false);
-    xmlhttp.send();
-    //alert( 'Delete Success.');
-    selectedID = '';
-    selectedType = '';
-    selectedName = '';
-  }
-});
-
-editor.on( 'submitSuccess', function ( e, type, data ) {
-  if(selectedevent === 'edit'){
-    alert( 'Edit Success.');
-  }
-  else if(selectedevent === 'remove'){
-    alert( 'Delete Success.');
-  }
-});
-
-
 });
 
 function objToStringWithID (obj) {
@@ -182,6 +134,7 @@ function objToStringWithID (obj) {
     }
     return result;
 }
+
 function objToStringWithType (obj) {
     var result = '';
     for (var p in obj) {
@@ -191,15 +144,7 @@ function objToStringWithType (obj) {
     }
     return result;
 }
-function objToStringWithName (obj) {
-    var result = '';
-    for (var p in obj) {
-        if (obj.hasOwnProperty(p)) {
-            result = obj['Picture_Door_Name'];
-        }
-    }
-    return result;
-}
+
 
 function objToString (obj) {
     var str = '';
@@ -277,19 +222,36 @@ function objToString (obj) {
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                    	<th></th>
-                                        <th>Picture No.</th>
-                                        <th>Picture Name</th>
-                                        <th>Picture Type</th>
-                                        <th>Picture Caption</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                </tbody>
+                              <thead>
+                                <tr>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                  <th></th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                  <td></td>
+                                </tr>
+                              </tbody>
                             </table>
                             <!-- /.table-responsive -->
+- saveButton    - onClick, takes all the data from the datatable and sends it to the server
+- cancelButton  - onClick, asks the user if the wants to undo unsaved changes and (if yes)
+                  reloads the datatable with the data from the server.
+- messages      - Displays the response from the server.
+-->
+  <div>
+    <button type='button' class='btn btn-default' id='saveButton' value='Save'>Save</button>
+    <button type='button' class='btn btn-default' id='cancelButton' value='Cancel' disabled='true'>Cancel</button>
+    <span id='messages'>&nbsp;</span>
+  </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
