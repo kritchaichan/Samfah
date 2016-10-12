@@ -34,7 +34,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
   	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/css/editor.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/syntax/shCore.css">
-  	<!--<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/demo.css">-->
 
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
@@ -48,117 +47,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <!-- DataTables JavaScript -->
-    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
-    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
-    <script type="text/javascript" language="javascript" src="//code.jquery.com/jquery-1.12.3.min.js">
-  	</script>
-    <script src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
-    <script src="../vendor/datatables-editor/js/dataTables.altEditor.free.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.1.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/select/1.1.2/js/dataTables.select.min.js"></script>
-    <script src="https://cdn.datatables.net/responsive/2.0.2/js/dataTables.responsive.min.js"></script>
-
-	<script type="text/javascript" language="javascript" class="init">
-  $(document).ready(function() {
-
-    var columnDefs = [{
-          title: "Picture ID",
-          id: "Picture_Door_ID",
-          data: "Picture_Door_ID",
-          type: "number"
-        }, {
-          title: "Picture Name",
-          id: "Picture_Door_Name",
-          data: "Picture_Door_Name",
-          type: "text"
-        }, {
-          title: "Picture Type",
-          id: "Picture_Door_Type",
-          data: "Picture_Door_Type",
-          type: "text"
-        }, {
-          title: "Picture Caption",
-          id: "Picture_Door_Caption",
-          data: "Picture_Door_Caption",
-          type: "readonly"
-        },{
-          title: "Picture NO.",
-          id: "Picture_Door_Sequence_Number",
-          data: "Picture_Door_Sequence_Number",
-          type: "text"
-        }]
-
-          var myTable;
-
-          myTable = $('#dataTables-example').DataTable({
-            dom: 'Bfrltip',                   //Element order: Button container(B) is essential.
-             ajax: "../lib/dbpicture.php",   //Receiving data from this source.
-               columns: columnDefs,            //Columns defined above.
-               select: 'single',               //Only single column selection is implemented.
-               altEditor: true,                //Enable altEditor.
-               responsive: true,               //Enable responsiveness.
-               buttons: [                     //All implemented buttons. Do not change name attribute.
-                 {
-              extend: 'selected', // Bind to Selected row
-              text: 'Edit',
-              name: 'edit'        // do not change name
-            },
-            {
-              extend: 'selected', // Bind to Selected row
-              text: 'Delete',
-              name: 'delete'      // do not change name
-           }]
-
-          });
-
-        });
-// If the user has unsaved changes when reloading/leaving the page, then
-// an alert is displayed asking the user to confirm the action
-$(window).bind('beforeunload',function(){
-   if(!$('#cancelButton').is(':disabled')){
-   return "";
-    }
-});
-
-function objToStringWithID (obj) {
-    var result = '';
-    for (var p in obj) {
-        if (obj.hasOwnProperty(p)) {
-            result = obj['Picture_Door_ID'];
-        }
-    }
-    return result;
-}
-
-function objToStringWithType (obj) {
-    var result = '';
-    for (var p in obj) {
-        if (obj.hasOwnProperty(p)) {
-            result = obj['Picture_Door_Type'];
-        }
-    }
-    return result;
-}
-
-
-function objToString (obj) {
-    var str = '';
-    for (var p in obj) {
-        if (obj.hasOwnProperty(p)) {
-            str += p + '::' + obj[p] + '\n';
-        }
-    }
-    return str;
-}
-
-
-</script>
-
 </head>
 
 <body>
@@ -222,36 +110,18 @@ function objToString (obj) {
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                              <thead>
-                                <tr>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                  <th></th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                <tr>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                  <td></td>
-                                </tr>
-                              </tbody>
+                                <thead>
+                                    <tr>
+                                        <th>Picture ID</th>
+                                        <th>Picture Name</th>
+                                        <th>Picture Type</th>
+                                        <th>Picture Caption</th>
+                                        <th>Picture No.</th>
+                                        <th>Button</th>
+                                    </tr>
+                                </thead>
                             </table>
                             <!-- /.table-responsive -->
-- saveButton    - onClick, takes all the data from the datatable and sends it to the server
-- cancelButton  - onClick, asks the user if the wants to undo unsaved changes and (if yes)
-                  reloads the datatable with the data from the server.
-- messages      - Displays the response from the server.
--->
-  <div>
-    <button type='button' class='btn btn-default' id='saveButton' value='Save'>Save</button>
-    <button type='button' class='btn btn-default' id='cancelButton' value='Cancel' disabled='true'>Cancel</button>
-    <span id='messages'>&nbsp;</span>
-  </div>
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -266,14 +136,142 @@ function objToString (obj) {
     </div>
     <!-- /#wrapper -->
 
+    <!-- jQuery -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+
     <!-- Bootstrap Core JavaScript -->
     <script src="../vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
     <script src="../vendor/metisMenu/metisMenu.min.js"></script>
 
+    <!-- DataTables JavaScript -->
+    <script src="../vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
+    <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
+    <script type="text/javascript" language="javascript" class="init">
+    var selectedID;
+    var selectedType;
+    var selectedName;
+    var selectedevent;
+
+  $(document).ready(function() {
+    var table =$('#dataTables-example').DataTable({
+        "processing": true,
+        "ajax": "../lib/dbpicture.php",
+        "columns": [
+          { "data": "Picture_Door_ID" },
+          { "data": "Picture_Door_Name" },
+          { "data": "Picture_Door_Type" },
+          { "data": "Picture_Door_Caption" },
+          { "data": "Picture_Door_Sequence_Number"},
+          {
+              "targets": -1,
+              "data": null,
+              "defaultContent": '<input type="submit" class="SubmitButtonClass" style="border:none;" value="" /> | '
+          }
+        ]
+    });
+
+    /*$('#dataTables-example tbody').on( 'click', 'tr', function () {
+      if ( $(this).hasClass('selected') ) {
+          $(this).removeClass('selected');
+      }
+      else {
+          table.$('tr.selected').removeClass('selected');
+          $(this).addClass('selected');
+      }
+    });*/
+
+    $('#dataTables-example tbody').on( 'click', 'tr' , 'button', function () {
+      if ( $(this).hasClass('selected') ) {
+          $(this).removeClass('selected');
+      }
+      else {
+          table.$('tr.selected').removeClass('selected');
+          $(this).addClass('selected');
+          var data = table.row( this ).data();
+          selectedID = objToStringWithID(data);
+          selectedType = objToStringWithType(data);
+          selectedName = objToStringWithName(data);
+          alert( 'The cell clicked on had the value of '+selectedID);
+      }
+    } );
+
+});
+
+
+
+
+    /*editor.on( 'open', function ( e, type, data ) {
+    //alert( 'The cell clicked on had the value of '+data);
+    selectedevent = data;
+    });
+
+    editor.on( 'preSubmit', function () {
+    if(selectedevent === 'edit'){
+      //alert( 'Edit Success.');
+    }
+    else if(selectedevent === 'remove'){
+      if (window.XMLHttpRequest){
+          xmlhttp=new XMLHttpRequest();
+      }
+      else{
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
+      xmlhttp.open("GET", SendVariable, false);
+      xmlhttp.send();
+      //alert( 'Delete Success.');
+      selectedID = '';
+      selectedType = '';
+      selectedName = '';
+    }
+  });*/
+
+    function objToStringWithID (obj) {
+      var result = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              result = obj['Picture_Door_ID'];
+          }
+      }
+      return result;
+    }
+    function objToStringWithType (obj) {
+      var result = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              result = obj['Picture_Door_Type'];
+          }
+      }
+      return result;
+    }
+    function objToStringWithName (obj) {
+      var result = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              result = obj['Picture_Door_Name'];
+          }
+      }
+      return result;
+    }
+
+    function objToString (obj) {
+      var str = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              str += p + '::' + obj[p] + '\n';
+          }
+      }
+      return str;
+    }
+
+
+    </script>
 
 </body>
 
