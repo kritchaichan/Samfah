@@ -117,7 +117,8 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                         <th>Picture Type</th>
                                         <th>Picture Caption</th>
                                         <th>Picture No.</th>
-                                        <th>Button</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -135,6 +136,41 @@ if ($_SESSION['checkSign'] != 'itoffside') {
 
     </div>
     <!-- /#wrapper -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">Edit Picture</h4>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="recipient-name" class="form-control-label">Picture Name</label>
+                <input type="text" class="form-control" id="pic-name" maxlength="50">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Picture Type</label>
+                <input type="text" class="form-control" id="pic-type" disabled>
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="form-control-label">Picture Caption</label>
+                <textarea class="form-control" id="pic-caption" rows="3" maxlength="512"></textarea>
+              </div>
+              <div class="form-group">
+                <label for="message-no" class="form-control-label">Picture No</label>
+                <input type="text" class="form-control bfh-number" id="pic-no" maxlength="3">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" onclick="SendAjaxforEdit()">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="../vendor/jquery/jquery.min.js"></script>
@@ -150,20 +186,20 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
-
     <script src="../vendor/sweetalert-master/dist/sweetalert.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script type="text/javascript" language="javascript" class="init">
     var selectedID;
-    var selectedType;
     var selectedName;
-    var selectedevent;
+    var selectedType;
+    var selectedCaption;
+    var selectedNo;
 
   $(document).ready(function() {
     var table =$('#dataTables-example').DataTable({
-        "processing": true,
+        "processing": false,
         "ajax": "../lib/dbpicture.php",
         "columns": [
           { "data": "Picture_Door_ID" },
@@ -172,69 +208,96 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           { "data": "Picture_Door_Caption" },
           { "data": "Picture_Door_Sequence_Number"},
           {
-              "targets": -1,
-              "data": null,
-              "defaultContent": '<input type="submit" class="SubmitButtonClass" style="border:none;" value="" /> | '
+            mData: "Action",
+            bSortable: false,
+            mRender: function(data, type, row) {
+                          //return '<a class="btn btn-info btn-sm">Edit</a>';
+                          return '<a class="btn btn-info btn-sm"> Edit</a>';
+                       }
+          },
+          {
+            mData: "Action",
+            bSortable: false,
+            mRender: function(data, type, row) {
+                          return '<button type="button" class="btn btn-danger btn-sm" >Delete</button>';
+                       }
           }
         ]
     });
 
-    /*$('#dataTables-example tbody').on( 'click', 'tr', function () {
-      if ( $(this).hasClass('selected') ) {
-          $(this).removeClass('selected');
-      }
-      else {
-          table.$('tr.selected').removeClass('selected');
-          $(this).addClass('selected');
-      }
-    });*/
-
-    $('#dataTables-example tbody').on( 'click', 'tr' , 'button', function () {
-      if ( $(this).hasClass('selected') ) {
-          $(this).removeClass('selected');
-      }
+    $('#dataTables-example tbody').on( 'click','tr',function () {
+      if ($(this).hasClass('selected')) {
+          //$(this).removeClass('selected');
+      }// --- END IF ---
       else {
           table.$('tr.selected').removeClass('selected');
           $(this).addClass('selected');
           var data = table.row( this ).data();
           selectedID = objToStringWithID(data);
-          selectedType = objToStringWithType(data);
           selectedName = objToStringWithName(data);
-          swal( 'The cell clicked on had the value of '+selectedID);
-      }
-    } );
-
-});
-
-
-
-
-    /*editor.on( 'open', function ( e, type, data ) {
-    //alert( 'The cell clicked on had the value of '+data);
-    selectedevent = data;
+          selectedType = objToStringWithType(data);
+          selectedCaption = objToStringWithCap(data);
+          selectedNo = objToStringWithNo(data);
+      }// --- END ELSE ---
     });
 
-    editor.on( 'preSubmit', function () {
-    if(selectedevent === 'edit'){
-      //alert( 'Edit Success.');
-    }
-    else if(selectedevent === 'remove'){
-      if (window.XMLHttpRequest){
-          xmlhttp=new XMLHttpRequest();
-      }
-      else{
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-      var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
-      xmlhttp.open("GET", SendVariable, false);
-      xmlhttp.send();
-      //alert( 'Delete Success.');
-      selectedID = '';
-      selectedType = '';
-      selectedName = '';
-    }
-  });*/
+    $('#dataTables-example tbody').on( 'click','button' ,function () {
+      if ($(this).hasClass('selected')) {
+          //$(this).removeClass('selected');
+      }// --- END IF ---
+      else {
+         swal({title: "Are you sure?",
+               text: "You will not be able to recover this picture door file!",
+               type: "warning",
+               showCancelButton: true,
+               confirmButtonColor: "#DD6B55",
+               confirmButtonText: "Yes, delete it!",
+               cancelButtonText: "No, cancel plx!",
+               closeOnConfirm: false,
+               closeOnCancel: true },
+               function(isConfirm){
+                 if (isConfirm) {
+                   if (window.XMLHttpRequest) {
+                       xmlhttp=new XMLHttpRequest();
+                   }
+                   else {
+                       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                   }
+                   var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
+                   xmlhttp.open("GET", SendVariable, true);
+                   xmlhttp.onreadystatechange = responseXHR;
+                   xmlhttp.send();
+                   function responseXHR() {
+                        if ( xmlhttp.readyState == 4 ) {
+                          swal({
+                                 title: "Deleted!",
+                                  text: "Your picture door file has been deleted.",
+                                   type: "success"
+                                 },
+                                 function(){
+                                   //location.reload();
+                                   table.row('.selected').remove().draw( false );
+                               });
+                        }
+                   }
+                }
+        });// --- END Swal ---
+      }// --- END ELSE ---
+    });
 
+    $('#dataTables-example tbody').on( 'click','a' ,function () {
+      if ($(this).hasClass('selected')) {
+          //$(this).removeClass('selected');
+      }// --- END IF ---
+      else {
+          $(".modal-body #pic-name").val(selectedName);
+          $(".modal-body #pic-type").val(selectedType);
+          $(".modal-body #pic-caption").val(selectedCaption);
+          $(".modal-body #pic-no").val(selectedNo);
+          $("#myModal").modal();
+      }
+    });
+});
     function objToStringWithID (obj) {
       var result = '';
       for (var p in obj) {
@@ -262,7 +325,24 @@ if ($_SESSION['checkSign'] != 'itoffside') {
       }
       return result;
     }
-
+    function objToStringWithCap (obj) {
+      var result = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              result = obj['Picture_Door_Caption'];
+          }
+      }
+      return result;
+    }
+    function objToStringWithNo (obj) {
+      var result = '';
+      for (var p in obj) {
+          if (obj.hasOwnProperty(p)) {
+              result = obj['Picture_Door_Sequence_Number'];
+          }
+      }
+      return result;
+    }
     function objToString (obj) {
       var str = '';
       for (var p in obj) {
@@ -273,8 +353,53 @@ if ($_SESSION['checkSign'] != 'itoffside') {
       return str;
     }
 
+    function SendAjaxforEdit() {
+      var Name = document.getElementById("pic-name").value;
+      var Caption = document.getElementById("pic-caption").value;
+      var NoStr = document.getElementById("pic-no").value;
+      var No = parseInt(NoStr);
+      //swal("Title","Name : "+Name+" Caption : "+Caption+" No : "+No);
+      //swal("asdsa",'../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No);
+        if(Name == "" || Name == null)
+        {
+            swal("Warning","Please fill picture name.","warning");
+            return;
+        }
 
-    </script>
+        /*if(No == NaN)
+        {
+              swal("Warning","Please fill No. is Numeric.","warning");
+              return;
+        }*/
+        if (window.XMLHttpRequest) {
+          xmlhttp=new XMLHttpRequest();
+        }
+        else {
+          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        var SendVariable = '../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No;
+        xmlhttp.open("GET", SendVariable, true);
+        xmlhttp.onreadystatechange = responseXHR;
+        xmlhttp.send();
+        function responseXHR() {
+            if ( xmlhttp.readyState == 4 ) {
+                swal({
+                title: "Update!",
+                text: "Your picture door file has been updated.",
+                type: "success"
+                },
+                function(){
+                    $('#myModal').modal('hide');
+                    location.reload();
+                });
+            }
+        }
+
+
+
+    }
+
+</script>
 
 </body>
 

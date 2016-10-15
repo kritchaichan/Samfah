@@ -1,4 +1,5 @@
 <?php
+
 $id = $_GET['id'];
 $type = $_GET['type'];
 $name = $_GET['name'];
@@ -56,7 +57,26 @@ switch ($type) {
     break;
 }*/
 
+require_once('../../app/config.inc.php');
+$strsql  = "DELETE FROM picture_door ";
+$strsql .= "WHERE ";
+$strsql .= "Picture_Door_ID = ".$id; // เลือก ตารางที่เราเก็บข้อมูล
+$strsql .= " AND Picture_Door_Type = '".$type."'"; // เลือก ตารางที่เราเก็บข้อมูล
+$strsql .= " AND Picture_Door_Name = '".$name."'"; // เลือก ตารางที่เราเก็บข้อมูล
+$result = mysqli_query($objCon,$strsql);
 $filedelete = $newpath.'\\'.$location.'\\'.$name.'.jpg';
 //echo $filedelete.'<br/>';
-unlink($filedelete);
+
+if($result) {
+  if(unlink($filedelete)) {
+    echo "Success";
+  }
+  else{
+    echo "file";
+  }
+}else{
+  die('Invalid query: ' . mysql_error());
+}
+
+mysqli_close($objCon);
 ?>
