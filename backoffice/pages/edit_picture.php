@@ -34,7 +34,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
   	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/select/1.2.0/css/select.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/css/editor.dataTables.min.css">
   	<link rel="stylesheet" type="text/css" href="../vendor/datatables-editor/examples/resources/syntax/shCore.css">
-
+    <link rel="stylesheet" type="text/css" href="../vendor/sweetalert-master/dist/sweetalert.css">
     <!-- Custom CSS -->
     <link href="../dist/css/sb-admin-2.css" rel="stylesheet">
 
@@ -150,6 +150,9 @@ if ($_SESSION['checkSign'] != 'itoffside') {
     <script src="../vendor/datatables-plugins/dataTables.bootstrap.min.js"></script>
     <script src="../vendor/datatables-responsive/dataTables.responsive.js"></script>
 
+
+    <script src="../vendor/sweetalert-master/dist/sweetalert.min.js"></script>
+
     <!-- Custom Theme JavaScript -->
     <script src="../dist/js/sb-admin-2.js"></script>
     <script type="text/javascript" language="javascript" class="init">
@@ -197,7 +200,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           selectedID = objToStringWithID(data);
           selectedType = objToStringWithType(data);
           selectedName = objToStringWithName(data);
-          alert( 'The cell clicked on had the value of '+selectedID);
+          swal( 'The cell clicked on had the value of '+selectedID);
       }
     } );
 
