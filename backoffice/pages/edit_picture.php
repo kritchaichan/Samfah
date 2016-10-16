@@ -107,6 +107,14 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                         <div class="panel-heading">
                             Order by Customers
                         </div>
+                        <div class="row">
+                          <div class="col-lg-12">
+                          <div class="from-control">
+                            <button type="button" id="EditPic" class="btn btn-primary" style="margin: 10px 10px 0px 10px" onclick="">Edit</button>
+                            <button type="button" id="DeletePic" class="btn btn-danger" style="margin: 10px 0px 0px 0px" onclick="">Delete</button>
+                          </div>
+                          </div>
+                        </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -117,8 +125,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
                                         <th>Picture Type</th>
                                         <th>Picture Caption</th>
                                         <th>Picture No.</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -166,7 +172,7 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary" onclick="SendAjaxforEdit()">Save changes</button>
+            <button type="button" id="ModalSaveEdit" class="btn btn-primary" onclick="">Save changes</button>
           </div>
         </div>
       </div>
@@ -206,28 +212,13 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           { "data": "Picture_Door_Name" },
           { "data": "Picture_Door_Type" },
           { "data": "Picture_Door_Caption" },
-          { "data": "Picture_Door_Sequence_Number"},
-          {
-            mData: "Action",
-            bSortable: false,
-            mRender: function(data, type, row) {
-                          //return '<a class="btn btn-info btn-sm">Edit</a>';
-                          return '<a class="btn btn-info btn-sm"> Edit</a>';
-                       }
-          },
-          {
-            mData: "Action",
-            bSortable: false,
-            mRender: function(data, type, row) {
-                          return '<button type="button" class="btn btn-danger btn-sm" >Delete</button>';
-                       }
-          }
+          { "data": "Picture_Door_Sequence_Number"}
         ]
     });
 
     $('#dataTables-example tbody').on( 'click','tr',function () {
       if ($(this).hasClass('selected')) {
-          //$(this).removeClass('selected');
+          $(this).removeClass('selected');
       }// --- END IF ---
       else {
           table.$('tr.selected').removeClass('selected');
@@ -239,64 +230,91 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           selectedCaption = objToStringWithCap(data);
           selectedNo = objToStringWithNo(data);
       }// --- END ELSE ---
-    });
+    });// --- END SELECT ROW ---
 
-    $('#dataTables-example tbody').on( 'click','button' ,function () {
-      if ($(this).hasClass('selected')) {
-          //$(this).removeClass('selected');
-      }// --- END IF ---
-      else {
-         swal({title: "Are you sure?",
-               text: "You will not be able to recover this picture door file!",
-               type: "warning",
-               showCancelButton: true,
-               confirmButtonColor: "#DD6B55",
-               confirmButtonText: "Yes, delete it!",
-               cancelButtonText: "No, cancel plx!",
-               closeOnConfirm: false,
-               closeOnCancel: true },
-               function(isConfirm){
-                 if (isConfirm) {
-                   if (window.XMLHttpRequest) {
-                       xmlhttp=new XMLHttpRequest();
-                   }
-                   else {
-                       xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-                   }
-                   var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
-                   xmlhttp.open("GET", SendVariable, true);
-                   xmlhttp.onreadystatechange = responseXHR;
-                   xmlhttp.send();
-                   function responseXHR() {
-                        if ( xmlhttp.readyState == 4 ) {
-                          swal({
-                                 title: "Deleted!",
-                                  text: "Your picture door file has been deleted.",
-                                   type: "success"
-                                 },
-                                 function(){
-                                   //location.reload();
-                                   table.row('.selected').remove().draw( false );
-                               });
-                        }
-                   }
+    $('#DeletePic').click( function () {
+      swal({title: "Are you sure?",
+            text: "You will not be able to recover this picture door file!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: false,
+            closeOnCancel: true },
+            function(isConfirm){
+              if (isConfirm) {
+                if (window.XMLHttpRequest) {
+                    xmlhttp=new XMLHttpRequest();
                 }
-        });// --- END Swal ---
-      }// --- END ELSE ---
-    });
+                else {
+                    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+                }
+                var SendVariable = '../lib/delete-pic.php?id='+selectedID+'&type='+selectedType+'&name='+selectedName;
+                xmlhttp.open("GET", SendVariable, true);
+                xmlhttp.onreadystatechange = responseXHR;
+                xmlhttp.send();
+                function responseXHR() {
+                     if ( xmlhttp.readyState == 4 ) {
+                       swal({
+                              title: "Deleted!",
+                               text: "Your picture door file has been deleted.",
+                                type: "success"
+                              },
+                              function(){
+                                table.row('.selected').remove().draw( false );
+                            });
+                     }
+                }
+             }
+     });
+   });// --- END DelectPic ---
 
-    $('#dataTables-example tbody').on( 'click','a' ,function () {
-      if ($(this).hasClass('selected')) {
-          //$(this).removeClass('selected');
-      }// --- END IF ---
-      else {
+      $('#EditPic').click( function () {
           $(".modal-body #pic-name").val(selectedName);
           $(".modal-body #pic-type").val(selectedType);
           $(".modal-body #pic-caption").val(selectedCaption);
           $(".modal-body #pic-no").val(selectedNo);
           $("#myModal").modal();
-      }
-    });
+      });
+
+      $('#ModalSaveEdit').click( function () {
+        var Name = document.getElementById("pic-name").value;
+        var Caption = document.getElementById("pic-caption").value;
+        var NoStr = document.getElementById("pic-no").value;
+        var No = parseInt(NoStr);
+        //swal("Title","Name : "+Name+" Caption : "+Caption+" No : "+No);
+        //swal("asdsa",'../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No);
+          if(Name == "" || Name == null) {
+              swal("Warning","Please fill picture name.","warning");
+              return;
+          }
+          if (window.XMLHttpRequest) {
+            xmlhttp=new XMLHttpRequest();
+          }
+          else {
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+          }
+          var SendVariable = '../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No;
+          xmlhttp.open("GET", SendVariable, true);
+          xmlhttp.onreadystatechange = responseXHR;
+          xmlhttp.send();
+          function responseXHR() {
+              if ( xmlhttp.readyState == 4 ) {
+                  swal({
+                  title: "Update!",
+                  text: "Your picture door file has been updated.",
+                  type: "success"
+                  },
+                  function(){
+                      $('#myModal').modal('hide');
+                      //location.reload();
+                      table.ajax.reload();
+                  });
+              }
+          }
+     });
+
 });
     function objToStringWithID (obj) {
       var result = '';
@@ -351,52 +369,6 @@ if ($_SESSION['checkSign'] != 'itoffside') {
           }
       }
       return str;
-    }
-
-    function SendAjaxforEdit() {
-      var Name = document.getElementById("pic-name").value;
-      var Caption = document.getElementById("pic-caption").value;
-      var NoStr = document.getElementById("pic-no").value;
-      var No = parseInt(NoStr);
-      //swal("Title","Name : "+Name+" Caption : "+Caption+" No : "+No);
-      //swal("asdsa",'../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No);
-        if(Name == "" || Name == null)
-        {
-            swal("Warning","Please fill picture name.","warning");
-            return;
-        }
-
-        /*if(No == NaN)
-        {
-              swal("Warning","Please fill No. is Numeric.","warning");
-              return;
-        }*/
-        if (window.XMLHttpRequest) {
-          xmlhttp=new XMLHttpRequest();
-        }
-        else {
-          xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-        }
-        var SendVariable = '../lib/edit-pic.php?id='+selectedID+'&type='+selectedType+'&name='+Name+'&caption='+Caption+'&no='+No;
-        xmlhttp.open("GET", SendVariable, true);
-        xmlhttp.onreadystatechange = responseXHR;
-        xmlhttp.send();
-        function responseXHR() {
-            if ( xmlhttp.readyState == 4 ) {
-                swal({
-                title: "Update!",
-                text: "Your picture door file has been updated.",
-                type: "success"
-                },
-                function(){
-                    $('#myModal').modal('hide');
-                    location.reload();
-                });
-            }
-        }
-
-
-
     }
 
 </script>
