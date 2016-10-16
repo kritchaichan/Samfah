@@ -32,174 +32,176 @@ if (!$result) {
 //ทำการสืบทอดคลาส FPDF ให้เป็นคลาสใหม่
 class PDF extends FPDF
 {
-	private $dots = "...................";
+    //Set OrderNo in Header
+    function SetOrder($orderID) {
+      $this->orderID = $orderID;
+    }
+  	//Override คำสั่ง (เมธอด) Header
+  	function Header()
+  	{
+      $orderID = $GLOBALS['orderID'];
+      $this->SetOrder($orderID);
+      
+  		$this->SetFont('PTsansnarrow','',24);
+  		$this->Text( 35 , 24 , "Order");
+  		$this->SetFont('PTsansnarrow','',9);
+  		$this->Text( 54 , 20 , "No.".$this->orderID);
+  		$date =  date('Y-m-d');
+  		$this->Text(145,20, "Date.".$date);
 
-	//Override คำสั่ง (เมธอด) Header
-	function Header()
-	{
+  		//ทำเส้้น Header
+  		$this->SetLineWidth(0.6);
+  		$this->Line(0,22,32,22);
+  		$this->Line(54,22,230,22);
 
-		$this->SetFont('PTsansnarrow','',24);
-		$this->Text( 35 , 24 , "Order");
-
-
-		$this->SetFont('PTsansnarrow','',9);
-		$this->Text( 54 , 20 , "No.000001");
-		$date =  date('Y-m-d');
-		$this->Text(145,20, "Date.".$date);
-
-		//ทำเส้้น Header
-		$this->SetLineWidth(0.6);
-		$this->Line(0,22,32,22);
-		$this->Line(54,22,230,22);
-
-		//ปัดบรรทัด กำหนดความกว้างของบรรทัด 20 หน่วย
-		$this->Ln(20);
-	}
+  		//ปัดบรรทัด กำหนดความกว้างของบรรทัด 20 หน่วย
+  		$this->Ln(20);
+  	}
 
 	//Override คำสั่ง (เมธอด) Footer
-	function Footer()	{
+  	function Footer()	{
 
-		//นับจากขอบกระดาษด้านล่างขึ้นมา 15 มม.
-		$this->SetY(-15);
-		$this->SetX(-30);
+  		//นับจากขอบกระดาษด้านล่างขึ้นมา 15 มม.
+  		$this->SetY(-15);
+  		$this->SetX(-30);
 
-		//กำหนดใช้ตัวอักษร Arial ตัวเอียง ขนาด 5
-		$this->SetFont('PTsansnarrow','',8);
+  		//กำหนดใช้ตัวอักษร Arial ตัวเอียง ขนาด 5
+  		$this->SetFont('PTsansnarrow','',8);
 
-		//พิมพ์ หมายเลขหน้า ตรงมุมขวาล่าง
-		$this->Cell(0,10,$this->PageNo().'/{nb}',0,0,'R');
+  		//พิมพ์ หมายเลขหน้า ตรงมุมขวาล่าง
+  		$this->Cell(0,10,$this->PageNo().'/{nb}',0,0,'R');
 
-	}
+  	}
 
-	function ProductsDetails($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark)
-	{
-		$this->SetLineWidth(1);
-		$this->SetDrawColor(153,153,153); //Set color
-		$this->RoundedRect(28, 32, 155, 115, 5, 'D'); // Draw RoundRect
-		//--SET DIRECTORY IMAGE LOCAL
-		switch ($Type) {
-			case 'Classic':
-				$location = "images/pic_door_classic";
-				break;
-			case 'Contemporary':
-				$location = "images/pic_door_contemporary";
-				break;
-			case 'Modern':
-				$location = "images/pic_door_modern";
-				break;
-			case 'Showroom':
-				$location = "images/showroom";
-				break;
-			case 'Folios':
-				$location = 'images/folios';
-				break;
-			case 'Process':
-				$location = "images/process";
-				break;
-			case 'Othercrafts':
-				$location = "images/pic_door_modern";
-				break;
-		}
-		$this->Image('../../'.$location.'/'.$PicId.'.jpg',38,43,0,90,'jpg');
-		$this->SetLineWidth(0.2);
-		$this->SetDrawColor(0,0,0); //Set color
-		 //set Height Line
-		$this->Line(90, 48, 90,128);
-		$this->Line(84,48,90,48);
-		$this->Line(84,128,90,128);
+  	function ProductsDetails($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark)
+  	{
+  		$this->SetLineWidth(1);
+  		$this->SetDrawColor(153,153,153); //Set color
+  		$this->RoundedRect(28, 32, 155, 115, 5, 'D'); // Draw RoundRect
+  		//--SET DIRECTORY IMAGE LOCAL
+  		switch ($Type) {
+  			case 'Classic':
+  				$location = "images/pic_door_classic";
+  				break;
+  			case 'Contemporary':
+  				$location = "images/pic_door_contemporary";
+  				break;
+  			case 'Modern':
+  				$location = "images/pic_door_modern";
+  				break;
+  			case 'Showroom':
+  				$location = "images/showroom";
+  				break;
+  			case 'Folios':
+  				$location = 'images/folios';
+  				break;
+  			case 'Process':
+  				$location = "images/process";
+  				break;
+  			case 'Othercrafts':
+  				$location = "images/pic_door_modern";
+  				break;
+  		}
+  		$this->Image('../../'.$location.'/'.$PicId.'.jpg',38,43,0,90,'jpg');
+  		$this->SetLineWidth(0.2);
+  		$this->SetDrawColor(0,0,0); //Set color
+  		 //set Height Line
+  		$this->Line(90, 48, 90,128);
+  		$this->Line(84,48,90,48);
+  		$this->Line(84,128,90,128);
 
-		//set Width Line
-		$this->Line(52,132,84,132);
-		$this->Line(52,128, 52,132);
-		$this->Line(84, 128, 84,132);
+  		//set Width Line
+  		$this->Line(52,132,84,132);
+  		$this->Line(52,128, 52,132);
+  		$this->Line(84, 128, 84,132);
 
-		//set thickness Line
-		//$this->Line(92,120,84,136);
+  		//set thickness Line
+  		//$this->Line(92,120,84,136);
 
-		$this->SetFont('PTsansnarrow','',13);
+  		$this->SetFont('PTsansnarrow','',13);
 
-		$this->SetXY(92,85);
-		$this->Cell( 10, 0 , $Height." CM",0,0,'L'); //add value height
+  		$this->SetXY(92,85);
+  		$this->Cell( 10, 0 , $Height." CM",0,0,'L'); //add value height
 
-		$this->SetXY(62,136);
-		$this->Cell( 10, 0 , $Width." CM",0,0,'L'); //add value width
+  		$this->SetXY(62,136);
+  		$this->Cell( 10, 0 , $Width." CM",0,0,'L'); //add value width
 
-		$this->SetXY(120,52);
-		$this->Cell( 10, 0 , "Quantity:",0,0,'L');
-		$this->SetXY(125,58);
-		$this->Cell( 20, 0 , $Quantity." Pcs",0,0,'L');//add value qty
-		$this->SetXY(120,64);
-		$this->Cell( 10, 0 , "Wood for Door:",0,0,'L');
-		$this->SetXY(125,70);
-		$this->Cell( 20, 0 , $wDoor,0,0,'L'); //add value wood
-		$this->SetXY(120,76);
-		$this->Cell( 10, 0 , "Accessories:",0,0,'L');
-		$this->SetXY(125,82);
-		$this->Cell( 30, 0 , "- ".$aFrame,0,0,'L'); //add value frame
-		$this->SetXY(125,88);
-		$this->Cell( 30, 0 , "- ".$aGlass,0,0,'L');//add value frame
-		$this->SetXY(120,94);
-		$this->Cell( 10, 0 , "Wood for framing:",0,0,'L');
-		$this->SetXY(125,100);
-		$this->Cell( 20, 0 , $wFrame,0,0,'L');
-		$this->SetXY(120,106);
-		$this->Cell( 10, 0 , "Length: ".$Height." CM",0,0,'L'); //add value thickness
-		$this->SetXY(120,113);
-		$this->Cell( 10, 0 , "Width: ".$Width." CM",0,0,'L'); //add value thickness
-		$this->SetXY(120,119);
-		$this->Cell( 10, 0 , "Thickness: ".$Thickness." inch",0,0,'L'); //add value thickness
-	}
+  		$this->SetXY(120,52);
+  		$this->Cell( 10, 0 , "Quantity:",0,0,'L');
+  		$this->SetXY(125,58);
+  		$this->Cell( 20, 0 , $Quantity." Pcs",0,0,'L');//add value qty
+  		$this->SetXY(120,64);
+  		$this->Cell( 10, 0 , "Wood for Door:",0,0,'L');
+  		$this->SetXY(125,70);
+  		$this->Cell( 20, 0 , $wDoor,0,0,'L'); //add value wood
+  		$this->SetXY(120,76);
+  		$this->Cell( 10, 0 , "Accessories:",0,0,'L');
+  		$this->SetXY(125,82);
+  		$this->Cell( 30, 0 , "- ".$aFrame,0,0,'L'); //add value frame
+  		$this->SetXY(125,88);
+  		$this->Cell( 30, 0 , "- ".$aGlass,0,0,'L');//add value frame
+  		$this->SetXY(120,94);
+  		$this->Cell( 10, 0 , "Wood for framing:",0,0,'L');
+  		$this->SetXY(125,100);
+  		$this->Cell( 20, 0 , $wFrame,0,0,'L');
+  		$this->SetXY(120,106);
+  		$this->Cell( 10, 0 , "Length: ".$Height." CM",0,0,'L'); //add value thickness
+  		$this->SetXY(120,113);
+  		$this->Cell( 10, 0 , "Width: ".$Width." CM",0,0,'L'); //add value thickness
+  		$this->SetXY(120,119);
+  		$this->Cell( 10, 0 , "Thickness: ".$Thickness." inch",0,0,'L'); //add value thickness
+  	}
 
 
-	function CustomerDetails($firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate)
-	{
-		$dot2 = "........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
-		$this->SetFont('PTsansnarrow','',18);
-		$this->SetY(157);
-		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Customer\'s Information'),0,0,'C');
-		$this->SetFont('PTsansnarrow','',14);
-		$this->SetXY(28.5,166);
-		$this->Cell(22,0,iconv( 'UTF-8','cp874' ,"Firstname: "),0,0,'');
-		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$firstname),0,0,''); // add value firstname
-		$this->Cell(20,0,iconv( 'UTF-8','cp874' ,"Surname: "),0,0,'');
-		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$lastname),0,0,''); // add value surnamename
-		$this->SetXY(28.5,175);
-		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,"Delivered Address: "),0,0,'');
-		$this->SetXY(28.5,180);
-		$this->MultiCell( 155,5,$address);
-		$this->SetXY(28.5,205);
-		$this->Cell(35,0,iconv( 'UTF-8','cp874' ,"Mobile phone NO: "),0,0,'');
-		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$mobile),0,0,''); // add value Mobile
-		$this->Cell(30,0,iconv( 'UTF-8','cp874' ,"Telephone NO: "),0,0,'');
-		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$phone),0,0,''); // add value Telephone
-		$this->SetXY(28.5,213);
-		$this->Cell(16,0,iconv( 'UTF-8','cp874' ,"Email@: "),0,0,'');
-		$this->Cell(75,0,iconv( 'UTF-8','cp874' ,$email),0,0,''); // add value Email
-		$this->Cell(15,0,iconv( 'UTF-8','cp874' ,"Line ID: "),0,0,'');
-		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$lineid),0,0,''); // add value LineID
-		$this->SetXY(28.5,221);
-		$this->Cell(30,0,iconv( 'UTF-8','cp874' ,"Facebook name: "),0,0,'');
-		$this->Cell(155,0,iconv( 'UTF-8','cp874' ,$fbname),0,0,''); // add value FBName
-		$this->SetY(235);
-		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Your expected delivery date: '.$deliverydate),0,0,'C'); // add value delivery date
-		$this->SetFont('PTsansnarrow','',12);
-		$this->SetY(245);
-		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,"Please confirm your purchase order by clicking \"confirm\".We will contact you back in 24 hrs."),0,0,'C');
-		$this->SetFont('PTsansnarrow','',18);
-		$this->SetY(255);
-		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Thank you for your order.'),0,0,'C');
+  	function CustomerDetails($firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate)
+  	{
+  		$dot2 = "........................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................................";
+  		$this->SetFont('PTsansnarrow','',18);
+  		$this->SetY(157);
+  		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Customer\'s Information'),0,0,'C');
+  		$this->SetFont('PTsansnarrow','',14);
+  		$this->SetXY(28.5,166);
+  		$this->Cell(22,0,iconv( 'UTF-8','cp874' ,"Firstname: "),0,0,'');
+  		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$firstname),0,0,''); // add value firstname
+  		$this->Cell(20,0,iconv( 'UTF-8','cp874' ,"Surname: "),0,0,'');
+  		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$lastname),0,0,''); // add value surnamename
+  		$this->SetXY(28.5,175);
+  		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,"Delivered Address: "),0,0,'');
+  		$this->SetXY(28.5,180);
+  		$this->MultiCell( 155,5,$address);
+  		$this->SetXY(28.5,205);
+  		$this->Cell(35,0,iconv( 'UTF-8','cp874' ,"Mobile phone NO: "),0,0,'');
+  		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$mobile),0,0,''); // add value Mobile
+  		$this->Cell(30,0,iconv( 'UTF-8','cp874' ,"Telephone NO: "),0,0,'');
+  		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$phone),0,0,''); // add value Telephone
+  		$this->SetXY(28.5,213);
+  		$this->Cell(16,0,iconv( 'UTF-8','cp874' ,"Email@: "),0,0,'');
+  		$this->Cell(75,0,iconv( 'UTF-8','cp874' ,$email),0,0,''); // add value Email
+  		$this->Cell(15,0,iconv( 'UTF-8','cp874' ,"Line ID: "),0,0,'');
+  		$this->Cell(50,0,iconv( 'UTF-8','cp874' ,$lineid),0,0,''); // add value LineID
+  		$this->SetXY(28.5,221);
+  		$this->Cell(30,0,iconv( 'UTF-8','cp874' ,"Facebook name: "),0,0,'');
+  		$this->Cell(155,0,iconv( 'UTF-8','cp874' ,$fbname),0,0,''); // add value FBName
+  		$this->SetY(235);
+  		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Your expected delivery date: '.$deliverydate),0,0,'C'); // add value delivery date
+  		$this->SetFont('PTsansnarrow','',12);
+  		$this->SetY(245);
+  		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,"Please confirm your purchase order by clicking \"confirm\".We will contact you back in 24 hrs."),0,0,'C');
+  		$this->SetFont('PTsansnarrow','',18);
+  		$this->SetY(255);
+  		$this->Cell(0,0,iconv( 'UTF-8','cp874' ,'Thank you for your order.'),0,0,'C');
 
-	}
+  	}
 
-	function PrintChapter($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark,$firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate)
-	{
-		$this->AddPage();
-		$this->ProductsDetails($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark);
-		$this->CustomerDetails($firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate);
-	}
+  	function PrintChapter($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark,$firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate)
+  	{
+  		$this->AddPage();
+  		$this->ProductsDetails($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark);
+  		$this->CustomerDetails($firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate);
+  	}
 
-//Function Draw RoundRect
-function RoundedRect($x, $y, $w, $h, $r, $style = '')
+    //Function Draw RoundRect
+    function RoundedRect($x, $y, $w, $h, $r, $style = '')
     {
         $k = $this->k;
         $hp = $this->h;
@@ -254,7 +256,7 @@ $pdf->AliasNbPages();
 //Loop add Information
 while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
 		//group Header
-		$orderID = $row['Order_ID'];
+    $orderID = $row['Order_ID'];
 		//group Products
 		$PicId = $row['Picture_Door_Name'];
 		$Type = $row['Picture_Door_Type'];
@@ -279,6 +281,7 @@ while($row = mysqli_fetch_array($result,MYSQLI_ASSOC)){
     $deliverydate = $row['Orders_Details_Delivery_Date'];
 
 $pdf->PrintChapter($PicId,$Type,$Height,$Width,$Thickness,$Quantity,$aGlass,$aFrame,$wDoor,$wFrame,$Remark,$firstname,$lastname,$address,$mobile,$phone,$email,$lineid,$fbname,$deliverydate);
+$pdf->SetOrder($orderID);
 }
 $pdf->Output();
 
