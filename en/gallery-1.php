@@ -27,7 +27,7 @@ while($row = $doorsQuery->fetch_object()){
   $doors[] = $row;
 }
 
-echo '<pre>',print_r($articles,true),'</pre>';
+//echo '<pre>',print_r($articles,true),'</pre>';
 
 ?>
 <!DOCTYPE html>
