@@ -2229,7 +2229,7 @@ transition: all 0.9s ease;
     .carousel-indicators
     {
         bottom: 0;
-        top: 275px;
+        top: 50%;
     }
    .samfah-heading-ourstory h1
     {
@@ -2268,7 +2268,7 @@ transition: all 0.9s ease;
     }
     .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
     {
-        height: 345px;
+        /*height: 345px;*/
     }
     /* background hover gallery mobile */
     .background-hover-gallery-mobile-1
