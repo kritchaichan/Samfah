@@ -182,5 +182,13 @@ $(document).ready(function(){
 });
 </script>
     <!-- end chang map order -->
+
+    <script type="text/javascript">
+    $(window).bind("pageshow", function() {
+        $("html, body").animate({
+           scrollTop: 0
+        }, 600);
+    });
+</script>
 </body>
 </html>
