@@ -21,8 +21,8 @@
 </head>
 <body>
 <!-- Preloader -->
-<!-- <div class="visible-lg"> -->
-<div>
+<div class="lg">
+<!-- <div> -->
     <div id="preloader">
         <div id="loader">
             <div class="loader"></div>

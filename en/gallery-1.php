@@ -45,8 +45,7 @@ while($row = $doorsQuery->fetch_object()){
 
 
   <!-- CSS  -->
-  <link rel="stylesheet" type="text/css" href="../assets/css/style.css">
-  <link rel="stylesheet" type="text/css" href="../assets/css/order.css">
+  <link rel="stylesheet" type="text/css" href="../assets/css/gallery.css">
   <!-- Lightbox CSS -->
   <link rel="stylesheet" type="text/css" href="../assets/css/lightbox.min.css">
   <!-- ICON  -->
