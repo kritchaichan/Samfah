@@ -1920,10 +1920,10 @@ transition: all 0.9s ease;
 {
     padding-top: 10px !important;
 }
-.image-custom
+/*.image-custom
 {
     height: 940px !important;
-}
+}*/
 .active-1
 {
     background-color: #ffffff !important;
@@ -2346,3 +2346,40 @@ transition: all 0.9s ease;
     }
     /* end background hover gallery mobile */
 }
+
+/* media screen and (max-width: 1600px)
+------------------------------------------------ */
+@media screen and (max-width: 1600px){
+	.text-2 {
+    margin-left: 100px;
+    margin-top: 30px;
+    width: 500px;
+	}
+}
+/* edia screen and (max-width: 1600px) End
+------------------------------------------------ */
+/* media screen and (max-width: 1440px)
+------------------------------------------------ */
+@media screen and (max-width: 1440px){
+	.text-2 {
+    margin-left: 100px;
+    margin-top: 20px;
+    width: 450px;
+	}
+}
+/* edia screen and (max-width: 1440px) End
+------------------------------------------------ */
+/* media screen and (max-width: 1280px)
+------------------------------------------------ */
+@media screen and (max-width: 1280px){
+	.text-2 {
+    margin-left: 100px;
+    margin-top: 35px;
+    width: 400px;
+	}
+	.container-image-hover .textbox {
+    top: 30px;
+	}
+}
+/* edia screen and (max-width: 1280px) End
+------------------------------------------------ */
