@@ -20,6 +20,16 @@
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 </head>
 <body>
+<!-- Preloader -->
+<!-- <div class="visible-lg"> -->
+<div>
+    <div id="preloader">
+        <div id="loader">
+            <div class="loader"></div>
+        </div>
+    </div>
+</div>
+<!-- Preloader End-->
     <!-- Full Page Image Background Carousel Header -->
     <div id="myCarousel" class="carousel slide">
         <!-- Indicators -->
@@ -41,13 +51,13 @@
             <div class="item">
                 <!-- Set Slide Gallery -->
                 <div class="fill">
-                <?php require_once("gallery.html"); ?>
+                    <?php require_once("gallery.html"); ?>
                 </div>
             </div>
             <div class="item">
                 <!-- Set Slide Order Us -->
                 <div class="fill">
-                <?php require_once("coming.php"); ?>
+                    <?php require_once("coming.php"); ?>
                 </div>
             </div>
             
@@ -183,7 +193,7 @@ $(document).ready(function(){
 </script>
     <!-- end chang map order -->
 
-    <script type="text/javascript">
+<script type="text/javascript">
     $(window).bind("pageshow", function() {
         $("html, body").animate({
            scrollTop: 0
