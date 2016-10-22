@@ -1251,7 +1251,7 @@ input[name="door_color"]:checked + span:before {
 
 @media screen and (max-width: 375px){
 	.box-catalog{
-		margin-top: 55%;
+		margin-top: 15%;
 	}
 	img[alt="door"]{
 		width: auto;
