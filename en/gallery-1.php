@@ -172,14 +172,6 @@ $(document).ready(function(){
   });
 </script>
 
-<script type="text/javascript">
-    $(window).bind("pageshow", function() {
-        $("html, body").animate({
-           scrollTop: 0
-        }, 600);
-    });
-</script>
-
 
 <!-- jQuery Library -->
 <script type="text/javascript" src="../assets/js/jquery-2.1.0.min.js"></script>
