@@ -1,0 +1,622 @@
+/* 1 - Import Google Font
+---------------------------------------------------------------------- */
+@import url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  src: url('http://fonts.googleapis.com/css?family=PT+Sans+Narrow');
+  unicode-range: U+41-5A, U+61-7A, U+C0-FF;
+}
+
+@font-face {
+  font-family: 'kunlasatri';
+  src: url('../fonts/kunlasatri.ttf');
+  unicode-range: U+0E00-U+0E7F;
+}
+/* 1 - Import Google Font End 
+---------------------------------------------------------------------- */
+/* preloader */
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #8B5E35;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/* end preloader */
+.slick-nextfac-1
+{
+    position: absolute;
+    top: 47%;right: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+.slick-prevfac-1
+{
+    position: absolute;
+    z-index: 1;
+    top: 47%;
+    left: 0;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.samfah-bg-about
+{
+    background-image: url(../../images/background/welcome.jpg);
+    background-size: cover;
+    background-position: top center;
+    text-align: center;
+    background-attachment: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.about-before-contact
+{
+    background-image: url(../../images/background/welcome.jpg);
+    background-size: cover;
+    background-position: top center;
+    background-attachment: fixed;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.samfah-image-about-profile
+{
+    text-align: center;
+}
+.samfah-image-about-profile img
+{
+    width: 400px;
+}
+.samfah-border-about
+{
+    border-style: solid;
+    border-color: #fff;
+    border-width: medium;
+    text-align: left;
+    padding: 10px;
+}
+.samfah-image-heading
+{
+    margin-top: 9px;
+}
+.samfah-border-about h1
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+.samfah-border-about p
+{
+    text-indent: 30px;
+    font-size: 14px;
+}
+.samfah-wood-image-about
+{
+    padding-top: 12px;
+}
+.samfah-wood-image-about
+{
+    display: -webkit-inline-box;
+}
+.samfah-wood-image-about-left
+{
+    text-align: left;
+    padding-right: 100px;
+}
+.samfah-wood-image-about-left img
+{
+    width: 140px
+}
+.samfah-wood-image-about-right
+{
+    text-align: right;
+}
+.samfah-wood-image-about-right img
+{
+    width: 140px;
+}
+
+/* cover ourstory */
+.samfah-cover-ourstory-re
+{
+    background-image: url(../../images/background/ourstory.jpg);
+    background-size: cover;
+    background-position: bottom center;
+    position: relative;
+    height: 1080px;
+}
+.samfah-cover-ourstory-abb
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-ourstory-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-ourstory-tc
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.samfah-cover-ourstory-vl
+{
+    vertical-align: middle;
+}
+.samfah-text-in-cover h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+/* end cover ourstory */
+/* cover order */
+.samfah-cover-order-re
+{
+    background-image: url(../../images/background/order.jpg);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    height: 1080px;
+}
+.samfah-cover-order-abb
+{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-order-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-order-tc
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.samfah-cover-order-vl
+{
+    vertical-align: middle;
+}
+.samfah-heading-in-cover-order h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+/* end cover order */
+/* cover gallery */
+.samfah-cover-gallery-re
+{
+    background-image: url(../../images/background/gallery.JPG);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    height: 1080px;
+}
+.samfah-cover-gallery-abb
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.samfah-cover-gallery-table
+{
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+.samfah-cover-gallery-tc
+{
+    display: table-cell;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.samfah-cover-gallery-vl
+{
+    vertical-align: middle;
+}
+.samfah-cover-gallery-heading h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+/* end cover gallery */
+.topcapil-content-in-cover
+{
+    margin-top: 82%;
+    margin-bottom: 81%;
+}
+.topcapil-content-in-cover h1
+{
+    font-size: 60px;
+    font-weight: bold;
+}
+.samfah-about-02
+{
+    margin-top: 30px;
+}
+.samfah-content-02 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding: 10px;
+    width: 104%;
+}
+.samfah-content-03 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding: 10px;
+    width: 100%;
+}
+.samfah-image-02 img
+{
+    width: 180px;
+}
+.samfah-image-02
+{
+    letter-spacing: 20px;
+}
+.samfah-image-03 img
+{
+    width: 180px;
+}
+.samfah-about-03-all
+{
+    margin-top: 30px;
+}
+.samfah-image-03
+{
+    letter-spacing: 20px;
+}
+.samfah-image-about-03 img
+{
+    width: 400px;
+}
+.samfah-detail-wood
+{
+    background-color: #fff;
+}
+.row-wood-01,.row-wood-02,.row-wood-03,.row-wood-04
+{
+    letter-spacing: 22px;
+    margin-top: 15px;
+}
+.all-wood
+{
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.detail-wood-02
+{
+    margin-top: 30px;
+}
+.samfah-image-before-contact img,.samfah-before-right img
+{
+    padding-top: 20px;
+}
+.border-before-contact
+{
+    margin-top: 20px;
+}
+.border-before-contact p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding: 20px;
+    width: 100%;
+}
+/* contact */
+.gg-maps
+{
+    position: relative;
+    height: 450px;
+}
+.background-contact
+{
+    background-image: url(../../images/bg-contact.jpg);
+    background-size: cover;
+    padding: 20px;
+}
+.botton-contact
+{
+    
+}
+.samfah-heading-contact h1
+{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+.border-contact
+{
+    border-style: solid;
+    border-width: 10px;
+    border-color: #fff;
+    padding: 20px;
+}
+.botton-contact p
+{
+    border-style: solid;
+    display: inline-block;
+    padding: 10px;
+    border-color: #fff;
+    color: #fff;
+    cursor: pointer;
+}
+.image-map-test
+{
+    text-align: center;
+}
+.samfah-heading-contact,.samfah-address
+{
+    text-align: center;
+}
+.samfah-heading-contact h1,.samfah-address p
+{
+    color: #fff;
+}
+.flip-re
+{
+    position: relative;
+}
+.samfah-address
+{
+    
+}
+/* end contact */
+.samfah-border-blog-contact
+{
+    border-style: solid;
+    border-color: #fff;
+    border-width: 14px;
+    padding: 70px;
+    height: 100%;
+}
+.samfah-form
+{
+    text-align: center;
+}
+.samfah-socile
+{
+    text-align: center;
+    margin-top: 20px;
+}
+.samfah-socile a
+{
+    font-size: 24px;
+    /*letter-spacing: 15px;*/
+    color: #fff;
+    transition: color 1s;
+    padding-left: 10px;
+    padding-right: 4px;
+}
+.samfah-socile a:hover
+{
+    color: #92825C;
+}
+.samfah-botton-branch
+{
+    text-align: center;
+    height: 100px;
+    margin-top: 30px;
+}
+.samfah-botton-branch p
+{
+    border-style: solid;
+    border-color: #fff;
+    display: inline-block;
+    color: #fff;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;    
+}
+.samfah-google-map iframe
+{
+    
+}
+.address-contact
+{
+    text-align: center;
+}
+.samfah-content-03 span
+{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
+@media screen and (max-width: 640px) 
+{
+    .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 12%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+    .samfah-image-about-profile img,.samfah-image-about-03 img
+    {
+        width: 290px;
+        margin-bottom: 20px;
+    }
+    .samfah-image-03 img,.samfah-image-02 img
+    {
+        width: 133px;
+    }
+    .samfah-image-about-03
+    {
+        margin-top: 20px;
+    }
+    .row-wood-01 img,.row-wood-02 img,.row-wood-03 img,.row-wood-04 img
+    {
+        width: 132px;
+    }
+    .all-wood
+    {
+        text-align: center;
+    }
+    .detail-wood-02 
+    {
+        text-align: center;
+    }
+    .detail-wood-02 img 
+    {
+        width: 285px;
+    }
+    .samfah-image-before-contact,.samfah-before-right,.detail-wood-02
+    {
+        text-align: center;
+    }
+    .samfah-image-before-contact img,.samfah-before-right img
+    {
+        width: 285px;
+    }
+    .samfah-contact-bg
+    {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .samfah-border-blog-contact
+    {
+        border-width: 4px;
+    }
+    .samfah-content-02 p
+{
+    text-align: left;
+    border-style: solid;
+    border-width: medium;
+    border-color: #fff;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+}
+    .topcapil-content-in-cover h1
+    {
+        font-size: 18px;
+    }
+    .topcapil-content-in-cover
+    {
+        margin-top: 29%;
+        margin-bottom: 22%;
+    }
+    .samfah-google-map
+    {
+        
+    }
+    .samfah-contact-bg
+    {
+        height: 65%;
+    }
+    .samfah-socile
+    {
+        bottom: 10%;
+    }
+    /* cover our story mobile */
+    .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
+    {
+        height: 232px;
+    }
+    /* end cover our story mobile */
+    .samfah-border-blog-contact
+    {
+        padding: 0px;
+    }
+    .height-map iframe
+    {
+        width: 100%;
+        height: 100%;
+    }
+    .background-contact
+    {
+        height: 71%;
+    }
+    
+}
+@media only screen and (min-width: 641px) and (max-width: 1025px) 
+{
+    
+   .samfah-heading-ourstory h1
+    {
+        color: #fff;
+        font-size: 24px;
+        position: absolute;
+        top: 40%;
+        left: 0;
+        right: 0;
+        display: block;
+    }
+    .samfah-content-02 p
+    {
+        width: 100%;
+    }
+    .samfah-image-before-contact,.samfah-before-right
+    {
+        text-align: center;
+    }
+    .all-wood,.detail-wood-02
+    {
+        text-align: center;
+    }
+    .topcapil-content-in-cover
+    {
+        margin-top: 29%;
+        margin-bottom: 22%;
+    }
+    .topcapil-content-in-cover h1
+    {
+        font-size: 18px;
+    }
+    .samfah-contact-bg
+    {
+        height: 50%;
+    }
+    .samfah-cover-ourstory-re,.samfah-cover-order-re,.samfah-cover-gallery-re
+    {
+        height: 345px;
+    }
+}
